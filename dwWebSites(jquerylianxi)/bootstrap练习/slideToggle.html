@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:50px; border:1px solid red; float:left; text-align:center; vertical-align:middle; margin-right:10px;}
+div.qqq{ background:yellow;}
+</style>
+<script>
+$(function(){
+	function aa(){
+	$("#aaa").slideToggle("slow","linear",aa);
+	}
+	aa();
+	$("button").click(function(){
+		
+		$("div:animated").toggleClass("qqq");		
+		})	
+	})
+</script>
+
+</head>
+
+<body>
+<div>你好</div>
+<div id="aaa">你不好</div>
+<div>你真的好吗</div>
+<button>点击改变颜色</button>
+</body>
+<!--<script type="text/javascript">
+function aa(){
+	$("#aaa").slideToggle("slow","linear",aa);
+	}
+	aa();
+</script>-->
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/vendors/jquery.easings.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.min.js"></script>
+<title>无标题文档</title>
+<style>
+/*.section1{ background:red;}
+.section2{ background:blue;}
+.section3{ background:yellow}
+.section4{ background:grey}
+.section5{ background:green}*/
+.section{ text-align:center; font-size:20px}
+</style>
+</head>
+
+<body>
+<div id="fullpage">
+	<div class="section section1"><h3>第一屏</h3></div>
+	<div class="section section2">
+    <div class="slide"><h4>第一页</h4></div>
+    <div class="slide"><h4>第二页</h4></div>
+    <div class="slide"><h4>第三页</h4></div>
+    </div>
+    <div class="section section3"><h3>第三屏</h3></div>
+    <div class="section section4"><h3>第四屏</h3></div>
+	<div class="section section5"><h3>第五屏</h3></div>    
+</div>
+<script>
+$(document).ready(function(){
+	$('#fullpage').fullpage({
+		sectionsColor:['red','blue','yellow','grey','green'],
+		controlArrows:true,//当值为false时，左右切换的箭头会消失，当值为true时，左右的箭头会出现；
+		resize:false,
+		
+		});
+	})
+</script>
+</body>
+</html>

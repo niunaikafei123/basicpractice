@@ -1,0 +1,156 @@
+@charset "utf-8";
+.web-qiezzi{ width:100%; height:100%; position:fixed;left:0px; min-height:580px; }
+.web-qiezzi:after{ content:' '; display:table; clear:both;}
+.qiezzi-nav{ width:68px; float:left; height:100%; position:fixed; left:0; background:#222327; z-index:99;}
+.qiezzi-nav > ul{ height:100%;}
+.qiezzi-content{ margin-left:278px; height:100%;}
+/*首页导航*/
+.qiezzi-nav > ul >li{ width:68px; height:28px; vertical-align:middle; text-align:center; margin-bottom:34px; position:relative;}
+.qiezzi-nav > ul > li a{ width:68px; height:100%;display:inline-block; vertical-align:middle; text-align:center; }
+.qiezzi-nav > ul > li span{ vertical-align:middle; display:inline-block; margin-top:55%; color:#fff;}
+.qiezzi-nav > ul > li.li1{ height:94px;padding-top:14px; border-right:none; margin-bottom:0px;}
+.qiezzi-nav > ul > li.li1 img{ width:46px; height:46px;}
+.qiezzi-nav > ul > li.li2{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.li3{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.li4{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.li5{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.li6{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.li7{ background:url(../image/gongzuotai.png) no-repeat center 22%;}
+.qiezzi-nav > ul > li.lastli{ position:fixed; bottom:28px; border-right:none; height:40px; margin-bottom:0px;}
+.qiezzi-nav > ul > li.lastli img{ height:40px; width:40px; }
+/*首页二级菜单*/
+.submenu{ width:208px; border-right:1px solid #eee; height:100%; float:left; position:fixed; left:68px;box-shadow:1px 1px 15px #e0e3e4}
+.submenu h2{ width:100%; height:47px; border-bottom:1px solid #e0e3e4; display:block; font-size:14px; padding-left:26px; line-height:47px; box-shadow:1px 1px 15px #e0e3e4}
+.submenu ul{ width:100%;}
+.submenu ul li{ height:36px; line-height:36px; padding-left:26px; font-size:13px; color:#424242}
+.submenu ul li:hover{ background:#f6f8fa; color:#424242 !important}
+.submenu ul li.firstli{ margin-top:13px;}
+
+/*用于二级菜单前面有小图标出现时使用*/
+.submenu ul.wenjianming li.li1 i{ width:18px; height:18px; background:url(../image/icon.png) no-repeat center 0; display:inline-block; vertical-align:middle;margin-right:6px; background-size:cover;}
+.submenu p{ padding-left:25px; padding-right:26px;}
+.submenu p.p1{ margin-top:24px; margin-bottom:24px;}
+.submenu p span{font-size:14px; color:#424242;}
+.submenu p .fa-cog{float:right; margin-top:3px;}
+.submenu p.p2{ margin-bottom:6px;}
+.submenu p label{width:76px; height:28px; line-height:28px; border:1px solid #888; text-align:center; font-weight:400; border-radius:3px;}
+.submenu p label:first-child{ margin-right:4px;}
+
+  
+/*内容部分*/
+.qiezzi-content{ position:relative;}
+/*内容的头部*/
+.qiezzi-content .top{ width:100%;height:47px; border-bottom:1px solid #e0e3e4;font-size:14px;box-shadow:1px 1px 15px #e0e3e4; padding-left:20px; position:fixed; background:#fff;}
+.qiezzi-content .top a{ height:47px; line-height:47px; color:#424242; font-size:14px; display:inline-block; padding:0 7px;}
+
+/*内容的中间部分*/
+.hzlist_x{ background:#F0F2F5; min-height:533px; overflow-y:auto; height:100%; overflow-x:auto; width:100%; padding-top:47px;}
+.qiezzi-content .hzlist .first{height:48px;box-shadow:1px 1px 15px #ccc;padding-left:12px;margin-top:28px;}
+.qiezzi-content .hzlist_x .first{padding-left:19px;font-size:12px;padding-left: 27px;}
+.qiezzi-content .hzlist_x .first p{color:#666666;padding-left:12px;margin-top:28px;  margin-bottom: 6px;}
+.qiezzi-content .hzlist_x .first div{padding-left:0;padding-right:0;margin-right:4px;float:left;}
+.qiezzi-content .hzlist_x .first div input{padding-left:12px;display:inline-block;width:216px;height:30px;border:1px solid;border-color:#d3d3d4;border-radius:3px;}
+.qiezzi-content .hzlist_x .first select{width: 157px;;padding-left:8px;height:30px;border-radius:3px;color:#666666;border: none;border: 1px solid #d3d3d4;}
+.qiezzi-content .hzlist_x .first .jztime{width:196px;}
+.qiezzi-content .hzlist_x .first>input{width:92px;height:32px;font-size:12px;padding: 4px 22px;margin-top: 51px;border-radius:3px;background:#fff;border:0;border: 1px solid;border-color:#d3d3d4;}
+.qiezzi-content .hzlist_x .second{margin-top:18px;margin-left:27px;margin-bottom:12px;}
+.qiezzi-content .hzlist_x .second input{padding-left:12px;background:#fff;display:inline-block;width:92px;height:32px;padding:4px 20px;font-size:12px;border-radius:3px;border:1px solid;border-color:#d3d3d4;}
+.qiezzi-content .hzlist_x .second .btnclass{background:#7e7ac5;color:#fff;}
+.qiezzi-content .hzlist_x .second .btnclass2{background:#6d69ab; color:#fff;}
+.qiezzi-content .hzlist_x table{margin-left:27px;width: 97%;border-bottom: 2px solid #ddd;margin-bottom: 0px;    box-shadow: 1px 1px 15px #ccc;}
+.qiezzi-content .hzlist_x table thead  tr  th{height:52px;text-align: center;font-size: 14px;background-color: #fff;vertical-align: middle;}
+.qiezzi-content .hzlist_x table tbody  tr  td{font-size: 13px;height:52px;border-top:0px;vertical-align: middle;}
+.qiezzi-content .hzlist_x table tbody  tr  td span{cursor: pointer}
+.qiezzi-content .hzlist_x table tbody  tr  td span:hover{color:#7e7ac5}
+.qiezzi-content .hzlist_x .yeqian{width:97%;margin-left: 27px;background:#fff;height: 52px;box-shadow: 1px 1px 15px #ccc;}
+.qiezzi-content .hzlist_x .yeqian .pagination>li>a{border:0;color:#666666;}
+.qiezzi-content .hzlist_x .yeqian .pagination{margin: 3px 0;}
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus{background-color:#7e7ac5}
+
+/*dropdown下拉框样式改变*/
+.qiezzi-content .hzlist_x .first div.dropdown{margin-right:0;}
+.dropdown .btn{width:177px;padding:5px 10px;font-size: 12px;border-radius:3px;padding-top:6px;color:#a9a9a9;background-color: #fff;border:1px solid #d3d3d4;text-align: left;}
+.btn .caret {margin-left: 18px;float: right;margin-top: 7px;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu>li>a{color:#a9a9a9;padding-left: 13px;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu{margin-top:0;font-size: 12px;    min-width: 177px;    height: 102px;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{background-color:#7e7ac5;color:#fff;}
+.dropdown #dropdownMenu2{width: 196px;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu>li{height:100%}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul{display:inline-block;margin-left: 13px;color:#a9a9a9;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul:first-child{border-right:1px solid #d3d3d4;padding-right: 5px;width: 77px;    height: 100%;overflow-x:auto;	overflow-y: scroll;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul:last-child{margin-left:3px;vertical-align: top;width: 76px;height: 100%;overflow-x:auto;overflow-y: scroll;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul li{text-overflow: ellipsis;white-space: nowrap;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul li a{color:#a9a9a9;}
+.qiezzi-content .hzlist_x .first .dropdown .dropdown-menu .kslist ul li a:hover{background-color:#7e7ac5;color:#fff;}
+@media screen and (max-width:1025px){
+	.qiezzi-content .hzlist_x table thead>tr>th,.qiezzi-content .hzlist_x table tbody>tr>th,.qiezzi-content .hzlist_x table tfoot>tr>th,.qiezzi-content .hzlist_x table thead>tr>td,.qiezzi-content .hzlist_x table tbody>tr>td,.qiezzi-content .hzlist_x table tfoot>tr>td { padding:5px;}
+}
+
+/*收费单详情弹出页面*/
+.halflayout{padding:0 15px;}
+.layout{ padding:0 30px;}
+.inforfirst{padding-left:25px;}
+.popup-box{ width:760px;height:auto; border:1px solid #eee; padding-bottom:50px;}
+.qz-modal-header{ height:50px; line-height:50px; border-bottom:1px solid #e0e3e4;box-shadow:1px 1px 15px #e0e3e4; color:#666; font-size:14px;}
+.qz-modal-header a{ height:50px; line-height:50px; display:inline-block; color:#666; font-size:14px; padding:0 5px;}
+.qz-modal-content{ width:100%; margin-top:30px;}
+.qz-modal-title{height: 33px;line-height: 33px;font-size:14px;background-color: #f0f2f5;padding-left: 10px;margin-bottom: 15px;}
+.qz-infor{ margin-top:15px; line-height:30px; margin-bottom:20px; font-size:13px;}
+.popup-box .table{ border-bottom:1px dashed #e0e3e4; padding-bottom:20px;}
+.popup-box .table thead>tr>th{ text-align:center; font-size:14px;}
+.popup-box .table tbody>tr>td{text-align:center; height:15px; line-height:15px; border-top:none; font-size:13px;}
+.table tbody>tr>td{}
+.popup-box .table tbody>tr:last-child td{ padding-bottom:25px;}
+.popup-box .table tbody>tr:first-child td{ padding-top:20px;}
+.popup-box .total{ height:35px;}
+.popup-box .total:nth-of-type(2){ margin-bottom:20px;}
+
+/*未付款页面*/
+.nonecharge .last{ margin-top:15px;}
+.nonecharge .btn{ padding:5px 30px;}
+.nonecharge .checkbox{ margin-top:8px;} 
+
+/*登记结果页面*/
+.smallpopup-box{ width:415px;height:auto; border:1px solid #eee; padding-bottom:50px; margin:0 auto;}
+/*.smallpopup-box label{ height:32px; padding:6px 12px;}*/
+.registrationresult .form-horizontal .control-label{ text-align:left;}
+.registrationresult .dropdown .btn{ width:287px;}
+.registrationresult .col-sm-9{ padding-left:0px; padding-right:0px; color:#424242;}
+.registrationresult .col-sm-9 label{color:#424242;}
+.registrationresult .col-sm-9:last-child{ font-size:12px;color:#adadad;}
+.registrationresult .col-sm-3{color:#adadad;}
+
+
+
+
+/*二级菜单消失时*/
+.newfloatlayer{ position:absolute;left:68px; width:150px; height:180px; top:0px;background:#222327;}
+ul.newfloatlayer li{ height:36px; line-height:36px;font-size:13px; width:150px; color:#fff; text-align:center;}
+
+
+
+/*自动切换适应平板和手机*/
+@media (min-width:768px) and (max-width: 992px) { 
+
+.submenu{ display:none;}
+.qiezzi-content{ margin-left:68px;}
+.qiezzi-nav ul li:hover .newfloatlayer{display:block}
+ }
+
+
+
+
+
+
+
+/*动画效果*/
+.popup-box{ float:right; animation:slide 2s;}
+.smallpopup-box{float:right; animation:smallslide 2s;}
+@keyframes slide{
+	from{ margin-right:-780px;}
+	to{ margin-right:0px;}
+}
+@keyframes smallslide{
+	from{ margin-right:-415px;}
+	to{ margin-right:0px;}
+}

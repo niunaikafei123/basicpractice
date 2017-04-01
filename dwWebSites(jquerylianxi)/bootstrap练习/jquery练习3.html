@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+<style>
+body{ padding:0px; margin:0px;}
+.abc{ width:300px; margin:0 auto;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$('.abc ul.aaa>li').css({'border':'3px solid red'})	
+	$('form input').css({"border":"2px dotted red"})
+	
+	})
+</script>
+</head>
+
+<body>
+<div class="abc">
+	<ul class="aaa">
+    	<li>苹果</li>
+        <li>
+        	<ul>
+            	<li>铅笔</li>
+                <li>橡皮</li>
+                <li>毛笔</li>
+            </ul>
+        </li>
+        <li>橘子</li>
+    </ul>
+    <form>
+    <div>Form is surrounded by the green outline</div>
+    <label>Child:</label>
+    <input name="name" />
+ 
+    <fieldset>
+      <label>Grandchild:</label>
+      <input name="newsletter" />
+    </fieldset>
+ 
+  </form>
+  Sibling to form: <input name="none" />
+</div>
+</body>
+</html>

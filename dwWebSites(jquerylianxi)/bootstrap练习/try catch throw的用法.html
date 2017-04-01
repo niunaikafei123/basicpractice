@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<h2>我的小程序</h2>
+<p>请在输入框中输入合适的数据</p>
+<input id="num" />
+<button onclick="test()">测试数据</button>
+<p id="msg"></p>
+<script>
+function test(){
+	try{
+		var x=document.getElementById("num").value;
+		if(x=="") throw "值为空";
+		if(isNaN(x)) throw "所填的值不是数字";
+		if(x>10) throw "所输入的值太大了！";
+		if(x<2) throw "所输入的值太小！";
+		}
+		catch(err)
+		{
+			document.getElementById("msg").innerHTML="错误:"+err;
+		}
+	
+	
+	}
+</script>
+</body>
+</html>

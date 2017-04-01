@@ -1,0 +1,25 @@
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; font-family:Microsoft YaHei,SimHei,Verdana,Arial,sans-serif,"Heiti SC";}
+body { font-size:12px; color:#3c3c3c; font-family:Microsoft YaHei,SimHei,Verdana,Arial,sans-serif,"Heiti SC"; background:#f7f7f7; }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; } 
+textarea { resize:none; }
+p{text-justify:distribute;}
+a { color: #424242;text-decoration:none; font-size: 12px; cursor:pointer}
+a:hover,a:active{text-decoration:none; }
+.cle{ clear:both;}
+.l{ float:left;}
+.r{ float:right;}
+.pull-left{ float:left;}
+.pull-right{float:right}
+.defaultActiveTab{ background:#7e7ac5; color:#fff !important;}
+.red{ color:red;}
+.grey{ color:#7b7b7b !important;}
+.deep{ color:#333 !important;}
+.purple{ color:#7b77c9}
+#loginInfo{ margin-right:-21px;}
+.top{ margin-top:48px;}
+.breadcrumb{ margin-bottom:0px !important;}

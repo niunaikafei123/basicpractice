@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+body{ padding:0px; margin:0px;}
+#zhezhao{ width: 100%; position:absolute; z-index: 1000;display: none; background:rgba(0,0,0,0.5)}
+#zhezhao button{width:100px; height:30px; display:block; margin:0 auto; position:absolute; display:block;}
+</style>
+<script>
+
+  $(function(){
+	  $('html').css({"height":"100%"});
+	  $("#zhezhao").height($(document).height());
+	  $("#zhezhao button").css('top',($(document).height()-$("#zhezhao button").height())/2);
+	  $("#zhezhao button").css('left',($(document).width()-$("#zhezhao button").width())/2);
+	  })
+   function dianji(bool){
+            if(bool){
+             $("#zhezhao").hide();
+            }else{
+             $("#zhezhao").show()
+            }
+         }
+
+</script>
+</head>
+
+<body>
+<div id="zhezhao">
+	<button onclick="dianji(1)">点击消失</button>
+</div>
+<input type="button" value="点击出现弹窗" onclick="dianji(0)"/>
+</body>
+</html>

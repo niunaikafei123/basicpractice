@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/base.css" rel="stylesheet"  />
+<link href="css/main.css" rel="stylesheet"  />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>地址管理页面</title>
+</head>
+
+<body>
+<!--固定在顶端的头部-->
+<div class="mastertop">
+	<ul class="tab" role="tablist">
+        <li class="defaultTabActive active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">产品管理</a></li>			
+     </ul>
+</div>
+<!--下面的区域-->
+<div class="processingfactory">
+<!--固定在左边的导航部分-->
+    <div class="processing-nav">
+    	<ul>
+        	<li class="li1"><a href="#"><img src="image/avatar.png" /></a></li>
+            <li class="li2"><a href="#"></a></li>
+			<li class="li3"><a href="#"></a></li>
+			<li class="li4"><a href="#"></a></li>
+			<li class="li5"><a href="#"></a></li>
+            <li class="li6"><a href="#"></a></li>
+            <li class="li7"><a href="#"></a></li>
+            <li class="lastli"><a href="#"><img src="image/qiezzi.png" /></a></li>
+		</ul>
+    </div>
+    <!-- 二级导航部分-->
+    <div class="processing-menu">
+    	<ul>
+            <li class="firstli">产品管理</li>
+            <li>订单管理</li>
+            <li class="defaultActiveTab">地址管理</li>
+            <li>公司信息</li>
+         </ul>    
+    </div>
+         <!--内容切换区域-->
+     <div class="processing-content">
+	 	<ul class="top" role="tablist">
+        	<li class="defaultActiveTab active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">地址管理</a></li>
+        </ul>
+        <div class="processing-content-center">
+        <div class="addressmanagement-page">
+        	<div class="deliveryinfor">
+                <div class="header">
+                    <h2>已保存的收货地址</h2><h3>你已经创建3个收货地址，最多可建5个</h3>
+                    <a>新增收货地址&gt;&gt;</a>
+                </div>
+				<ul class="receiving">
+                	<li class="receivecolor">
+                    	<p class="line">徐爽<a>默认地址</a></p>
+                        <span class="line">18801341736</span>
+                        <span class="line">北京市海淀区学清路5号768创业产业园B区5号2042</span>
+                        <a class="line">修改</a>
+                    </li>
+                    <li>
+                    	<p class="line">徐爽</p>
+                        <span class="line">18801341736</span>
+                        <span class="line">北京市海淀区学清路5号768创业产业园B区5号2042</span>
+                        <a class="line">修改</a>
+                    </li>
+                    <li>
+                    	<p class="line">徐爽</p>
+                        <span class="line">18801341736</span>
+                        <span class="line">北京市海淀区学清路5号768创业产业园B区5号2042</span>
+                        <a class="line">修改</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="deliveryinfor newadddeliveryinfor">
+                <div class="header">
+                    <h2>新增收货的地址</h2>
+                </div>
+				<form class="form-horizontal">
+            	<div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="收货人">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">字数范围2~20，必须填</label>
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="手机号码">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">合法的手机号码，必须填</label>
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+                     <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+
+                    <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+
+                    
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="详细地址">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">填写完整的地址信息</label>
+                 </div>
+            	<div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox">设置默认地址
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button type="submit" class="btn btn-default defaultActiveTab ">保存</button>
+                    </div>
+                   </div>
+            </form>
+            </div>
+        
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

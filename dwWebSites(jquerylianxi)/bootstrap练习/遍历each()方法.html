@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+<script>
+$(function(){
+	$("ul li:eq(1)").css({"background":"red"})
+	$("ul li:nth-child(3)").css({"background":"green"});
+	$("ul").each(function(index, element) {
+        $(this).find("li:eq(1)").css({"color":"blue"})
+    });	
+	})
+</script>
+</head>
+
+<body>
+<div>
+    <ul>
+    	<li>苹果</li>
+        <li>香蕉</li>
+        <li>橘子</li>
+    </ul>
+    <ul>
+    	<li>茄子</li>
+        <li>豆角</li>
+        <li>尖椒</li>
+    </ul>
+</div>
+</body>
+</html>

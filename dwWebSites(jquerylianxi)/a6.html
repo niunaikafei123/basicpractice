@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3动画小练习</title>
+<style>
+	*{ padding:0px; margin:0px;}
+	.aaa{ width:100px; height:100px; background:red; position:absolute;transition:transform 1s ease;animation:donghua 5s;animation-fill-mode : forwards }
+	@-webkit-keyframes donghua{	
+		from { left:0px; top:0px;}
+		40%{  left:30px; top:50px;}
+		50%{ left:50px; top:100px;}
+		60%{ left:150px; top:200px;}
+		to {  left:300px; top:300px;}
+	}
+
+	#qiu:target{
+		transform:rotate(7200deg);
+		
+	}
+	#a1{
+		position:absolute;
+		top:200px;
+	}
+</style>
+</head>
+
+<body>
+<div class="aaa" id="qiu"></div>
+<div id="a1"><a href="#qiu">click me</a></div>
+</body>
+</html>

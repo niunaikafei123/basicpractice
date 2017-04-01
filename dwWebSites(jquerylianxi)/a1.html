@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+ function test() {
+            try{
+            var x = document.getElementById("text").value;
+            if(x < 10) throw("太小");
+            if(x > 25) throw("太大");
+            if(x=="")  throw "值为空";
+            }
+            catch (error) {
+                var y = document.getElementById("message");
+                y.innerHTML = "错误:"+error + ".";
+            }
+
+
+
+        }
+
+
+</script>
+</head>
+
+<body>
+	<h2>我的第一个 JavaScript 程序</h2>
+    <p>请输入 5 到 10 之间的数字</p>
+
+        <input type="text" id="text" /><button onclick="test()">测试输入值</button>
+
+    <p id="message"></p>
+</body>
+</html>

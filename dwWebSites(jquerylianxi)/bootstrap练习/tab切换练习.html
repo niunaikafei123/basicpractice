@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; font-family:microsoft yahei,arial; }
+body { font-size:12px; color:#333333; font-family:Verdana, Microsoft YaHei, Simsun; background:#fff; line-height:18px; }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; } 
+textarea { resize:none; }
+p{ text-align:justify; text-justify:distribute;}
+a { color: #cacaca; text-decoration:none; font-size: 12px;}
+a:hover { color:#e6e6e6; text-decoration:none; }
+h2{ display:inline-block; width:80px; height:30px; border:1px solid #eee; margin:0px; text-align:center; line-height:30px; cursor:pointer;}
+.content{ display:none;}
+.active{ border:1px solid red;}
+.content.active{ display:block}
+.con{ width:254px;}
+</style>
+<script>
+$(function(){
+	$("h2").click(function(){
+		var index=$(this).index();
+		$(".content").eq(index).show().addClass('active').siblings().removeClass('active').hide();
+		})
+	
+	})
+</script>
+</head>
+
+<body>
+<h2>老师</h2>
+<h2>医生</h2>
+<h2>科学家</h2>
+<div class="con">
+<div class="content active">老师是一个非常神圣的职业</div>
+<div class="content">医生是一个令人敬仰的职业</div>
+<div class="content">科学家是一个伟大的职业</div>
+</div>
+</body>
+</html>

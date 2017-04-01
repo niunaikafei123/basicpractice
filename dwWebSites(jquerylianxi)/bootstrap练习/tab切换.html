@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+h1{
+  display:inline-block;
+  width:80px;
+}
+.active{
+  border:1px solid green;
+}
+.content{
+  display:none;
+}
+.content.active{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="active">TAB1</h1>
+<h1>TAB2</h1>
+<h1>TAB3</h1>
+<div class="con">
+    <div class="content active">
+    这里是一的内容
+    </div>
+    <div class="content">
+    这里是二的内容
+    </div>
+    <div class="content">
+    这里是三的内容
+    </div>
+</div>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$('h1').click(function(){
+  var index = $(this).index();
+  $('.content').eq(index).show().addClass('active').siblings().removeClass('active').hide();
+});
+</script>
+</body>
+</html>

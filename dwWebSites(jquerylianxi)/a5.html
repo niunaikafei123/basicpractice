@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+ $(function(){
+
+	$("ul li").each(function(){
+
+   		var index=$(this).index();
+
+	$("ul li").eq(0).addClass("act");
+	
+	$(this).hover(function(){
+	
+	 //alert(index);
+	
+	 $(this).addClass("act").siblings().removeClass("act");
+	
+	 $(".container>div").eq(index).stop(true).show().siblings().stop(true).hide();
+
+      })
+
+    })
+
+ })
+
+</script>
+
+
+</head>
+
+<body>
+
+<ul>
+
+    <li><a href="http://www.52aixuexi.com/wdwzml/suibi/">随笔</a></li>
+    
+    <li><a href="http://www.52aixuexi.com/wdwzml/sucai/">素材</a></li>
+    
+    <li><a href="http://www.52aixuexi.com/wdwzml/biancheng/">编程</a></li>
+
+</ul>
+
+<div class="container">
+
+    <div>这是随笔内容区域</div>
+    
+    <div style="display:none;">这是素材内容区域</div>
+    
+    <div style="display:none;">这是否编程内容区域</div>
+
+</div>  
+
+
+</body>
+</html>

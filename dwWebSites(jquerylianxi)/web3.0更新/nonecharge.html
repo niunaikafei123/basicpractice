@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/base.css" rel="stylesheet"  />
+<link href="css/main.css" rel="stylesheet"  />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>未付款页面</title>
+</head>
+
+<body>
+<div class="popup-box nocharge">
+	<div class="qz-modal-header halflayout">
+            <div class="col-sm-6">
+                收费单详情
+            </div>
+            <div class="col-sm-6 text-right">
+            	<a href=“#”>收费</a>
+                <a href=“#”>收费并打印</a>
+                <a href=“#”>取消</a>
+            </div>
+     </div>
+     <div class="qz-modal-content layout">
+   	 	<div class="qz-modal-title">
+    		患者信息
+		</div>
+        <div class="qz-infor">
+        	<div class="row">
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left inforfirst">病历号</div>
+                    <div class="col-xs-6 ng-binding">100024</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">姓名</div>
+                    <div class="col-xs-6 ng-binding">abd</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">性别</div>
+                    <div class="col-xs-6 ng-binding">男</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">电话</div>
+                    <div class="col-xs-6 ng-binding">123456</div>
+                </div>
+            </div>
+    	</div>
+        	<div class="row">
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left inforfirst">医生</div>
+                    <div class="col-xs-6 ng-binding">100024</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">护士</div>
+                    <div class="col-xs-6 ng-binding">abd</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">单据号</div>
+                    <div class="col-xs-6 ng-binding">男</div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-6 text-left">账单时间</div>
+                    <div class="col-xs-6 ng-binding">2015-12-6</div>
+                </div>
+            </div>
+    	</div>
+        </div>
+        <div class="qz-modal-title">
+    		收费明细
+		</div>
+        <table class="table">
+        	<thead>
+            	<tr>
+                	<th>明细项目</th>
+                    <th>单位</th>
+                    <th>单价(元)</th>
+                    <th>折扣价</th>
+                    <th>数量</th>
+                    <th>合计</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td>一次性注射器</td>
+                    <td>次</td>
+                    <td>￥30.00</td>
+                    <td>￥30.00</td>
+                    <td>5</td>
+                    <td>￥30.00</td>
+                </tr>
+                <tr>
+                	<td>一次性注射器</td>
+                    <td>次</td>
+                    <td>￥30.00</td>
+                    <td>￥30.00</td>
+                    <td>5</td>
+                    <td>￥30.00</td>
+                </tr>
+                <tr>
+                	<td>一次性注射器</td>
+                    <td>次</td>
+                    <td>￥30.00</td>
+                    <td>￥30.00</td>
+                    <td>5</td>
+                    <td>￥30.00</td>
+                </tr>
+                <tr>
+                	<td>一次性注射器</td>
+                    <td>次</td>
+                    <td>￥30.00</td>
+                    <td>￥30.00</td>
+                    <td>5</td>
+                    <td>￥30.00</td>
+                </tr>
+            </tbody>
+        
+        </table>
+       <!-- <div class="total">
+				<div class="col-xs-5">
+                    <div class="row">
+                        <div class="col-xs-5  text-left">费用合计</div>
+                        <div class="col-xs-7 ng-binding">￥ 576.00</div>
+                    </div>
+                </div>
+                <div class="col-xs-7">
+                    <div class="row">
+                        <div class="col-xs-5 text-left">优惠</div>
+                        <div class="col-xs-7 ng-binding">￥ 576.00</div>
+                    </div>
+                </div> 
+           </div>-->
+            <div class="total">
+				<div class="col-xs-10">
+                    <div class="row">
+                        <div class="col-xs-3  text-left">费用合计</div>
+                        <div class="col-xs-9 ng-binding">
+                                <div class="row">
+                                	<div class="col-xs-4 text-left">￥ 576.0</div>
+                                    <div class="col-xs-3 text-left">优惠</div>
+                                    <div class="col-xs-5 ng-binding">￥ 576.00</div>
+                            	</div>                    
+						</div>
+                    </div>
+                </div>
+			 </div>
+ 
+           <div class="total">
+           		<div class="col-xs-6">
+                     <div class="row">
+                           <div class="col-xs-5  text-left moveup">折扣</div>
+                           <div class="col-xs-7 ng-binding"><input type="text" class="form-control" placeholder="90%" /></div>
+                      </div>
+                </div>
+           </div>
+           <div class="total last">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-5  text-left bigfont">折后合计</div>
+                        <div class="col-xs-7 ng-binding bigfont red">￥ 576.00</div>
+                    </div>
+                </div>
+             </div>     
+       
+        <div class="qz-modal-title">
+    		收费信息
+		</div>
+
+        <div class="total last">
+				<div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-5  text-left control-label moveup">收费方式</div>
+                        <div class="col-xs-7 ng-binding">
+                        	<div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    请选择收费方式
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-5 text-left control-label moveup">收款时间</div>
+                        <div class="col-xs-7 ng-binding">
+                        	<div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    2015/12/16
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                    </div>
+                </div> 
+           </div>
+           <div class="total">
+				<div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-5  text-left control-label moveup">收费方式</div>
+                        <div class="col-xs-7 ng-binding">
+                        	<input type="text" class="form-control" ng-model="costInfo.note">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> 使用账户余额（当前账户余额：0.00元）
+                        </label>
+                     </div>
+                </div> 
+           </div>
+           <div class="total">
+				<div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-5  text-left control-label moveup">实收</div>
+                        <div class="col-xs-7 ng-binding red moveup">
+                        	￥100.00
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> 找零<span class="red">￥100.00</span>直接充值
+                        </label>
+                     </div>
+                </div> 
+           </div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="total">
+        	<div class="col-xs-1 moveup">备注</div>
+            <div class="col-xs-11">
+            	<!--<input type="text" class="form-control" ng-model="costInfo.note">-->
+                <!--<textarea name="yoursuggest" cols ="80" rows = "2"></textarea>-->
+                <textarea class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+     </div>
+     
+</div>
+</body>
+</html>

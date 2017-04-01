@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<title>无标题文档</title>
+<style>
+body, p, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle }
+body { background: #fff; font-family:微软雅黑; color: #000; -webkit-user-select: auto; -webkit-text-size-adjust: none; font-size: 17px; max-width: 640px; margin:auto; }
+header, footer, img,input { display: block; margin: 0; padding: 0 }
+img { border: 0 }
+div{ display:block; margin:0; padding:0;}
+a{ text-decoration:none;}
+img{ border:0px;}
+.b{ font-weight:normal;}
+b{ font-weight:normal;}
+/*.header{ width:100%; height:60px; background:red; position:absolute; top:0px;}
+.content{ width:100%; overflow-y:auto; background:blue; position:top:60px; }
+.footer{ width:100%; height:50px; bottom:0px; background:yellow; position:absolute; }*/
+.header{ width:100%; height:60px; background:red;}
+.content{ width:100%; overflow-y:auto; background:blue;}
+.footer{ width:100%; height:50px; bottom:0px; background:yellow;}
+</style>
+
+</head>
+
+<body>
+<div class="header">早上</div>
+<div class="content" id="bbb">中午</div>
+<div class="footer">晚上</div>
+<script>
+    var oDiv = document.getElementById('bbb');    
+    oDiv.style.height =screen.height - 110 + 'px'; //这个就是直接给DIV的高度赋值。
+</script>
+</body>
+</html>

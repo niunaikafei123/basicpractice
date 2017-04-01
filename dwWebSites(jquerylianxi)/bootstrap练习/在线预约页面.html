@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+	.v_input,#YuYue_table td input[type=text],#YuYue_table td input[type=number],#YuYue_table td input[type=button]{width: 95%;height: 35px;margin-top: 5px;font-size: 100%;border-radius: 20px;border: solid 1px #ccc;padding: 0px 0px 0px 20px;text-align: left;margin-top: 10px;-webkit-appearance: none;}
+	.v_input{padding-top: 8px;height: 30px;color: #999;background-image: url(../img/input_bg.png);background-repeat: no-repeat;background-position: right;}
+	.Reservation_tip{padding: 10px;font-size: 90%;color: #999;text-align: left;}
+	#submitbtn{ width:98% !important; background:#32B8FF; color:#fff; text-align:center !important;}
+	.scroll_area{width: 100%;position: relative;height: auto !important;min-height: 400px;height: 400px;height: 100%;overflow-x: hidden;margin: 0 auto;max-width: 720px;
+    border: solid 0px #FF0000;}
+</style>
+</head>
+
+<body>
+<div id="datetitle_wek"></div>
+<div class="kePublic">
+	<div id="datePlugin"></div>
+	<div id="div_error">
+		<div id="errornr"></div>
+        <div id="attchDiv">
+        	<div id="errornr_close">
+            	<span class="close thick"></span>
+             </div>
+        </div>
+     </div>
+     <div id="div_bg"></div>
+     
+     <!---预约时间段--->
+     <div id="div_time"  style="border:solid 5px #666; width:200px; border-radius:15px; display:none;"><div datav='1' style="padding:8px;">8:00~10:00</div>
+     <div datav='2' style="padding:8px;">10:00~12:00</div>
+     <div datav='3' style="padding:8px;">14:00~16:00</div>
+     <div datav='4' style="padding:8px;">16:00~18:00</div>
+     <div datav='5' style="padding:8px;">18:00~20:00</div></div>
+     <!---预约时间段--->
+     <!---预约牙病种类--->
+     <div id="div_items" style="border:solid 5px #666; width:200px; border-radius:15px; display:none;">
+         <div style="padding:8px;">牙痛</div>
+         <div style="padding:8px;">牙龈出血</div>
+         <div style="padding:8px;">补牙</div>
+         <div style="padding:8px;">洗牙</div>
+         <div style="padding:8px;">牙龈发炎</div>
+         <div style="padding:8px;">拔牙</div>
+         <div style="padding:8px;">美白</div>
+         <div style="padding:8px;">牙套矫正</div>
+         <div style="padding:8px;">乳牙</div>
+         <div style="padding:8px;">镶牙</div>
+         <div style="padding:8px;">种植牙</div>
+         <div style="padding:8px;">其他</div>
+     </div>
+     <!---预约牙病种类--->
+     <!---医生选择--->
+     <div id="div_doctor" style="border:solid 5px #666; width:200px; border-radius:15px; display:none;"><div style="padding:8px;">演示医生</div>
+    </div>
+     <!---预约时间段--->
+     <!--内容start--->
+     <div class="scroll_area">
+     <!--头部start-->
+     <header id="top_area">
+         <span class="top_title">在线预约</span>
+         <span class="top_left_return"><img height="30" src="/weiweb/theme/public/img/back.png"></span>
+     </header>
+     
+     <section  id="home_navbtn none_backround">
+     	<div class="content_in" style="margin:0px;">
+        	<table width="100%" cellspacing="1" border="0" cellpadding="0" id="YuYue_table">
+                <tr><td align="center" style="padding:20px 10px 0px 10px"><input type="text" name="username" id="username" placeholder="姓名..." value="11"><input type="number" style="-webkit-appearance: none;" name="usermobile" id="usermobile" placeholder="手机号..." value=""><input type="text" name="appDate" placeholder="日期..."   id="appDate"/><input type="hidden" name="time" placeholder="选择时间段..."  value="8:00~10:00"  id="time" /><input type="hidden" name="items" placeholder="选择治疗项目..."   id="items" /><input type="hidden" name="doctor" placeholder="选择医生..."   id="doctor" /><input type="hidden" name="ClinicId"  id="ClinicId" value="35002282821474664" /><input type="hidden" name="origndata"  id="origndata" value='{"phone":null,"openid":"otoRouHLfXNJdrtGvHWir2I3nVSU","token":"haoya2015","access_token":null,"fcustomerid":"","clinicid":"35002282821474664","usermobile":"","username":"11","kuserid":"35135475321036636","clinicName":"\u5317\u4eac\u6c99\u6cb3\u9ad8\u6559","items":[{"ScheduleItem":"\u7259\u75db"},{"ScheduleItem":"\u7259\u9f88\u51fa\u8840"},{"ScheduleItem":"\u8865\u7259"},{"ScheduleItem":"\u7259\u9f88\u53d1\u708e"},{"ScheduleItem":"\u62d4\u7259"},{"ScheduleItem":"\u7f8e\u767d"},{"ScheduleItem":"\u7259\u5957\u77eb\u6b63"},{"ScheduleItem":"\u9576\u7259"},{"ScheduleItem":"\u4e73\u7259"},{"ScheduleItem":"\u79cd\u690d\u7259"},{"ScheduleItem":"\u5176\u4ed6"}],"date":"2016-04-06","guid":"36180840722604193","DoctorName":"\u6f14\u793a\u533b\u751f","doctors":[{"id":"35987748032366123","name":"\u6f14\u793a\u533b\u751f"}]}' /><div class="v_input" id="v_time">8:00~10:00</div><div class="v_input" id="v_items" >选择治疗项</div><div class="v_input" id="v_doctor">选择医生</div><input type="text" name="leaveMessage" id="leaveMessage" placeholder="病情描述..." /><input type="button" id="submitbtn" onclick="submitSchedule();" value="提交预约" /><div class="Reservation_tip">成功提交预约申请后,诊所会联系您确认安排医生及就诊时间,并最终以微信形式通知到您。
+            </div></td></tr>
+            	<tr><td align="center">&nbsp;</td></tr>
+            </table>
+		</div>
+		<div class="fot_space">&nbsp;</div>
+      </section>
+      
+      <footer class="page_footer_Common"><nav class="fot_nav"><a href="/weiweb/theme/index.php?m=Map&ClinicId=35002282821474664&token=haoya2015&openid=otoRouHLfXNJdrtGvHWir2I3nVSU&t=three&tel="><img src="/weiweb/theme/public/img/location.png" height="70"></a><a href="/weiweb/theme/index.php?ClinicId=35002282821474664&token=haoya2015&openid=otoRouHLfXNJdrtGvHWir2I3nVSU&t=three&tel=" class="fot_nav_sel"><img src="/weiweb/theme/public/img/tp3/home.png" height="70"></a><a href="tel:"><img src="/weiweb/theme/public/img/tel.png" height="70"></a></nav></footer>
+   </div>
+	
+    
+    
+    
+    
+    					
+						
+<script language="javascript">
+ 	var getDoctor='演示医生';
+	if(getDoctor!=''){
+		$("#v_doctor").text(getDoctor);
+		$("#v_doctor").css("color","#000");
+		$("#doctor").val(getDoctor);
+	}
+	
+	var cur_dowWidth=document.body.scrollWidth;
+	var cur_docHeight=document.body.scrollHeight;
+	
+	$("#div_bg").click(function(){
+		$("#div_time").fadeOut();
+		$("#div_items").fadeOut();
+		$("#div_doctor").fadeOut();
+		$("#div_error").fadeOut();
+		$(this).hide();
+		});
+		
+    $("#div_time div").click(function(){
+		 $("#div_time").hide();
+		 $("#div_bg").hide();
+		 $("#time").val($(this).text());
+		 $("#v_time").text($(this).text()).css("color","#000");
+		});
+		
+	$("#div_items div").click(function(){
+		$("#div_items").hide();
+		$("#div_bg").hide();	
+	  	$("#items").val($(this).text());
+		$("#v_items").text($(this).text()).css("color","#000");;
+	});
+	
+	$("#div_doctor div").click(function(){
+		$("#div_doctor").hide();	
+		$("#div_bg").hide();
+	  	$("#doctor").val($(this).text());
+		$("#v_doctor").text($(this).text()).css("color","#000");;
+	});
+	
+	$("#v_time").click(function(){
+		$("#div_bg").show();
+		var pos=$(this).offset();
+		$("#div_time").css({"top":pos.top+$(this).height()+10,"left":(cur_dowWidth-$("#div_time").width())/2,"display":"block"});
+		});
+		
+	$("#v_items").click(function(){
+		$("#div_bg").show();
+		var pos=$(this).offset();
+		$("#div_items").css({"top":(cur_docHeight-$("#div_items").height())/2,"left":(cur_dowWidth-$("#div_items").width())/2,"display":"block"});
+		});	
+		
+	$("#v_doctor").click(function(){
+		$("#div_bg").show();
+		var pos=$(this).offset();
+		$("#div_doctor").css({"top":pos.top-$("#div_doctor").height()/2,"left":(cur_dowWidth-$("#div_doctor").width())/2,"display":"block"});
+		});	
+		
+	$("#div_error").click(function(){
+		$("#div_bg").hide();
+		$(this).hide();
+		});		
+	//------------------------------------------------------------
+	// 上传处理
+	//------------------------------------------------------------
+	function submitSchedule()
+			{
+								
+				var results="";
+				var name = $('#username').val();
+				var mobile = $("#usermobile").val();
+				if(!mobile)
+				{
+					$('#usermobile').removeAttr("disabled"); 
+					//$("#usermobile").focus();
+					//alert('手机号码不能为空');  
+					results="手机号码不能为空<br>";
+					//return;
+				}
+				else
+				{
+					 var isMobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1}))+\d{8})$/;  
+		             if (!isMobile.exec(mobile) && mobile.length != 11) 
+		             {  
+		             	 $('#usermobile').removeAttr("disabled"); 
+						 results+="手机号码不正确<br>";
+		             	 //$("#usermobile").focus();  
+		                 //alert('手机号码不正确');  
+		                 //return;
+		             }
+				}
+				var timeoption = $('#time').val();
+				var schedules = $('#items').val();
+				var doctor=$("#doctor").val();
+				var leaveMessage=$("#leaveMessage").val();
+				var items=$("#items").val();
+				var ClinicId=$("#ClinicId").val();
+				var origndata=$("#origndata").val();
+				
+				var data ={};
+				data.date = $('#appDate').val();
+				if(!data.date)
+				{
+					//alert('请选择预约日期');
+					results+="请选择预约日期!<br>";
+					//return;
+				}
+				
+				if(results!=''){
+					//alert(results);
+					var tmp_top=($(window).height()-$("#div_error").height())/2;
+					var tmp_left=($(document).width()-$("#div_error").width())/2;
+					//alert('tmp_top='+tmp_top+' tmp_left='+tmp_left);
+					$("#div_bg").show();
+					$("#div_error").css({"top":"0px","left":tmp_left,"display":"block"}).animate({"top":tmp_top},500);
+					$("#errornr").html(results);	
+					return false;
+				}
+		
+				data.username = name;
+				data.usermobile = mobile;
+				data.timeseciton = timeoption;
+				data.doctor = doctor;
+				data.leaveMessage = leaveMessage; 
+				data.items = items; 
+				data.ClinicId=ClinicId;
+				data.origndata=origndata;
+			 
+			 	$('#submitbtn').attr('disabled',"true");
+				$('#submitbtn').val('正在提交...');
+				$.ajax({
+				  type: 'POST',
+				  url: "/weiweb/theme/index.php?m=Reservation&a=save",
+				  data: data,
+				  //dataType:"json",
+				  success: function(data)
+				  {				  	 
+					 
+					var tmp_top=($(window).height()-$("#div_error").height())/2;
+					var tmp_left=($(document).width()-$("#div_error").width())/2-15;
+				 
+					$("#div_bg").show();
+					$("#errornr").html('<span style="color:#0051A2">'+data[0].info+'</span>');	
+					$("#div_error").css({"top":"0px","left":tmp_left,"display":"block"}).animate({"top":tmp_top},500,function(){
+						if(data[0].info=='您的预约已经提交!'){
+							WeixinJSBridge.call('closeWindow');
+							}
+						});					
+					
+					setTimeout(function(){
+						$("#div_error").fadeOut();
+						$("#div_bg").hide();
+						$('#submitbtn').removeAttr("disabled");
+						$('#submitbtn').val('提交预约');
+						}, 3000); 						
+					 
+				  },
+				  error:function()
+				  {
+				  	$("#div_bg").show();
+						$("#div_error").css({"top":tmp_top,"left":tmp_left,"display":"block"});
+						$("#errornr").html('<span style="color:#0051A2">网络异常！</span>');	
+						setTimeout(function(){
+							$("#div_error").fadeOut();
+							$("#div_bg").hide();
+							$('#submitbtn').removeAttr("disabled");
+							$('#submitbtn').val('提交预约');
+							}, 3000); 					
+				  	$("#loading").hide();
+					
+				  },dataType:"json"
+				  
+				});
+				
+			}
+		//------------------------------------------------------------	
+		// 日期控件处理
+		//------------------------------------------------------------
+		$(function () {
+				var currYear = (new Date()).getFullYear();	
+				var opt={};
+				opt.date = {preset : 'date'};
+				opt.datetime = {preset : 'datetime'};
+				opt.time = {preset : 'time'};
+				opt.default = {
+					theme: 'android-ics light', //皮肤样式
+					display: 'modal', //显示方式 
+					mode: 'scroller', //日期选择模式
+					dateFormat: 'yyyy-mm-dd',
+					lang: 'zh',
+					showNow: true,
+					nowText: "今天",
+					startYear: currYear - 50, //开始年份
+					endYear: currYear + 10 //结束年份
+				};
+			
+				$("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+			
+			});
+	</script><!-----------------------------------------------------------></body>
+</html>

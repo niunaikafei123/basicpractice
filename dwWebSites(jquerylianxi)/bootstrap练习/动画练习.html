@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+*{ padding:0px; margin:0px;}
+ul li{ width:100px; height:40px; border:1px solid blue; list-style:none; float:left;}
+.box{ width:404px; height:42px; overflow:hidden;}
+.box ul{ width:1500px;}
+.bbb{ width:300px; height:50px; border:1px solid red; text-align:right;}
+table thead>tr>th{ border:1px solid red; width:100px; height:30px;}
+table{border-collapse:collapse; table-layout:fixed;}
+table tbody>tr>td{ width:100px; height:30px; text-align:center;}
+table tbody>tr:hover{ background:#ddd;}
+table tbody>tr>td:first-child{ width:200px;}
+table tbody>tr>td:nth-child(2){ width:150px !important; overflow:hidden; white-space:nowrap;text-overflow: ellipsis; display:block}
+</style>
+</head>
+
+<body>
+<div class="box">
+    <ul class="aaa">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>菠萝</li>
+        <li>葡萄</li>
+    </ul>    
+</div>
+
+<table class="table" border="1" >
+<thead>
+	<tr>
+    	<th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+    </tr>
+</thead>
+<tbody>
+	<tr>
+    	<td>001</td>
+        <td>李明</td>
+        <td>男</td>
+        <td>22</td>
+    </tr>
+    <tr>
+    	<td>001</td>
+        <td>李明</td>
+        <td>男</td>
+        <td>22</td>
+    </tr>
+</tbody>
+</table>
+<script>
+function yidong(){
+	$(".aaa").animate({marginLeft:"-100px"}, 2000,"linear",function(){
+		/*$(this).css({marginLeft:"0"}).find("li:first-child").appendTo(this);*/	
+		$(".aaa").css({marginLeft:"0"});
+		$(".aaa li:first-child").appendTo(".aaa")	
+		})
+			
+	}
+	var abc=setInterval(yidong,2000);
+	$(".aaa li").mouseover(function(){
+		$(".aaa").stop();
+		clearInterval(abc);		
+		})
+		
+	$(".aaa li").mouseout(function(){
+		abc=setInterval(yidong,2000)
+		})
+</script>
+</body>
+</html>

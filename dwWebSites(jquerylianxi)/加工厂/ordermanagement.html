@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/base.css" rel="stylesheet"  />
+<link href="css/main.css" rel="stylesheet"  />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>订单管理页面</title>
+</head>
+<body>
+<!--固定在顶端的头部-->
+<div class="mastertop">
+	<ul class="tab" role="tablist">
+        <li class="defaultTabActive active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">产品管理</a></li>			
+     </ul>
+</div>
+<!--下面的区域-->
+<div class="processingfactory">
+<!--固定在左边的导航部分-->
+    <div class="processing-nav">
+    	<ul>
+        	<li class="li1"><a href="#"><img src="image/avatar.png" /></a></li>
+            <li class="li2"><a href="#"></a></li>
+			<li class="li3"><a href="#"></a></li>
+			<li class="li4"><a href="#"></a></li>
+			<li class="li5"><a href="#"></a></li>
+            <li class="li6"><a href="#"></a></li>
+            <li class="li7"><a href="#"></a></li>
+            <li class="lastli"><a href="#"><img src="image/qiezzi.png" /></a></li>
+		</ul>
+    </div>
+       <!-- 二级导航部分-->
+    <div class="processing-menu">
+    	<ul>
+            <li class="firstli">产品管理</li>
+            <li class="defaultActiveTab">订单管理</li>
+            <li>地址管理</li>
+            <li>公司信息</li>
+         </ul>    
+    </div>
+     <!--内容切换区域-->
+     <div class="processing-content">
+	 	<ul class="top" role="tablist">
+        	<li class="defaultActiveTab active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">订单管理</a></li>
+        </ul>
+        <div class="processing-content-center">
+        	<table class="table ordermanagementtable">
+            	<thead>
+                	<th>物品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>总价格</th>
+                    <th>交易状态</th>
+                    <th>交易操作</th>
+                </thead>
+            	
+            	<tbody>
+                	<tr class="specialtr">
+                    	<td colspan="5">订单号：xxxxxxxxxxxx&nbsp;&nbsp; 下单时间：2016-1-16 20：00:00&nbsp;&nbsp; 诊所/医院名称：徐爽的诊所</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                    	<td>[固定类】纯钛钢冠</td>
+                        <td>200</td>
+                        <td>1</td>
+                        <td rowspan="2">1200</td>
+                        <td rowspan="2">已发模具</td>
+                        <td rowspan="2"><a>收获生产</a><a>查看物流</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>[排牙类】山八牙</td>
+                        <td>500</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+           <table class="table ordermanagementtable bg-color">
+            	<thead>
+                	<th>物品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>总价格</th>
+                    <th>交易状态</th>
+                    <th>交易操作</th>
+                </thead>
+            	
+            	<tbody>
+                	<tr class="specialtr">
+                    	<td colspan="5">订单号：xxxxxxxxxxxx&nbsp;&nbsp; 下单时间：2016-1-16 20：00:00&nbsp;&nbsp; 诊所/医院名称：徐爽的诊所</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                    	<td>[固定类】纯钛钢冠</td>
+                        <td>200</td>
+                        <td>1</td>
+                        <td rowspan="2">1200</td>
+                        <td rowspan="2">已发模具</td>
+                        <td rowspan="2"><a>收获生产</a><a>查看物流</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>[排牙类】山八牙</td>
+                        <td>500</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table processingtable">
+            	<thead>
+                	<tr>
+                    	<th>状态编号</th>
+                        <th>诊所端</th>
+                        <th>功能操作</th>
+                        <th>加工厂端</th>
+                        <th>功能操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    	<td>0</td>
+                        <td>下单成功，待发模具</td>
+                        <td><a>取消订单</a><a>模具发货</a><a>订单详情</a></td>
+                        <td>下单成功，待发模具</td>
+                        <td><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>1</td>
+                        <td>已发模具，待确认</td>
+                        <td><a>查看物流</a><a>订单详情</a></td>
+                        <td>已发模具</td>
+                        <td><a>收货生产</a><a>查看物流</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>2</td>
+                        <td>厂家接单，生成中</td>
+                        <td><a>查看物流</a><a>订单详情</a></td>
+                        <td>物品生产中</td>
+                        <td><a>订单发货</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>3</td>
+                        <td>厂家已发货</td>
+                        <td><a>查看物流</a><a>订单详情</a><a>收货</a></td>
+                        <td>已发货</td>
+                        <td><a>查看物流</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>4</td>
+                        <td>已收货</td>
+                        <td><a>查看物流</a><a>订单详情</a><a>返厂</a><a>完成订单</a></td>
+                        <td>诊所已收获</td>
+                        <td><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>5</td>
+                        <td>返厂</td>
+                        <td><a>完成订单</a><a>物流情况</a><a>订单详情</a></td>
+                        <td>返厂</td>
+                        <td><a>收到货物，完成订单</a><a>物流情况</a><a>订单详情</a></td>
+                    </tr>
+                    <tr>
+                    	<td>6</td>
+                        <td>订单完成</td>
+                        <td><a>物流情况</a><a>订单详情</a></td>
+                        <td>订单完成</td>
+                        <td><a>物流情况</a><a>订单详情</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>        
+      </div> 
+
+
+
+
+
+
+
+
+</body>
+</html>

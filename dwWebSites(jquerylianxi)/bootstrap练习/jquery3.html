@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+*{padding:0; margin:0;}
+ul{ overflow:hidden;}
+ul li{ float:left; list-style:none; width:100px; height:30px; line-height:30px; border:1px solid #eee; text-align:center; line-height:30px; cursor:pointer;}
+.content{ width:404px; height:300px; border:1px solid blue;}
+</style>
+<script>
+$(document).ready(function(e) {
+    $("ul li").click(function(){
+		var index=$(this).index();
+		$(".content1").eq(index).show().siblings().hide();
+		
+		})
+});
+</script>
+</head>
+
+<body>
+<ul>
+	<li>asp.net</li>
+    <li>java</li>
+    <li>c++</li>
+    <li>计算机基础</li>
+</ul>
+<div class="content" id="content">
+	<div class="content1">asp.net是一门开发语言</div>
+    <div class="content1" style="display:none">java是一门开发语言</div>
+    <div class="content1" style="display:none">c++是一门开发语言</div>
+    <div class="content1" style="display:none">计算机基础是计算机专业学生必学的</div>
+</div>
+</body>
+</html>

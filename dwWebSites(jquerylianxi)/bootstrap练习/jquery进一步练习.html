@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+.jvxing{ width:200px; height:150px; background:red; position:relative; font-size:14px;}
+.anniu{ width:100px; height:30px; border:1px solid #ddd; margin-bottom:20px; color:blue;}
+.clip{ padding:10px; background:green}
+.content{ padding:50px; background:red; display:none;}
+.yincang{ width:100px; height:30px; border:1px solid red;}
+#button1{ width:100px; height:30px; border:1px solid #000;}
+</style>
+<script> 
+$(document).ready(function(e) {
+    $("#anniu").click(function(){
+		$("#jvxing").animate({left:'200px', opacity:'0.5',height:'300px', width:'500px'},1000);
+		$('#jvxing').animate({fontSize:'30px'})	
+		})
+		$("#clip").click(function(){
+			
+			$(".content").slideToggle(5000);
+			})
+	  $("#stop").click(function(){
+    $(".content").stop(1,1);
+  });
+
+		$(".yincang").click(function(){
+			$(".neirong").hide(3000,function(){
+				alert("今天是星期六")
+				});
+			
+			})
+			$("#button1").click(function(){
+				$("#p1").css({"color":"red"}).slideUp(2000).slideDown(2000);
+				})
+		$("#btn1").click(function(){
+			var a=$("#duanluo").text();
+			alert("Text:"+a);			
+			})
+			$("#btn2").click(function(){
+				var b=$("#duanluo").html();
+				alert("HTML:"+b);
+				})
+		
+		$("#xianshizhi").click(function(){
+			var ppp=$("#name").val();
+			alert("input的值为:"+ppp);
+			})
+			$("#zhanshi").click(function(){
+				var ccc=$("#lianjie").attr("href");
+				alert("a的href属性为"+ccc);
+				})
+			
+});
+</script> 
+</head>
+
+<body>
+<input type="button"  id="anniu" class="anniu"  value="点击"/>
+<div class="jvxing" id="jvxing">你看你看赶快不那看你看过哪款</div>
+<button id="stop">停止动画</button>
+<div class="clip" id="clip"></div>
+<div class="content"></div>
+<button class="yincang" id="yincang">点击隐藏</button>
+<p class="neirong">今天是星期六，可是我们还在上班</p>
+
+
+<p class="p1" id="p1">笔记本肩膀</p>
+<button id="button1">点击开始操作</button>
+<p id="duanluo">这是段落中的<b>粗体</b>文字</p>
+<button id="btn1">点击显示text文本</button>
+<button id="btn2">点击显示html文本</button>
+<p>姓名：<input type="text" id="name" value="李洋" /></p>
+<button id="xianshizhi">显示值</button>
+<a href="http://www.w3school.com.cn" id="lianjie">www.w3school.com.cn</a>
+<button id="zhanshi">点击显示</button>
+</body>
+</html>

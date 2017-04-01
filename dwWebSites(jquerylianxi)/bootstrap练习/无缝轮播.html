@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+.box{ width:800px; height:260px; overflow:hidden; }
+.picBox{ margin:0px; padding:0px; list-style:none; width:1500px;}
+.picBox li{ float:left;}
+.picBox img{ width:200px; height:240px;}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<ul class="picBox">
+    	<li><img src="image/avatar.png" /></li>
+        <li><img src="image/avatar.png" /></li>
+        <li><img src="image/avatar.png" /></li>
+        <li><img src="image/avatar.png" /></li>
+    </ul>
+</div>
+<script>
+function yidong(){
+	$(".picBox").animate({marginLeft:"-200px"},"2000","linear", function(){
+		$(".picBox").css({marginLeft:"0px"});	
+		 $(".picBox li:first").remove().clone(true).appendTo(".picBox");  
+		})}
+	var abc=setInterval("yidong()",1000);	
+/*	$(".picBox").hover(function(){
+		$(".picBox").stop();
+		clearInterval(abc);},function(){
+			abc=setInterval(yidong,1000);
+			})*/
+	$(".picBox").mouseover(function(){
+		$(".picBox").stop();
+		clearInterval(abc);
+		
+		})
+	$(".picBox").mouseout(function(){
+		abc=setInterval(yidong,1000);
+		})
+</script>
+
+
+
+
+</body>
+</html>

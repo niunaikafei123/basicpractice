@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<!--<script>
+$(document).ready(function(e) {
+   $("button").click(function(){
+	   $("p").slideToggle();
+	   })
+});
+</script>-->
+<script>
+$( document).ready(function(e) {
+    $("button").bind("click",function(){
+		$("p").slideToggle();
+		})
+});
+</script>
+</head>
+
+<body>
+<p>卡帮你就跟那</p>
+<button>点击</button>
+<ul>
+	<li>苹果</li>
+    <li>香蕉</li>
+    <li>橘子</li>
+    <li>菠萝</li>
+</ul>
+
+</body>
+</html>

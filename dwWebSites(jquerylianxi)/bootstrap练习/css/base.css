@@ -1,0 +1,29 @@
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; font-family:Microsoft YaHei,SimHei,Verdana,Arial,sans-serif,"Heiti SC";}
+body { font-size:12px; color:#424242; font-family:Microsoft YaHei,SimHei,Verdana,Arial,sans-serif,"Heiti SC"; }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; } 
+textarea { resize:none; }
+p{text-justify:distribute;}
+a { color: #424242;text-decoration:none; font-size: 12px; cursor:pointer}
+a:hover {text-decoration:none; }
+.cle{ clear:both;}
+.defaultActiveTab{background:#463265; color:#fff !important;}
+.processing-content ul li.defaultActiveTab a{ color:#fff;}
+.processing-content ul li.defaultActiveTab a:hover{text-decoration:none;}
+.basiccolor{ color:red;}
+.left{ float:left;}
+.btn-default:hover{ background-color:#fff; color:#3c3c3c !important;}
+.txtleft{ text-align:left;}
+.moveleft{ margin-left:25%;}
+.table tbody>tr>td{ vertical-align:middle;}
+.form-control,.btn{ border-radius:0px;}
+label{ font-weight:normal; color:#3f444e}
+.btn .caret{ width:8px;}
+input[type="radio"], input[type="checkbox"]{ margin:2px 0 0;}
+.bg-color{ background:#f7fcfe;}
+/*.form-control{ height:30px}
+.dropdown-toggle{ height:30px;}*/

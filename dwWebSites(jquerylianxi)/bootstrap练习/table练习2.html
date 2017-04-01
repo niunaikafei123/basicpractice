@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+ul{
+list-style-type: none;
+list-style-position: inside;
+width: 600px;
+margin: 20px auto;
+padding: 0;
+}
+ul li{
+float: left;
+border: 1px solid #22ff22;
+margin: 0px 3px;
+padding: 10px;
+background: #ddffdd;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+border-bottom: none;
+cursor: pointer;
+}
+.clearfix{
+clear: both;
+}
+#container{
+width: 600px;
+margin: 0 auto;
+height: 400px;
+background: #aaaa55;
+}
+#container div{
+padding: 20px;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script>
+function showTag(tagNo){
+for(var i=1; i<=3; i++){
+$("#div"+i).css("display","none");
+$("#tag"+i).css("background","#ddffdd");
+}
+$("#tag"+tagNo).css("background","#11ff11");
+$("#div"+tagNo).css("display","block");
+}
+</script>
+</head>
+
+<body>
+<ul>
+<li id="tag1" onmouseover="showTag(1)">标签1</li>
+<li id="tag2" onmouseover="showTag(2)">标签2</li>
+<li id="tag3" onmouseover="showTag(3)">标签3</li>
+</ul>
+<div class="clearfix"></div>
+<div id="container">
+<div id="div1">
+这是第一个div的内容
+hello world!
+</div>
+<div id="div2" style="display:none">
+这是第二个div的内容
+I am a div in 2
+</div>
+<div id="div3" style="display:none">
+这是第三个div的内容
+This is div 3
+</div>
+</div>
+</body>
+</html>

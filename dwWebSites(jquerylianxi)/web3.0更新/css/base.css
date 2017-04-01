@@ -1,0 +1,24 @@
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; font-family:"Microsoft YaHei.SimHei,Verdana,Arial,sans-serif,Heitisc"}
+body { font-size:13px; color:#333333; font-family:"Microsoft YaHei.SimHei,Verdana,Arial,sans-serif,Heitisc; background:#fff; line-height:18px;" }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; } 
+textarea { resize:none; }
+p{text-justify:distribute;}
+a { color: #cacaca; text-decoration:none; font-size: 12px;}
+a:hover { color:#e6e6e6; text-decoration:none; }
+.cle{ clear:both;}
+.defaultActiveTab{ background:#7e7ac5; color:#fff !important;}
+.defaultTabActive{ color:#7e7ac5 !important; border-bottom:2px solid #7e7ac5;}
+.bigfont{ font-size:16px; font-weight:bold;}
+.red{ color:red;}
+.last{ margin-bottom:15px;}
+.moveup{padding-top:8px;}
+.movedown{ padding-bottom:5px;}
+textarea{ border-radius:3px;}
+.form-control{ height:32px;}
+.btn{ padding:5px 12px;}
+.newfloatlayer{ display:none;}

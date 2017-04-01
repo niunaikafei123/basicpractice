@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+<style>
+body{ padding:0px; margin:0px;}
+div,span{ width:200px; height:200px; border:1px solid #eee; margin-right:20px; float:left; text-align:center; line-height:200px;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("div").css("border","9px solid red");
+	$("span").css({'background':'yellow'});
+	$('#myID\\.entry\\[1\\]').css({"font-size":"30px"})
+	})
+</script>
+</head>
+<!--id选择器在jquery中的使用-->
+<body>
+<div class="aa">我是aa</div>
+<div class="bb">我是bb</div>
+<span class="aa">我是cc</span>
+<div id="myID.entry[1]">我是一名老师</div>
+</body>
+</html>

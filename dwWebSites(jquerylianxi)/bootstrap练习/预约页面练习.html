@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+	.v_input,#YuYue_table td input[type=text],#YuYue_table td input[type=number],#YuYue_table td input[type=button]{width: 95%;height: 35px;margin-top: 5px;font-size: 100%;border-radius: 20px;border: solid 1px #ccc;padding: 0px 0px 0px 20px;text-align: left;margin-top: 10px;-webkit-appearance: none;}
+	.v_input,#YuYue_table td input[type=text],#YuYue_table td input[type=number],#YuYue_table td input[type=button]:focus{ outline:none;}
+	.v_input{padding-top: 8px;height: 30px;color: #999;background-image:url(image/input_bg.png);background-repeat: no-repeat;background-position: right;}
+	.Reservation_tip{padding: 10px;font-size: 90%;color: #999;text-align: left;}
+	#submitbtn{ width:98% !important; background:#32B8FF; color:#fff; text-align:center !important;}
+	.scroll_area{width: 100%;position: relative;height: auto !important;min-height: 400px;height: 400px;height: 100%;overflow-x: hidden;margin: 0 auto;max-width: 720px;border: solid 0px #FF0000;}
+	#div_time,#div_items,#div_doctor{ position:absolute;z-index:99; background:#fff;}
+/*	#div_bg{ position:absolute; top:0px; left:0px; height:100%; background:#000; opacity:0.5;}*/
+	#div_bg {width: 100%;position: absolute;left: 0px;top: 0px;z-index: 1;height: 100%;background-color: #000;filter: alpha(Opacity=50);-moz-opacity: 0.5;opacity: 0.5;
+    display:none;}
+	#div_time div{ border-bottom:1px solid #ddd;}
+	#div_error{ position:absolute; z-index:99; color:red;width: 80%;height: auto !important;padding-bottom: 20px;background-color: #EFEFEF;text-align: center;border: solid 0px #999999; padding-top:20px; border-radius:20px; max-width:600px; display:none;}
+	#attchDiv{ position:relative;}
+	#errornr_close{ position:absolute;position: absolute;top: -70px;text-align: center;line-height: 30px;right: -8px;width: 30px;height: 30px;border-radius: 50%;border: solid 2px #ddd;background-color: #ddd;}
+	.close {position: absolute;display: inline-block;cursor: pointer;width: 15px;height: 15px;overflow: hidden;right: 7px;bottom: 6px;}
+	.close::before, .close::after {content: '';position: absolute;height: 2px;width: 100%;top: 50%;left: 0;margin-top: -1px;background: #000;}
+	.close::before{-webkit-transform: rotate(45deg);transform: rotate(45deg);}
+	.close::after{-webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
+	.close.thick::before, .close.thick::after {height: 2px;margin-top: -2px;}
+
+</style>
+</head>
+
+<body>
+<div id="datetitle_wek"></div>
+<div class="kePublic">
+	<div id="datePlugin"></div>
+     <div id="div_error">
+     	<div id="errornr">手机号码不能为空<br>请选择预约日期!<br></div><div id="attchDiv">
+            <div id="errornr_close">
+                <span class="close thick"></span>
+            </div>
+        </div>        
+      </div>
+     
+     <div id="div_bg"></div>
+     
+     <!---预约时间段--->
+     <div id="div_time"  style="border:solid 5px #666; width:200px; border-radius:15px; display:none;"><div datav='1' style="padding:8px;">8:00~10:00</div>
+     <div datav='2' style="padding:8px;">10:00~12:00</div>
+     <div datav='3' style="padding:8px;">14:00~16:00</div>
+     <div datav='4' style="padding:8px;">16:00~18:00</div>
+     <div datav='5' style="padding:8px;">18:00~20:00</div></div>
+     <!---预约时间段--->
+     <!---预约牙病种类--->
+     <div id="div_items" style="border:solid 5px #666; width:200px; border-radius:15px; display:none;">
+         <div style="padding:8px;">牙痛</div>
+         <div style="padding:8px;">牙龈出血</div>
+         <div style="padding:8px;">补牙</div>
+         <div style="padding:8px;">洗牙</div>
+         <div style="padding:8px;">牙龈发炎</div>
+         <div style="padding:8px;">拔牙</div>
+         <div style="padding:8px;">美白</div>
+         <div style="padding:8px;">牙套矫正</div>
+         <div style="padding:8px;">乳牙</div>
+         <div style="padding:8px;">镶牙</div>
+         <div style="padding:8px;">种植牙</div>
+         <div style="padding:8px;">其他</div>
+     </div>
+     <!---预约牙病种类--->
+     <!---医生选择--->
+     <div id="div_doctor" style="border:solid 5px #666; width:200px; border-radius:15px; display:none;"><div style="padding:8px;">演示医生</div>
+    </div>
+     <!---预约时间段--->
+     <!--内容start--->
+     <div class="scroll_area">
+     <!--头部start-->
+   <!--  <header id="top_area">
+         <span class="top_title">在线预约</span>
+         <span class="top_left_return"><img height="30" src="/weiweb/theme/public/img/back.png"></span>
+     </header> -->    
+     <section  id="home_navbtn none_backround">
+     	<div class="content_in" style="margin:0px;">
+        	<table width="100%" cellspacing="1" border="0" cellpadding="0" id="YuYue_table">
+                <tr><td align="center" style="padding:20px 10px 0px 10px"><input type="text" name="username" id="username" placeholder="姓名..." value="11"><input type="number" style="-webkit-appearance: none;" name="usermobile" id="usermobile" placeholder="手机号..." value=""><input type="text" name="appDate" placeholder="日期..."   id="appDate"/><input type="hidden" name="time" placeholder="选择时间段..."  value="8:00~10:00"  id="time" /><input type="hidden" name="items" placeholder="选择治疗项目..."   id="items" /><input type="hidden" name="doctor" placeholder="选择医生..."   id="doctor" /><input type="hidden" name="ClinicId"  id="ClinicId" value="35002282821474664" /><input type="hidden" name="origndata"  id="origndata" value='{"phone":null,"openid":"otoRouHLfXNJdrtGvHWir2I3nVSU","token":"haoya2015","access_token":null,"fcustomerid":"","clinicid":"35002282821474664","usermobile":"","username":"11","kuserid":"35135475321036636","clinicName":"\u5317\u4eac\u6c99\u6cb3\u9ad8\u6559","items":[{"ScheduleItem":"\u7259\u75db"},{"ScheduleItem":"\u7259\u9f88\u51fa\u8840"},{"ScheduleItem":"\u8865\u7259"},{"ScheduleItem":"\u7259\u9f88\u53d1\u708e"},{"ScheduleItem":"\u62d4\u7259"},{"ScheduleItem":"\u7f8e\u767d"},{"ScheduleItem":"\u7259\u5957\u77eb\u6b63"},{"ScheduleItem":"\u9576\u7259"},{"ScheduleItem":"\u4e73\u7259"},{"ScheduleItem":"\u79cd\u690d\u7259"},{"ScheduleItem":"\u5176\u4ed6"}],"date":"2016-04-06","guid":"36180840722604193","DoctorName":"\u6f14\u793a\u533b\u751f","doctors":[{"id":"35987748032366123","name":"\u6f14\u793a\u533b\u751f"}]}' /><div class="v_input" id="v_time">8:00~10:00</div><div class="v_input" id="v_items" >选择治疗项</div><div class="v_input" id="v_doctor">选择医生</div><input type="text" name="leaveMessage" id="leaveMessage" placeholder="病情描述..." /><input type="button" id="submitbtn" onclick="submitSchedule();" value="提交预约" /><div class="Reservation_tip">成功提交预约申请后,诊所会联系您确认安排医生及就诊时间,并最终以微信形式通知到您。
+            </div></td></tr>
+            	<tr><td align="center">&nbsp;</td></tr>
+            </table>
+		</div>
+		<div class="fot_space">&nbsp;</div>
+      </section>     
+
+   </div>	
+	<script language="javascript">
+		var getDoctor='演示医生';
+		var height=$(document.body).height();
+		var width=$(document.body).width();
+		if(getDoctor!=''){
+			$("#v_doctor").text(getDoctor);
+			$("#v_doctor").css("color","#000");
+			$("#doctor").val(getDoctor);
+		}
+		$("#div_bg").click(function(){
+			$("#div_time").fadeOut();
+			$("#div_items").fadeOut();
+			$("#div_doctor").fadeOut();
+			$(this).hide();
+			})
+		$("#v_time").click(function(){
+			$("#div_time").show();
+			$("#div_bg").show();
+			zuobiao=$(this).offset();
+			$("#div_time").css({"top":$(this).height()+zuobiao.top+10,"left":(width-$("#div_time").width())/2,"display":"block"});	
+			})
+		$("#v_items").click(function(){
+			 $("#div_bg").show();
+			 $("#div_items").show();
+			 zuobiao=$(this).offset();
+			 $("#div_items").css({"top":$(this).height()+zuobiao.top+10,"left":(width-$("#div_items").width())/2,"display":"block"})
+				})
+		$("#v_doctor").click(function(){
+			$("#div_bg").show();
+			$("#div_doctor").show();
+			zuobiao=$(this).offset();
+			$("#div_doctor").css({"top":$(this).height()+zuobiao.top+10,"left":(width-$("#div_doctor").width())/2,"display":"block"})
+			
+			})
+			$("#submitbtn").click(function(){
+				var tmp_top=($(window).height()-$("#div_error").height())/2;
+				var tmp_left=($(document).width()-$("#div_error").width())/2;
+				$("#div_error").css({"top":"0px","left":tmp_left,"display":"block"}).animate({"top":tmp_top},500);
+
+				})
+	
+	
+	</script>
+   </body>
+</html>

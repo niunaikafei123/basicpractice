@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<title>无标题文档</title>
+<style>
+table{ border:1px solid red;}
+table>tbody>tr>td{ border:1px solid yellow;}
+</style>
+<script>
+$(function(){
+	$("tr:first").css({"color":"red"})
+	$("td:gt(2)").css({"font-size":"30px"})
+	$("td:gt(-3)").css({"background":"yellow"})	
+	})
+</script>
+</head>
+
+<body>
+<div>
+	<table style="table-layout:fixed">
+		<tr>
+        	<td>学生1</td>
+            <td>小明2</td>
+            <td>小明3</td>
+            <td>小明4</td>
+        </tr>
+        <tr>
+        	<td>老师5</td>
+            <td>小亮6</td>
+            <td>小亮7</td>
+            <td>小亮8</td>
+        </tr>    
+    </table>
+</div>
+</body>
+</html>

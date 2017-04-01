@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/base.css" rel="stylesheet"  />
+<link href="css/main.css" rel="stylesheet"  />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>无标题文档</title>
+<style>
+.rect{ width:200px; height:200px; background:red; position:absolute;left:-200px;}
+.rect:target{position:absolute; left:500px; transition:all 0.5s linear;}
+/*.rect:target{position:absolute; left:-100%; transition:all 3s linear; }*/
+</style>
+
+
+
+</head>
+
+<body>
+<a href="#abc" class="a">点击出现</a>
+<a href="#abc" class="b">点击消失</a>
+<div class="rect" id="abc"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+.wd-footer{ width:300px; margin: 0 auto;}
+.refresh{ float:left; vertical-align:middle; animation:donghua 0.8s linear infinite}
+.aaa{ display:inline-block; cursor:pointer;}
+#img{ float:left;margin-right:10px;}
+@keyframes donghua{
+	0%{
+		transform:rotate(0);
+		}
+	100%{
+		
+		transform:rotate(360deg);
+		
+		}
+	}
+</style>
+</head>
+<body>
+
+<div class="wd-footer"><img src="image/refresh.png" id="img" /><a class="aaa" onclick="warning()">点击查看更多商品</a></div>
+</body>
+<script>
+function warning(){
+		<!--$('img').attr('class','refresh');-->
+		$('img').addClass("refresh");
+	}  
+	var a1=[0,1,4,23,2];
+	a1.sort(function(a,b){return b-a});
+	
+</script>
+</html>

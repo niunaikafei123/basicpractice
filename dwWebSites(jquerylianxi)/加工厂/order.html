@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/base.css" rel="stylesheet"  />
+<link href="css/main.css" rel="stylesheet"  />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>下订单页面</title>
+</head>
+<body>
+<!--固定在顶端的头部-->
+<div class="mastertop">
+	<ul class="tab" role="tablist">
+        <li class="defaultTabActive active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">产品管理</a></li>			
+     </ul>
+</div>
+<!--下面的区域-->
+<div class="processingfactory">
+<!--固定在左边的导航部分-->
+    <div class="processing-nav">
+    	<ul>
+        	<li class="li1"><a href="#"><img src="image/avatar.png" /></a></li>
+            <li class="li2"><a href="#"></a></li>
+			<li class="li3"><a href="#"></a></li>
+			<li class="li4"><a href="#"></a></li>
+			<li class="li5"><a href="#"></a></li>
+            <li class="li6"><a href="#"></a></li>
+            <li class="li7"><a href="#"></a></li>
+            <li class="lastli"><a href="#"><img src="image/qiezzi.png" /></a></li>
+		</ul>
+    </div>
+       <!-- 二级导航部分-->
+    <div class="processing-menu">
+    	<ul>
+            <li class="firstli defaultActiveTab">下单</li>
+            <li>订单管理</li>
+            <li>关联加工厂</li>
+         </ul>    
+    </div>
+     <!--内容切换区域-->
+     <div class="processing-content">
+	 	<ul class="top" role="tablist">
+        	<li class="defaultActiveTab active" role="presentation"><a href="#diyikuang" aria-controls="diyikuang" role="tab" data-toggle="tab">下单</a></li>
+        </ul>
+        <div class="processing-content-center">
+        <form class="form-horizontal">
+        	<table class="table order-table">
+            	<tbody>
+                	<tr>
+                    	<td><label class="control-label"><span class="basiccolor">*</span>选择加工厂</label></td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                        <td><label class="control-label"><span class="basiccolor"></span>患者姓名</label></td>
+                        <td><input type="password" class="form-control" id="inputPassword" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                    	<td><label class="control-label"><span class="basiccolor"></span>患者编号</label></td>
+                        <td><input type="password" class="form-control" id="inputPassword" placeholder="Password"></td>
+                        <td><label class="control-label"><span class="basiccolor"></span>年龄</label></td>
+                        <td><input type="password" class="form-control" id="inputPassword" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                    	<td><label class="control-label"><span class="basiccolor"></span>性别</label></td>
+                         <td class="underpinning">
+                            <div class="checkbox left">
+                                <label>
+                                  <input type="checkbox">寄托 
+                                </label>
+                             </div>
+                             <div class="checkbox left">
+                                 <label>
+                                  <input type="checkbox">排牙
+                                </label>
+                             </div>                            
+                        </td>
+                        <td><label class="control-label"><span class="basiccolor"></span>手机号码</label></td>
+                        <td><input type="password" class="form-control" id="inputPassword" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                    	<td><label class="control-label"><span class="basiccolor"></span>牙齿颜色</label></td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                        <td><label class="control-label"><span class="basiccolor"></span>是否试戴</label></td>
+                        <td class="underpinning">
+                            <div class="checkbox left">
+                                <label>
+                                  <input type="checkbox">是 
+                                </label>
+                             </div>
+                             <div class="checkbox left">
+                                 <label>
+                                  <input type="checkbox">否
+                                </label>
+                             </div>                            
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label class="control-label"><span class="basiccolor"></span>是否加急</label></td>
+                        <td class="underpinning">
+                            <div class="checkbox left">
+                                <label>
+                                  <input type="checkbox">是 
+                                </label>
+                             </div>
+                             <div class="checkbox left">
+                                 <label>
+                                  <input type="checkbox">否
+                                </label>
+                             </div>                            
+                        </td>
+                        <td><label class="control-label"><span class="basiccolor"></span>附件</label></td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                    </tr>                   
+				</tbody>
+			</table>
+            <table class="table bitmap-table">
+            	<tbody>
+                	<tr>
+                    	<td ><label class="control-label"><span class="basiccolor"></span>固定类</label></td>
+                        <td>
+                        	<div class="teethbitmap">
+                            	<div class="teeth teeth1"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth2"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth3"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth4"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                        <td>￥3000.3</td>
+                    </tr>
+                    <tr>
+                    	<td ><label class="control-label"><span class="basiccolor"></span>固定类</label></td>
+                        <td>
+                        	<div class="teethbitmap">
+                            	<div class="teeth teeth1"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth2"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth3"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth4"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                         <td>￥3000.3</td>
+                    </tr>
+                    <tr>
+                    	<td ><label class="control-label"><span class="basiccolor"></span>固定类</label></td>
+                        <td>
+                        	<div class="teethbitmap">
+                            	<div class="teeth teeth1"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth2"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth3"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                                <div class="teeth teeth4"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="dropdown specialdw">
+                                  <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Dropdown
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </div>
+                        </td>
+                        <td>￥3000.3</td>
+                    </tr>
+                    <tr>
+                    	<td ><label class="control-label"><span class="basiccolor"></span>固定类</label></td>
+                        <td colspan="4"><textarea class="form-control" rows="3"></textarea></td>
+                    </tr>
+                </tbody>           
+		</table>
+        </form>
+        <div class="deliveryinfor">
+        	<div class="header">
+            	<h2>收货人信息</h2>
+                <a>新增收货地址>></a>
+            </div>
+            <p><span class="spancolor">徐爽&nbsp;&nbsp;&nbsp; 北京</span>徐爽&nbsp;&nbsp; 北京&nbsp;&nbsp; 市海淀区四环到五环之间学清路5号768创意产业园B区2042<i>185****5981</i></p>
+            <p><span>徐爽&nbsp;&nbsp;&nbsp; 北京</span>徐爽&nbsp;&nbsp; 北京&nbsp;&nbsp; 市海淀区四环到五环之间学清路5号768创意产业园B区2042<i>185****5981</i></p>
+            <p><span>徐爽&nbsp;&nbsp;&nbsp; 北京</span>徐爽&nbsp;&nbsp; 北京&nbsp;&nbsp; 市海淀区四环到五环之间学清路5号768创意产业园B区2042<i>185****5981</i></p>
+            <p><span>徐爽&nbsp;&nbsp;&nbsp; 北京</span>徐爽&nbsp;&nbsp; 北京&nbsp;&nbsp; 市海淀区四环到五环之间学清路5号768创意产业园B区2042<i>185****5981</i></p>
+           	<button type="submit" class="btn btn-default address defaultActiveTab">收起地址</button>
+        </div>
+         <div class="deliveryinfor newadddeliveryinfor">
+         	<div class="header">
+            	<h2>新增收货地址</h2>
+            </div>            
+            <form class="form-horizontal">
+            	<div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="收货人">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">字数范围2~20，必须填</label>
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="手机号码">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">合法的手机号码，必须填</label>
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+                     <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+
+                    <div class="col-sm-2">
+                     	<div class="dropdown specialdw">
+                                          <button class="btn btn-default dropdown-toggle form-control txtleft" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                          </ul>
+                                 </div>                                 
+                    </div>
+
+                    
+                 </div>
+                 <div class="form-group">
+                	<label class="control-label col-xs-1"><span class="basiccolor">*</span></label>
+                    <div class="col-sm-5">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="详细地址">
+                    </div>
+                    <label class="control-label col-xs-3 text-left">填写完整的地址信息</label>
+                 </div>
+            	<div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox">设置默认地址
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button type="submit" class="btn btn-default defaultActiveTab ">保存</button>
+                    </div>
+                   </div>
+            </form>   
+		</div>
+        
+        <div class="deliveryinfor newadddeliveryinfor treatmentinfor">
+        	<div class="header">
+         <!--   	<input type="text" placeholder="病历号，姓名，拼音码">-->
+         		<input type="password" class="form-control left" id="inputPassword" placeholder="Password">
+                <button type="submit" class="btn btn-default">提交</button>
+                <button type="submit" class="btn btn-default">新建患者</button>
+            </div>        
+        
+            <table class="table treatment-table">
+                <thead>           
+                	<tr>
+                    	<th>姓名</th>
+                        <th>病历号</th>
+                        <th>最近就诊时间</th>
+                        <th>性别</th>
+                        <th>年龄</th>
+                        <th>电话</th>
+                        <th>欠款</th>
+                        <th>渠道来源</th>
+                        <th>选中</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    	<td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>        
+            </table>
+            
+            <div class="yeqian text-center">
+						<ul class="pagination pagination-lg">
+							<li><a href="#">&lt;</a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">6</a></li>
+							<li><a href="#">…</a></li>
+							<li><a href="#">27</a></li>
+							<li><a href="#">&gt;</a></li>
+						</ul>
+					</div>
+            
+            
+            
+        </div>
+        
+        
+        
+        
+        </div>
+      </div>
+
+
+</div>
+
+
+</body>
+</html>
