@@ -1,0 +1,24 @@
+1.首先创建一个仓库比如：qinaduan
+
+2.在本地对账号和邮箱进行关联：
+git config --global user.name 你github的名字
+git config --global user.email 你github即将关联的邮箱名字
+
+3.将gitbash里面进入到本地与github关联的文件夹中，然后
+
+4.git init //把这个目录变成git可以管理的仓库
+
+5.git add README.md  //将文件添加到仓库
+
+6.git commit -m "first commit"
+
+7.git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库 注意：后面那个是自己的仓库的地址
+
+8.git push -u origin master //把本地库的所有内容推送到远程库上
+
+
+然后每次关联的本地的这个文件夹要是有所变动，需要执行以下命令：
+git add -A
+git commit -m "修改的内容"
+git pull
+git push -u origin master
