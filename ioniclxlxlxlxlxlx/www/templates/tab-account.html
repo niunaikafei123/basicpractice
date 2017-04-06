@@ -1,0 +1,65 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+	    <ion-toggle  ng-model="settings.enableFriends">
+	        Enable Friends
+	    </ion-toggle>
+	     <ion-toggle ng-model="pushNotification.checked"
+	                ng-change="pushNotificationChange()">
+	      Push Notifications
+	    </ion-toggle>
+    </ion-list>
+    <p><input type="text" ng-model="search" style="border:1px solid red" /></p>
+    <table class="table">
+    		<thead>
+    				<tr>
+    						<th>产品编号</th>
+    						<th>产品名称</th>
+    						<th>产品价格</th>
+    				</tr>
+    		</thead>
+    		<tbody>
+    			<!--用添加过滤器的方法来进行搜索-->
+    				<!--<tr ng-repeat="item in produceData | filter:search">-->
+    					<!--只搜索id-->
+    					<tr ng-repeat="item in produceData | filter:{id:search}">
+    					<td>{{item.id}}</td>
+    					<td>{{item.name}}</td>
+    					<td>{{item.price | currency:'(RMB)'}}</td>
+    				</tr>
+    		</tbody>
+    </table>
+    <ul>
+    	<li ng-repeat = "data in datas | filtercity">
+    		<p>{{data.name}},{{data.age}},{{data.city}}</p>
+    	</li>
+    </ul>
+    <ul ng-init="items=['上海','天津','北京']">
+    	 <li ng-repeat="item in items">
+    	 	<span>index:{{$index}}</span>
+    	 	<span>first:{{$first}}</span>
+    	 	<span>middle:{{$middle}}</span>
+    	 	<span>last:{{$last}}</span>
+    	 	<span>{{item}}</span>
+    	 </li>
+    </ul>
+    <button ng-click="dianji($event)">点击我</button>
+    <!--<div ng-controller="demoCtrl">-->
+    	<script type="text/ng-template" id="costom2Tag">
+    		 hello{{poi}}
+    	</script>
+	    <!--<costom-tag>12345</costom-tag>
+	    <div class="costom-tag"></div>-->
+	    <div ng-repeat="item in hehes" costom-tag="bbb" costom-tags></div>
+<!--	    <costom2-tag></costom2-tag>-->
+    <!--</div>-->
+    <div book-list></div>
+    <div add-shuxing fruits="fruits" parents = "fruits" parent-title="{{title}}">气死</div>
+    <kittencup-group>
+    	  <kittencup-collapse ng-repeat="collapse in datatues" heading="{{collapse.title}}">
+    	  	{{collapse.content}}
+    	  </kittencup-collapse>
+    </kittencup>
+    <button type="button" ng-click="tiaozhuan()">跳转至form页面</button>
+  </ion-content>
+</ion-view>

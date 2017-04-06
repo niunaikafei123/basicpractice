@@ -1,0 +1,73 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <div ng-controller = "Acontroller">
+    	 <input type="text" ng-model="data.message"/>
+    	 <input type="text" ng-model="Data.name" />
+    	 <p>message：{{data.message}}</p>
+    	 <h2>{{Data.name}}</h2>
+    </div>
+    <div ng-controller="Bcontroller">
+    		<p>Bmessage:{{data.message}}</p>
+    		<h2>{{Data.name}}</h2>
+    </div>
+    <!--过滤器的几种类型-->
+         <!--number类型-->
+    <div>{{123456789 | number}}</div>
+    <!--number类型保留3位小数-->
+      <div>{{123456789 | number:3}}</div>
+         <!--货币类型-->
+    <div>{{12345 | currency}}</div>
+    <!--将货币类型的$改成rmb开头-->
+    <div>{{123098 | currency:'rmb'}}</div>
+    <!--将时间转换为只有年月日的形式-->
+    <p>{{shijian | date}}</p>
+    <!-- 时间类型的简写形式-->
+    <p>{{shijian | date:'shortDate'}}</p>
+    <!--带年月日星期-->
+    <p>{{shijian | date:'fullDate'}}</p>
+    <!--时分秒和上下午的时间格式-->
+    <p>{{shijian | date:'mediumTime'}}</p>
+    <!--跟直接date效果一样的-->
+    <p>{{shijian | date:'mediumDate'}}</p>
+    <!--直接检索出来年-->
+    <p>{{shijian | date:'y'}}</p>
+    <!--直接检索出来月份-->
+    <p>{{shijian | date:'M'}}</p>
+   <!-- 直接检索出来天-->
+    <p>{{shijian | date:'d'}}</p>
+    <!--今天是星期几-->
+    <p>Day in week：{{shijian | date:'EEEE'}}</p>
+    <!--今天是多少号-->
+    <p>Day in month：{{shijian | date:'dd'}}</p>
+    <!--展现出此时的时间小时数-->
+    <p>{{shijian | date:'HH'}}</p>
+    <!--展示出此时的分钟数-->
+    <p>{{shijian | date:'mm'}}</p>
+    <!--展示出此时的毫秒数-->
+    <p>{{shijian | date:'ss'}}</p>
+    <!--展现出年月日时分秒-->
+    <p>{{shijian | date:'y-M-d H:m:s'}}</p>
+    <!--对数组进行操作的过滤器--> 
+    <p>{{[1,2,3,4,5,4,3,2] | limitTo:-5}}</p>
+    <p>{{daxie | lowercase}}</p>
+    <p>{{xiaoxie | uppercase}}</p>
+    <!--filter过滤器用于过滤数组，对象等-->
+    <p>{{data.chengshi | filter:'chongqing'}}</p>
+    <!--<p>{{data.chengshi | filter: {py:'g'}}}</p>-->
+    <!--用于排序，将py字段进行排序-->
+    <p>{{data.chengshi | orderBy:'py'}}</p>
+    <p>{{data.chengshi | orderBy:'-py'}}</p>
+  </ion-content>
+</ion-view>
