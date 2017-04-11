@@ -237,6 +237,33 @@ angular.module('starter.controllers', [])
 		abc();
 	}
 	aa();
+	
+	
+	//关于ajax的部分
+	var xml = new XMLHttpRequest(); //创建XMLHttpRequest对象
+	console.log(xml);
+	//首先会检查XMLHttpRequest的整体状态并且保证它已经完成（readyState=4），即数据已经发送完毕，然后根据服务器的设定询问请求状态，如果一切已经就绪（status =200），然后执行下面需要的操作。
+	//注意：XMLHttpRequest有两个方法，open和send，其中open方法指定了：1.向服务器提交数据的类型，即post还是get，2.请求的url地址和传递的参数，3.传输方式，false为同步，true为异步，默认为true
+	//send方法用来向服务器发送请求的。
+	//ajax无非是两个过程，发送请求和相应请求。
+	
+	
+//	xml.open("POST", 'http://www.baidu.com', false); //对象已经建立，调用open方法
+//	//当readyState改变时,会触发onreadystatechange事件
+//  xml.onreadystatechange = function () {
+//      if (xml.readyState == 4) {
+//          document.getElementById("user1").innerHTML = "数据正在加载...";
+//          if (xml.status == 200) {
+//              document.write(xml.responseText);
+//          }
+//      }
+//  }
+//  xml.send();
+
+//使用ajax的几个优点：
+//1.页面无刷新,在页面内与服务器通信,用户的体验很好;
+//2.使用异步方式与服务器进行通信，不需要打断用户的操作，具有更加快速的相应能力；
+//3.可以吧以前一些服务器负担的工作转嫁给客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，ajax的原则是“按需取数据”；
 })
 
 
