@@ -287,11 +287,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
 .constant("aa","现在7点半了")  //可以用来声明整个应用范围内的常量，并且让他们在所有配置（config方法里）和实例（controller,services等）方法中都可用
 .value("bb","几点能走呢")  //只能注入像controller，services，factory等方法
 
-
-
-
-
-
 .directive('hideTabs', function($rootScope) {  
   return {  
     restrict: 'A',  
@@ -312,6 +307,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
     }  
   };  
 })
+
+.directive('even',function(){
+	return{
+		require:'ngModel',
+		link : function(scope,elm,attrs,ngModelController){
+			ngModelController.$parsers.push(function(viewvalue){
+				console.log(viewvalue);
+			})
+		}
+	}
+})
+
 //run方法是注入之后，用户可用之前执行，比如加载远程的模板，需要在使用前放入缓存，或者在使用操作前判断用户是否登录，未登录可以先去登录页面
 .run(function($ionicPlatform) {
 	console.log("run")
@@ -371,6 +378,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
       }
     }
   })
+   .state('tab.jiedian', {
+    url: '/dash/jiedian',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-jiedian.html',
+        controller: 'jiedianCtrl'
+      }
+    }
+  })
   .state('tab.shuzu', {
     url: '/dash/shuzu',
     views: {
@@ -380,7 +396,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
       }
     }
   })
-
+  .state('tab.bibao', {
+    url: '/dash/bibao',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/bibao.html',
+        controller: 'BibaoCtrl'
+      }
+    }
+  })
   .state('tab.chats', {
       url: '/chats',
       views: {

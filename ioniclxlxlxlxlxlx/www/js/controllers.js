@@ -41,18 +41,216 @@ angular.module('starter.controllers', [])
    
    var gaibian =  "ABCabc";
    console.log(gaibian.toLocaleUpperCase()); //将所有的字符变成大写的
-   console.log(gaibian.toLocaleLowerCase()); //将所有的字符变成小写的
+   console.log(gaibian.toLocaleLowerCase()); //将所有的字符变成小写的	
    
-	
-	
-	
-	
-	
+   for (var i = 0; i < 5; i++) {
+	  setTimeout(function() {
+	    console.log(i);
+	  }, 1000 * i);
+	}
+   
+   setTimeout(function() {
+	  console.log(1)
+	}, 0);
+	new Promise(function executor(resolve) {
+	  console.log(2);
+	  for( var i=0 ; i<10000 ; i++ ) {
+	    i == 9999 && resolve();
+	  }
+	  console.log(3);
+	}).then(function() {
+	  console.log(4);
+	});
+	console.log(5);
 })
+
+//每个函数都有一个prorotype,即原型，然后每个对象都有一个__proto__，可成为隐式原型，并且存在一个这么的关系，对象.__proto__ === 方法.prorotype
+.controller('BibaoCtrl',function($scope,Data,$state){
+//	function Fn() { }
+//      Fn.prototype.name = '王福朋';
+//      Fn.prototype.getYear = function () {
+//          return 1988;
+//      };
+//
+//      var fn = new Fn();
+//      console.log(fn);
+//      console.log(Fn.prototype);
+//      console.log(fn.name);
+//      console.log(fn.getYear());
+		function aaa(){
+			aaa.prototype.a = 1;
+			aaa.prototype.b = 2;
+		}
+		var bbb = new aaa();
+		console.log(bbb);
+		console.log(bbb.a);
+		var yyy={
+			a:10,
+			b:20
+		}
+		console.log(yyy.toString());
+		console.log(a);
+		var a = 10;
+		console.log(this);
+//		函数在定义的时候,已经确定了自由变量的作用域,而不是在函数调用的时候
+		var a = 10;
+		function fn(){
+			console.log(a);
+		}
+		function bar(f){
+			var a = 20;
+			f();
+		}
+		bar(fn); //因为函数fn在定义的时候，已经明确了a为10，所以在执行fn函数的时候，直接打印出来的是10;
+//		关于this的取值情况，this取值分以下四种情况
+//		1>构造函数
+//		构造函数是为了new一个对象,并且构造函数的函数名第一个需要大写
+		function Foo(){
+			this.name = "王福朋";
+			this.year = "1988";
+			console.log(this);	//此时的this是window		
+		}
+		Foo();
+//		2>函数作为对象的一个属性
+//		如果函数作为对象的一个属性时,并且作为对象的一个属性被调用时,函数中的this指向该对象
+		var obj = {
+			x:10,
+			fn:function(){
+				console.log(this);  //此时的this指向obj这个对象
+				console.log(this.x); //10
+			}
+		};
+		obj.fn();
+//		然而,如果fn函数不是作为obj对象的属性被调用,而是赋给一个新的变量的时候,此时this就指向了window
+		var obj = {
+			x:10,
+			fn:function(){
+				console.log(this);  //此时的this指向window
+				console.log(this.x); //undefined
+			}
+		};	
+		var fn1 = obj.fn;
+		fn1();
+//		3>函数用call或者apply调用
+//		当一个函数被call或者apply调用的时候,this的值就取传入的对象的值.
+		var obj = {
+			x:10
+		}
+		var fn = function(){
+			console.log(this);  //obj
+			console.log(this.x);  //10
+		}
+		fn.call(obj);
+		
+//		4>全局调用普通函数
+		var pp = 10;
+		var yyp = function(){
+			console.log(this);   //window
+			console.log(window.pp);  //undefined
+		}
+		yyp();
+		
+		var tt = 10;
+		console.log(tt);
+		console.log(window.tt);
+		
+//		js中的apply和call方法
+//		call方法:调用一个对象的方法,以另一个对象替换当前的对象
+		function f(){
+	                  var a = "name";		
+	                  this.b = "test1";		
+	                  this.add = function (){ return "add" }		
+	               }
+		
+		function o(){
+		               this. c = "c";
+		             }
+
+        f.call(o);  //就是把f的方法在o中走一遍
+		
+//		闭包的两种情况:1.函数作为返回值,2函数作为参数传递
+		function fn(){
+			var max = 10;
+			return function bar(x){
+				if(x > max){
+					console.log(x);
+				}
+			}
+		}
+		
+})
+.controller('jiedianCtrl', function($scope,$ionicActionSheet,$state) {
+	$scope.myFunction = function(){
+		console.log("222");
+		var node=document.getElementById("myList2").lastChild;
+		var list = document.getElementById("myList1");
+		if(document.getElementById("myList2").childNodes.length >=1){
+			list.appendChild(node);
+		}
+		else{
+			alert("没有子元素了，so无法删除了");
+		}
+		
+	};
+	$scope.removenode = function(){
+		var node=document.getElementById("myList2").lastChild;
+		node.parentNode.removeChild(node);
+	};
+	$scope.addnode = function(){
+		var list = document.getElementById("myList1");
+		list.appendChild(document.createTextNode("新添加"));
+	};
+	$scope.replacenode = function(){
+		var a = document.getElementById('myList1').lastChild;
+		var b = document.getElementById('myList1').firstChild;
+		a.parentNode.replaceChild(b,a);
+	};
+	$scope.insertnode = function(){
+		var newelement = document.createElement("li");
+		var newnode = document.createTextNode("warter");
+		newelement.appendChild(newnode);
+		var list = document.getElementById("myList1");
+		list.insertBefore(newelement,list.childNodes[0]);		
+	};
+	$scope.insertafternode = function(newnode,oldnode){
+		 //判断oldnode后面还有没有同类别的标记
+		  var nextnode = oldnode.nextSibling;
+		 if(nextnode){ //如果没有则为null,则为false,有的话就为true
+		  oldnode.parentNode.insertBefore(newnode,nextnode);
+		 }else{
+		  oldnode.parentNode.appendChild(newnode);
+		 }
+	};
+	//闭包的应用
+	for(var i=0;i<6;i++){
+		(function(i){
+			setTimeout(function(){
+				console.log(i);
+			},2000)
+		})(i)
+	}
+	function aa(){
+		var qq = 1;
+		function abc(){
+			return qq++;
+		};
+		abc();
+	}
+	aa();
+})
+
+
+
 .controller('DashCtrl', function($scope,$ionicActionSheet,$timeout,$state) {
 	$scope.tiaoshuzu = function(){
 		$state.go('tab.shuzu')
-	};	
+	};
+	$scope.tiaobibao = function(){
+		$state.go('tab.bibao');
+	};
+	$scope.tiaojiedian = function(){
+		$state.go('tab.jiedian');
+	}
 	$scope.show = function(){
 		 var hideSheet = $ionicActionSheet.show({
           buttons: [
