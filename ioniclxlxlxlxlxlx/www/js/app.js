@@ -378,12 +378,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
       }
     }
   })
-   .state('tab.jiedian', {
+  .state('tab.jiedian', {
     url: '/dash/jiedian',
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-jiedian.html',
         controller: 'jiedianCtrl'
+      }
+    }
+  })
+  .state('tab.jsonp', {
+    url: '/dash/jsonp',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-jsonp.html',
+        controller: 'jsonpCtrl'
       }
     }
   })

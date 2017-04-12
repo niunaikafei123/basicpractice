@@ -177,7 +177,54 @@ angular.module('starter.controllers', [])
 				}
 			}
 		}
-		
+		//闭包的两个特殊例子
+		function aa(){
+			var tt = 6;
+			(function(){
+				console.log(tt);
+			})()
+		}
+		aa();
+	//解读：这种的一个普通的闭包说明闭包用到了外面定义的变量，是可以拿到的，因此可以打印出来tt为6
+	function bb(){
+		var pp = "11";
+		(function(){
+			if( pp === 'undefined'){
+				console.log("hello" + pp);
+			}
+			else{
+				console.log("你好" + pp);
+			}
+		})()
+	}
+	bb();
+	//解读：这样的话会执行else后面的语句，因为闭包中可以拿到pp的值，因此执行else；
+	function cc(){
+		var yy = 0;
+		(function(){
+			if(typeof yy === 'undefined'){
+				var yy = "000";
+				console.log("我是新数据" + yy);
+			}
+			else{
+				console.log("我是旧数据" + yy)
+			}
+		})()
+	}
+	cc();
+	//解读：这种的yy虽然在闭包外面定义了，但是因为在闭包里面有重新赋值，所以在闭包里面的刚开始相当于加了一条var yy;因此此时的yy就是undefined，因此会走if语句。
+	
+	function Foo() {
+	    var i = 0;
+	    return function() {
+	        console.log(i++);
+	    }
+	}	 
+	var f1 = Foo(),
+	    f2 = Foo();
+	f1();
+	f1();
+	f2();
 })
 .controller('jiedianCtrl', function($scope,$ionicActionSheet,$state) {
 	$scope.myFunction = function(){
@@ -230,11 +277,10 @@ angular.module('starter.controllers', [])
 		})(i)
 	}
 	function aa(){
-		var qq = 1;
-		function abc(){
-			return qq++;
-		};
-		abc();
+		var qq = "abc";
+		(function(){
+			console.log(qq);
+		})()
 	}
 	aa();
 	
@@ -264,8 +310,62 @@ angular.module('starter.controllers', [])
 //1.页面无刷新,在页面内与服务器通信,用户的体验很好;
 //2.使用异步方式与服务器进行通信，不需要打断用户的操作，具有更加快速的相应能力；
 //3.可以吧以前一些服务器负担的工作转嫁给客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，ajax的原则是“按需取数据”；
+	//jsonp的介绍
+	
+		
+	//函数的引用
+		function master(callback){
+			var a = 1 ;
+			window.fn = callback;
+			callback(a);
+		}
+		
+		master(function(a){
+			console.log(a)
+		})
+		
+		window.fn(5)
 })
-
+.controller('jsonpCtrl', function($scope,$ionicActionSheet,$state) {
+	window.GetData = function(data){
+		console.log(data.count);		
+	}
+	$scope.GetAjaxData = function(){
+		var url = "http://api.douban.com/v2/movie/in_theaters?callback=GetData";
+		var script = document.createElement('script');
+		script.setAttribute("src",url);
+		document.getElementsByTagName("head")[0].appendChild(script);
+	}
+	//总结jsonp，本地站点一直处于主动地位，定义callback函数，动态添加script节点，执行远程js，发送请求，传入请求参数和callback名称;url的问号前面是web站点一般处理程序的SearchBook地址，问号后面我们传入一个参数callback,值为GetData，也就是我们上面定义的方法名以及回调函数的名称，当然我们可以传入更多的参数。
+	//ajax和jsonp的相同点与不同点
+	//1.相同点:目的一样，都是请求一个url，然后把服务器返回的数据进行处理。
+	//2.不同点：本质上是不同的，ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心是通过HTTP来动态添加<script>标签来调用服务器提供的js脚本。
+	//3.他们的区别不在于是否跨域，因为ajax通过服务器代理一样可以实现跨域，jsonp本身也不排斥同域的属于获取
+		function test(){
+			console.log(a);
+			console.log(foo());
+			var a = 1;
+			function foo(){
+				return 2;
+			}
+		}
+		test();
+		
+		function aa(){
+			var stb = "hello world";
+			(function(){
+				if(typeof stb === 'undefined'){
+					var stb = "leilei";
+					console.log("nihao" + stb);
+				}
+				else{
+					console.log("nibuhao" + stb);
+				}
+			})()
+		}
+		aa();
+		
+})
 
 
 .controller('DashCtrl', function($scope,$ionicActionSheet,$timeout,$state) {
@@ -277,6 +377,9 @@ angular.module('starter.controllers', [])
 	};
 	$scope.tiaojiedian = function(){
 		$state.go('tab.jiedian');
+	}
+	$scope.tiaojsonp = function(){
+		$state.go('tab.jsonp');
 	}
 	$scope.show = function(){
 		 var hideSheet = $ionicActionSheet.show({
