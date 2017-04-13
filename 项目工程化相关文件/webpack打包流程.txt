@@ -1,0 +1,82 @@
+1.首先全局安装webpack
+npm install webpack -g
+
+2.创建一个项目文件夹，然后进入到项目中，npm init，使得package.json文件出现
+
+3.在项目中也需要安装一下webpack
+npm install webpack --save-dev
+
+4.新建一个入口文件entry.js
+document.getElementById('app').textContent = 'hello ~';
+
+5.新建一个index.html,里面内容：
+	<body>
+		<div id="app"></div>
+		<script src="bundle.js"></script>  //这是使用webpack'打包后生成的文件
+	</body>
+
+6.在命令行运行以下命令，将entry.js里面的内容打包生成bundle.js
+	webpack entry.js bundle.js
+
+7.假设项目中还需要另一个js,新建一个name.js
+	module.exports = "ninghao.net";
+
+8.需要在入口文件entry.js中引入name.js中写的东西:
+	var name = require('./name'); //表示name.js的文件地址在根目录下的
+然后需要在之前entry.js的文件中显示地方改成：
+	document.getElementById('app').textContent = 'hello ~' + name;
+然后此时再webpack entry.js bundle.js，就会看到entry.js里面的内容在bundle.js有同样的一份
+
+9.因为webpack只会解析javascript，因此你要是想要打包html和css等，需要安装相应的loader，也就是转换器
+举例：新建一个style.css文件，比如：
+body{
+	background:pink;
+ }
+，然后需要在入口文件中写上如何打开这个css文件的：
+	require('./style.css');
+
+10.安装css转换器：
+npm install css-loader style-loader --save-dev
+
+11.入口文件entry.js里面需要进入css
+require('style-loader!css-loader!./style.css')
+注：这表示style.css文件用到了两个loader，（也表示用到了两个插件），然后插件之间是用的感叹号。
+然后重新运行webpack entry.js bundle.js，然后打开浏览器，就可以看到浏览器上的效果变了
+
+12.在项目中新建webpack.config.js(webpack的配置文件)，里面描述webpack的配置文件要做的事情
+	module.exports = {
+	entry :'./entry.js',
+	output:{
+		path :__dirname,
+		filename : 'bundle.js'
+	},
+	devtool:'source-map',
+	module:{
+		loaders:[
+		 {
+		  	test:/\.js$/, //用正则表达式来看一下文件的扩展名是不是css
+		  	exclude:/node_modules/,
+		  	loader:'react-hot-loader!babel-loader'
+		 },
+		  {
+		  	test:/\.css$/, //用正则表达式来看一下文件的扩展名是不是css
+		  	loader:'style-loader!css-loader'
+		  }
+		]
+	}
+}
+module.exports是为了导出一个对象，先指定入口文件，然后output指出打包后的文件放的位置和名字，module找出来要使用的模块，loader是指出来了css用到的插件；
+13.配置完config文件之后，要运行webpack命令，因为相关的命令都在它的配置文件描述清楚了。
+
+14。调试代码需要用到source-map
+    首先安装 webpack --devtool source-map，
+在配置文件中，直接写上一句话，就可以直接自己执行source-map了：
+devtool:'source-map'
+
+15.如果想用webpack处理es2015和es2016的代码，需要安装插件：
+npm install babel-loader babel-core babel-preset-es2015 --save-dev
+然后创建一个babel的配置文件，新建.babelrc文件，然后在里面设置一下预设，
+{
+	"presets" : ["es2015","react"]
+ }
+注意，需要在webpack.config.js文件中设置一下，所有的js文件都需要使用babel-loader插件，具体看hbuilder上的例子。

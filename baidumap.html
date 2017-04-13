@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" type="text/css" rel="stylesheet">
+    <script src="http://api.map.baidu.com/getscript?v=2.0&ak=sj2V7snhsrGLdisslO80g5vU&services=&t=20160513110936" type="text/javascript">
+    </script>
+    <script type="text/javascript",src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js">
+    </script></head>
+<body>
+<style type="text/css">
+    #container{
+        width:600px;
+        height:400px;
+    }
+</style>
+<div id="container"></div>
+
+<script type="text/javascript">
+    var map =new BMap.Map('container');
+    map.centerAndZoom(new BMap.Point(	116.418476, 39.923343), 14);
+    var icon =new BMap.Icon('images/pin_03.png', new BMap.Size(16, 24), {
+	    anchor: new BMap.Size(10, 30),
+	    infoWindowAnchor: new BMap.Size(10, 0)
+    });
+    var mkr =new BMap.Marker(new BMap.Point(	116.418476,39.923343), {
+        icon: icon,
+        enableDragging: true,
+        raiseOnDrag: true
+    });
+    map.addOverlay(mkr);
+</script>
+</body>
+</html>

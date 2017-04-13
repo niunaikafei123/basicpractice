@@ -222,9 +222,17 @@ angular.module('starter.controllers', [])
 	}	 
 	var f1 = Foo(),
 	    f2 = Foo();
-	f1();
-	f1();
-	f2();
+	f1(); //0
+	f1(); //1
+	f2(); //0  这里因为f2是Foo的一个新对象，所以要重新开始
+	
+	var bb = 1;
+	function aa(bb){
+		bb = 2;
+		console.log(bb);
+	};
+	aa(bb); //相当于aa(1),但是因为a函数里面重新定义了变量bb，因此a函数中的bb值为2，因此会打印出来2
+	console.log(bb); //这个会打印出来全局变量bb为1
 })
 .controller('jiedianCtrl', function($scope,$ionicActionSheet,$state) {
 	$scope.myFunction = function(){

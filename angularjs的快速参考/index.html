@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		ul.tab{border-bottom: 1px solid black; margin:0px;padding: 0px;list-style: none;}
+		ul.tab li{border: 1px solid black; border-right:none; display: inline-block;padding: 5px;text-align:center;transform: skew(20deg,0deg);margin-left: -1px;margin-bottom: -1px;width:100px;}
+		ul.tab li:last-child{border-right: 1px solid black;}
+		ul.tab li a{display: block;height: 100%; transform: skew(-20deg,0deg);}
+		ul.tab li:first-child{margin-left: 20px;}
+		ul.tab li.selected:before{content:'';display: inline-block;width:30px;height: 42px;transform: rotate(40deg);position: absolute;border-left: 1px solid black;left: 2px;background-color: white;}
+		ul.tab li.selected{margin-left: -8px;border-bottom: 1px solid white;border-left:none;}
+		ul.tab li:first-child.selected:before{content:'';display: inline-block;width:30px;height: 38px;transform: rotate(40deg);position: absolute;border-right: 1px solid black;border-left:none;left: -15px;top:-15px;background-color: white;}
+	</style>
+</head>
+<body>
+	
+	<div id="app">
+		
+	<div>
+		<ul class="tab">
+			<!--<li><a>aaaa</a></li>
+			<li class="selected"><a>bbb</a></li>
+			<li><a>cccc</a></li>
+			<li><a>dddd</a></li>-->
+			<li v-for="(item,index) in menuItems" v-bind:class="{'selected':selectedIndex==index}" v-on:click="selectedTab(index)"><a>{{item.name}}</a></li>
+		</ul>
+	</div>
+	  {{ message }}
+	  <p v-bind:title="message" v-html="message" v-if="isShow"></p>
+	  	<input type="text" v-bind:value="message" />
+	  	<ol>
+	  		<!--<li v-for="arr in arrays" >id:{{arr.id}} name:{{arr.name}} sex:{{arr.sex}}</li>-->
+	  		<todo-item v-for="arr in arrays" v-bind:todo="arr"></todo-item>
+	  	</ol>
+	  	<input type="text" v-model="newArr.id" />
+	  	<input type="text" v-model="newArr.name" />
+	  	<input type="button" value="submit" v-on:click="addArr"/>
+	  	<p v-bind:title="'aaaaa'">{{sexName}}{{messageWatch}}</p>
+	  	<ol>
+	  		<li v-for="(n,index) in 10">{{n}}{{index}}</li>
+	  	</ol>
+	</div>
+	<script type="text/javascript" src="vue.js" ></script>
+	<script >
+		Vue.component('todo-item',{
+			props:['todo','inittitle'],
+			template:'<li>{{todo.name}}</li>'
+		})
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		    message: 0,
+		    messageWatch:0,
+		    isShow:true,
+		    arrays:[
+		    {id:1,name:'aaa'},
+		    {id:2,name:'bbb',sex:'0'},
+		    {id:3,name:'ccc',sex:'1'}
+		    ],
+		    newArr:{
+		    	id:'',
+		    	name:'',
+		    	sex:''
+		    },
+		    selectedIndex:0,
+		    menuItems:[
+		    	{name:'aaaaaa'},
+		    	{name:'bbbbbb'},
+		    	{name:'cccccc'},
+		    	{name:'dddddd'},
+		    	{name:'ee'}
+		    ]
+		  },
+		  methods:{
+		  	addArr:function(){
+		  		this.arrays.push({id:this.newArr.id});
+		  	},
+		  	selectedTab:function(index){
+		  		this.selectedIndex=index;
+		  	}
+		  },
+		  computed:{
+		  	sexName:function(){
+		  		return this.message==1?'man':'women';
+		  	}
+		  },
+		  watch:{
+		  	message:function(val){
+		  		this.messageWatch=val+'watch';
+		  	}
+		  }
+		})
+		app.$watch('message',function(newval,oldval){
+			console.log(newval);
+			console.log(oldval);
+		});
+//		setInterval(function(){
+//			app.message++;
+//		},1000);
+		
+	</script>
+	<script>
+		var dog=function(){
+			this.name='dog';
+			sex='man';
+		}
+		dog.prototype.sound=function(){
+			console.log("dog");
+		}
+		var chicken=function(){}
+		chicken.prototype.sound=function(){
+			console.log('chicken')
+		}
+		var makesound=function(animal){
+			animal.sound();
+		}
+		makesound(new dog());
+		makesound(new chicken());
+	</script>
+</body>
+</html>

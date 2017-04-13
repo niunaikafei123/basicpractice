@@ -1,0 +1,16 @@
+1.在html结构中应该这么写：
+<a v-link="{path: '/view-a'}">Go to view-a</a>
+2.如果已经定义了name属性，也可以这么写：
+router.map({
+  '/user/:userId': {
+       name: 'user',
+    component: {...}
+  }
+});
+2.路由跳转有两种写法：
+  1》<a v-link="{name: 'user', params: {userId: 1}">This is a user whose id is 1</a>
+  2》router.go({name: 'user', params: {userId: 1}});
+
+
+腾讯视频嵌入网页的方法：
+<iframe class="video_iframe" style=" z-index:1; width:100%; height:17.5rem " src="http://v.qq.com/iframe/player.html?vid=n0180x1o0pz&amp;width=&amp;height=&amp;auto=0" allowfullscreen="" frameborder="0" height="" width="100%"></iframe>

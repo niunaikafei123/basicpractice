@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div >
+	<input type="text" ng-model="a" ng-init="a='bbbbb'" />
+	<span ng-bind="a"></span>
+	<div ng-bind="a"></div> 
+	<input type="text" ng-model="a" />
+	<hr />
+
+
+	<span ng-click="showIndex=1" ng-init="showIndex=1">tabname1</span>
+	<span ng-click="showIndex=2">tabname2</span>
+	<div ng-show="showIndex==1">content1</div>
+	<div ng-show="showIndex==2">°¡12</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Expires" CONTENT="-1">
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<script src="../js/angular.js"></script>
+		<link type="text/css" rel="stylesheet" href="../css/public.css" />
+		<title></title>
+		<style type="text/css">
+			div {
+				font-size: 0.26rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div ng-app="myApp" ng-controller="myCtrl">
+			<p ng-repeat="x in items | unique:'id'">
+				{{x.id}}---{{x.name}}
+			</p>
+		</div>
+		<script>
+			//AngularJs 自定义过滤器  
+			//1.使用过滤器，去除重复  
+			angular.module('common', []).filter('unique', function() {
+				return function(collection, keyname) {
+					console.info(collection);
+					console.info(keyname);
+					var output = [],
+						keys = [];
+					angular.forEach(collection, function(item) {
+						var key = item[keyname];
+						if (keys.indexOf(key) === -1) {
+							keys.push(key);
+							output.push(item);
+						}
+					});
+					return output;
+				}
+			});
+			var app = angular.module('myApp', ['common']);
+			app.controller('myCtrl', function($scope) {
+				//$scope.items = [1, 2, 3,2];  
+				//当前unique 的过滤只针对，对象数组过滤  
+				$scope.items = [{
+					id: 1,
+					name: 'zhangsan'
+				}, {
+					id: 2,
+					name: 'lisi'
+				}, {
+					id: 1,
+					name: 'zhangsan'
+				}, ];
+			});
+		</script>
+	</body>
+
+</html>
