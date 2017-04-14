@@ -8,7 +8,7 @@ git config --global user.email 你github即将关联的邮箱名字
 
 4.git init //把这个目录变成git可以管理的仓库
 
-5.git add README.md  //将文件添加到仓库
+5.git add README.md  //将README.md添加到.git里面
 
 6.git commit -m "first commit"
 
@@ -20,5 +20,5 @@ git config --global user.email 你github即将关联的邮箱名字
 然后每次关联的本地的这个文件夹要是有所变动，需要执行以下命令：
 git add -A
 git commit -m "修改的内容"
-git pull
+git pull //如果是自己提交一般不需要这个
 git push -u origin master
