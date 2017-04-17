@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+	<style>
+		/**{height:100%;}*/
+		.tabWrapper{width:994px;height:100%;margin:0 auto 0 auto;}
+		.all{width:981px;height:980px; margin:0 auto 0 auto;}
+		.year{border:1px solid #aaa;height:27px;width:325px;float:left;}
+		.month{border:1px solid #aaa;width:25px; height:25px;float:left;text-align:center;line-height:25px;}
+		.beforeMonth{background-color:#eea;}
+	</style>
+</head>
+<body>
+	<div class="tabWrapper"></div>
+	<script src="jquery-1.5.1.min.js"></script>
+	<script>
+		function createAll() {
+			var tabStr = "<div class='all'></div>";
+			$(".tabWrapper").append(tabStr);
+		}
+		function createYear() {
+			var yearStr = "<div class='year'></div>";
+			$(".all").append(yearStr);		
+		}
+		function createMonth(year) {
+			var monthStr = "<div class='month'></div>";
+			if (year) {
+				$(year).append(monthStr);
+			} else {
+				$(".tabWrapper").append(monthStr);
+			}
+		}
+
+		function createAllMonth(monthCount, year) {
+			if (monthCount > 0) {
+				setTimeout(function () {
+					createMonth(year);
+					monthCount--;
+					createAllMonth(monthCount, year);
+				}, 200);
+			} else {
+				$('.year').css("border", "none").css("padding-right", "2px");
+				setTimeout(function () {
+					$(".tabWrapper").empty();
+					for (var i = 0; i < 75 * 12; i++) {
+						createMonth();
+					}
+
+					oldMonth(1991);
+				}, 1000);
+			}
+		}
+
+		createAll();
+		var yearCount = 75;
+		function createAllYear() {
+			if (yearCount > 0) {
+				setTimeout(function () {
+					createYear();
+					yearCount--;
+					createAllYear();
+				}, 100);
+			} else {
+				var yearList = $(".year");
+				yearCount = yearList.length;
+				for (var i = 0; i < yearCount; i++) {
+					createAllMonth(12, yearList[i]);
+				}
+			}
+		}
+		createAllYear();
+
+
+		function oldMonth(year) {
+			var birthday = new Date(year, 0, 1);
+			var now = new Date();
+			var monthList = $('.month');
+			var yearCount = now.getFullYear() - birthday.getFullYear();
+			for (var i = 0; i < yearCount; i++) {
+				for (j = 1; j <= 12; j++) {
+					$(monthList[i * 12 + j - 1]).append((i + 1)).addClass('beforeMonth');
+				}
+			}
+			var monthCount = now.getMonth();
+			for (var i = 0; i <= monthCount; i++) {
+				$(monthList[yearCount * 12 + i]).append((yearCount + 1)).addClass('beforeMonth');
+			}
+		}
+	</script>
+</body>
+</html>

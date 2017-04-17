@@ -1,4 +1,86 @@
 angular.module('starter.controllers', [])
+.controller('Es6Ctrl',function($scope,Data,$state){
+	//普通的函数
+	var name0 = 'zach';
+	while(true){
+		var name0 = 'obama';
+		console.log(name0); //obama
+		break;
+	}
+	console.log(name0); //obama
+	//使用es6语法的函数,let实际上为javascript增加了块级作用域,也就是在代码块内有效
+	let name1 = 'zach';
+	while(true){
+		let name1 ="xiaoming";
+		console.log(name1);  //xiaoming
+		break;
+	}
+	console.log(name1); //zach
+//点评：es5的语法是只有全局作用域和函数作用域，因为while只是一个循环，是程序流的一种方式，并不是函数，因此在while循环中改变变量的值会改变全局变量的值；而下面那个es6的语法因为增加了块级作用域，因此在一个块中的变量才想同。
+//循环语句将变量泄漏为全局变量
+	var a = [];
+	for (var i = 0; i < 10; i++) {
+	  a[i] = function () {
+	    console.log(i);
+	  };
+	}
+	a[6](); //10
+	//首先定义了个数组，执行for循环就是给这个数组赋值上很多函数，因为一共循环了10次，因此给数组a赋值了10个函数，而var定义的变量新值会覆盖旧值，因此a[6]代表数组的第7个函数，此时输出的i已经为10了，所以会打印出来10，而es6的语法不一样，for循环的i为10了，但是数组的a[6]为6
+	var a = [];
+	for (let i = 0; i < 10; i++) {
+	  a[i] = function () {
+	    console.log(i);
+	  };
+	}
+	a[6](); // 6
+	//如果for循环的循环体中有使用循环变量的情况（或者是后续发生变化的变量），如打印循环变量或者return循环变量，都是等到循环完成之后，才会执行函数体；如果想要变成变量从0开始输出，需要使用闭包，加个立即执行的函数，然后让for循环的循环变量变成闭包的形参，在新的函数中return循环变量
+//	var clickBoxs = document.querySelectorAll('.clickBox')
+//	for (var m = 0; m < clickBoxs.length; m++){
+//	    clickBoxs[m].onclick = function(){
+//	        console.log(m) //5
+//	    }
+//	}
+
+//	function iteratorFactory(i){
+//	    var onclick = function(e){
+//	        console.log(i)
+//	    }
+//	    return onclick;
+//	}
+//	var clickBoxs = document.querySelectorAll('.clickBox')
+//	for (var i = 0; i < clickBoxs.length; i++){
+//	    clickBoxs[i].onclick = iteratorFactory(i)
+//	}
+//	var clickBoxs = document.querySelectorAll('.clickBox')
+//	for (var m = 0; m < clickBoxs.length; m++){
+//	    clickBoxs[m].onclick = (function(p){
+//	    	return function()
+//	    	{	    		
+//	    		console.log(p) 
+//	    	}	        
+//	    })(m)
+//	}
+	
+	function abs(x){
+    for(var i=0;i<arguments.length;i++){
+        console.log(arguments[i]);
+    }
+    if(x<0)
+        x=-x;
+    return x;
+	}
+	abs(-2,222);
+	
+	function sum(...rest){
+	    var result=0;
+	    for(var i=0;i<rest.length;i++){
+	        result+=rest[i];
+	    }
+	    return result;
+	}
+	console.log(sum(1,23,4));
+
+})
 .controller('ShuzuCtrl',function($scope,Data,$state){
 	var shuzu00 = [1,2,3,4,5];
 	var shuzu01 = ["aa","bb","cc","dd"];
@@ -388,6 +470,9 @@ angular.module('starter.controllers', [])
 	}
 	$scope.tiaojsonp = function(){
 		$state.go('tab.jsonp');
+	}
+	$scope.tiaoes6 = function(){
+		$state.go('tab.es6');
 	}
 	$scope.show = function(){
 		 var hideSheet = $ionicActionSheet.show({

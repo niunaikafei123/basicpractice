@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="box"/>
+<button id="btn">统计</button>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        var ary = [];
+        var str = box.value;
+        for(var i=0;i<str.length;i++){
+            var judge = true;
+            var num = 0;
+            for(var j=0;j<str.length;j++){
+                if(str[i]==str[j]){
+                    num++;
+                }
+            }
+//            判断是否有重复的
+            for(var k=0;k<ary.length;k++){
+                if(ary[k] == str[i]){
+                    judge = false;
+                }
+            }
+            if(judge){
+                ary.push(str[i]);
+                ary.push(num);
+            }
+
+        }
+        alert(ary.splice(','));
+    }
+</script>
+</html>

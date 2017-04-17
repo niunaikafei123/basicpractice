@@ -378,6 +378,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'],f
       }
     }
   })
+  .state('tab.es6', {
+    url: '/dash/es6',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-es6.html',
+        controller: 'Es6Ctrl'
+      }
+    }
+  })
   .state('tab.jiedian', {
     url: '/dash/jiedian',
     views: {

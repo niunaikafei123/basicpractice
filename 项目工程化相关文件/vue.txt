@@ -1,0 +1,53 @@
+vue-cli 
+	可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需一分钟即可启动带热重载、
+	保存时静态检查以及可用于生产环境的构建配置的项目：
+	# 全局安装 vue-cli
+	$ npm install -g vue-cli
+	# 创建一个基于 "webpack" 模板的新项目
+	$ vue init webpack my-project
+	# 安装依赖，走你
+	$ cd my-project
+	$ npm install
+	$ npm run dev
+
+vue-router
+	npm install vue-router
+
+
+Mint UI
+	npm install mint-ui -save
+
+项目
+	1.引入vue与vue-router
+	
+	import Vue from 'vue'
+	import VueRouter from 'vue-router'//声明
+	
+	Vue.use(VueRouter)//引用
+	var router = new VueRouter() // 实例化
+	
+	router.map({
+	    '/Home':{
+	    	component: Home
+	    },
+	    '/App':{
+	    	component: App
+	    }
+	}) //引入组件
+	
+	router.redirect({
+	    '*' : '/Home'
+	}) //声明下，当进入主页的时候跳转到Home这个组件内
+
+	
+        // 现在我们可以启动应用了！
+        // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
+	router.start(App,'#app');    
+
+引入mint-ui
+
+	import Vue from 'vue';
+	import MintUI from 'mint-ui';
+	import 'mint-ui/lib/style.css';
+
+	Vue.use(MintUI);
