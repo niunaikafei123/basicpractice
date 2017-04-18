@@ -1,0 +1,93 @@
+@green:green;
+@white:#fff;
+
+header{
+    background: @green;
+    h1{
+        color:@white;
+    };
+}
+//定义多个相同名称的变量时
+@var:0;
+.class{
+    @var:1;
+    .brass{
+        @var:2;
+        three:@var;
+        @var:3;
+    }
+    one:@var;
+}
+//作为选择器和属性名的变量
+@kuandu:width;
+.@{kuandu}{
+    @{kuandu}:150px;
+    background: @green;
+}
+//混合不输出只需要带个括号
+.xiushi(){
+    color:red;
+    text-decoration: underline;
+}
+h2{
+    font-size:28px;
+    .xiushi;   
+    .bb();
+    cursor: pointer; 
+}
+h3{
+    font-size:24px;
+    .xiushi;
+    .border_you(#000);
+}
+
+.bb{
+    &:hover{
+        color:pink;
+        .border(yellow);
+    }
+}
+.aa{
+    .bb();
+}
+
+//带参数的混合
+.border(@color){
+    border:1px solid @color;
+}
+
+//带参数并且有默认值的混合
+.border_you(@color:red){
+    border:1px solid @color;
+}
+
+//带多个参数的混合
+.mixin(@color:red;@padding:10px;@margin:3px){
+    color:@color;
+    padding:@padding;
+    margin:@margin;    
+}
+.newdiv{
+    .mixin();
+}
+.bbyy{
+    .mixin(1,2,3;)
+}
+//如果传参的括号里面全部都是以逗号分隔，那么会依次传给各个参数值；如果括号里面既有逗号又有分号，会把分号之前的当做一个整体
+
+//定义多个具有相同名称和参数数量的混合
+.maxin(@color){
+    color_1:@color;
+}
+.maxin(@color;@padding:2px){
+    color_2:@color;
+    padding_2:@padding;
+}
+.maxin(@color;@padding:2px;@margin:2){
+    color_3:@color;
+    padding_3:@padding;
+    margin:@margin@margin@margin@margin;
+}
+.abc{
+    .maxin(#008000);
+}

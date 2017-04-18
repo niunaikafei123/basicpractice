@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="styleold.css" />
+		<!--<link rel="stylesheet/less" href="style.less" />-->
+		<script src="less.min.js"></script>
+		<style>
+		.table{
+            width: 400px;
+            border-collapse:collapse; 
+            border-spacing:0; 
+            overflow: auto;
+            table-layout: fixed;
+        }
+        .fixedThead{
+            display: block;
+            width: 400px;
+            overflow: auto;
+        }
+        .scrollTbody{
+            display: block;
+            height: 262px;
+            overflow: auto;
+            width: 100%;
+        }
+        .table td,.table th {
+            width: 200px !important;
+            border-bottom: none;
+            border-left: none;
+            border-right: 1px solid #CCC;
+            border-top: 1px solid #DDD;
+            padding: 2px 3px 3px 4px;
+            /*display: inline-block;*/
+        }
+        .table tr{
+            border-left: 1px solid #EB8;
+            border-bottom: 1px solid #B74;
+        }
+        thead.fixedThead tr th:last-child {
+            color:#FF0000;
+            width: 200px;
+        }
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>麦子学院</h1>
+		</header>
+		<div class="width">今天是星期几呢</div>
+		<h2>我是第一行</h2>
+		<h3>我是第二行</h3>
+		<div class="aa">点我会变哦</div>
+		 <table class="table">
+	        <thead class="fixedThead">
+	            <tr>
+	            	<th>header</th>
+	            	<th>header two</th>
+	            	<th>header</th>
+	            	<th>header two</th>
+	            	<th>header</th>
+	            	<th>header two</th>
+	            	<th>header</th>
+	            	<th>header two</th>
+	            </tr>
+	        </thead>
+	        <tbody class="scrollTbody">
+	            <tr><td>fuck 1</td><td>fuck 2</td><td>fuck 1</td><td>fuck 2</td><td>fuck 1</td><td>fuck 2</td><td>fuck 1</td><td>fuck 2</td></tr>                
+	        </tbody>
+	    </table>
+		<script>
+			function show(x){
+				console.log(typeof(x));
+				console.log(typeof(10));
+				console.log(typeof(true));
+				console.log(typeof([1,2,3]));
+				console.log(typeof({a:2,b:3}));
+				console.log(typeof(null));
+				console.log(typeof(function(){}));
+			}
+			show();
+			function bb(){
+				
+			}
+			console.log(bb instanceof Object)
+			var obj={
+				a:10,
+				b:function(x){
+					alert(this.a+x);
+				},
+				c:{
+					name:"王艳艳",
+					year:"1996"
+				}				
+			}
+			console.log(obj.b);
+			 function Fn() {
+	            this.name = '王福朋';
+	            this.year = 1988;
+	        }
+	        var fn1 = new Fn();
+	        console.log(fn1);
+	        var arr = new Array();
+	        console.log(arr);
+	        var arr1 = [1];
+	        console.log(arr1);
+			function student(){
+				this.name = "小明";
+			};
+			var a = new student();
+			console.log(a);
+//			var abc = {a:1,b:2};
+//			console.log(abc);
+			var abc = new Object();
+			abc.a = 1;
+			abc.b = 2;
+			console.log(abc);
+			function aaa(){
+				
+			}
+			var bbb=aaa;
+			console.log(bbb);
+            function c(){
+            	
+            }
+            console.log(c.prototype);
+            var ppp = new Object();
+            console.log(ppp);
+	        function Fn1() { }
+	        Fn1.prototype.name = '王福朋';
+	        Fn1.prototype.getYear = function () {
+	            return 1988;
+	        };
+	        console.log(Fn1.prototype);
+			var obj1 ={name:'obj1'}
+			var obj2 ={name:'obj2'}
+			console.log(obj1.__proto__);
+			console.log(obj2);
+			function Fn2() { }
+	        Fn2.prototype.name = '王福朋';
+	        Fn2.prototype.getYear = function () {
+	            return 1988;
+	        };	
+	        console.log(Fn2);
+	        var fn = new Fn2();
+	        console.log(fn);
+	        console.log(fn.name);
+	        console.log(fn.getYear());
+	        var obj3 = {};
+	        console.log(obj3.__proto__);
+	        function aa(){
+	        	
+	        }
+	        console.log(aa.prototype);
+	         var Person = function () { };
+				Person.prototype.Say = function () {
+				alert("Person say");
+			}
+			var p = new Person();
+			console.log(Person.prototype);
+			console.log(p.__proto__);
+//			p.Say();
+
+
+//			var Person = function () { };
+//			Person.prototype.Say = function () {
+//				alert("Person say");
+//			}
+//			Person.prototype.Salary = 50000;
+//		 
+//			var Programmer = function () { };
+//			Programmer.prototype = new Person();
+//			Programmer.prototype.WriteCode = function () {
+//				alert("programmer writes code");
+//			};
+//		 
+//			Programmer.prototype.Salary = 500;
+//		 
+//			var p = new Programmer();
+//			p.Say();
+//			p.WriteCode();
+//			alert(p.Salary);
+			
+			function Foo(){}
+			var f1 = new Foo();
+			f1.a = 10;
+			Foo.prototype.a = 100;
+			Foo.prototype.b =200;
+			var f2 = new Foo();
+			f2.a = 90;
+			console.log(f1);
+			console.log(f2.a);
+			console.log(f1.a);
+ 			console.log(f1.b);
+ 			
+ 			var obj={a:10,b:20};
+ 			console.log(obj.toString());
+ 			var a10 = 10;
+ 			console.log(a10);
+ 			console.log(this);
+ 			//函数声明
+ 			console.log(f9);
+ 			function f9(){};
+ 			//函数表达式
+ 			console.log(f8);
+ 			var f8 = function(){}
+ 			//构造函数
+ 			function AB(){
+ 				this.name = "陪陪";
+ 				this.sex = "女";
+ 				console.log(this);
+ 			}
+ 			var kkk = new AB();
+ 			console.log(kkk);
+ 			console.log(this === window);
+ 			
+ 			var a=10,
+ 			fn,
+ 			bar = function(x){
+ 				var b = 5;
+ 				fn(x+b);
+ 			};
+ 			fn = function(y){
+ 				var c=5;
+ 				console.log(y+c);
+ 				return function bar(x){
+				if (x > max){
+					console.log(x)
+				}
+			};
+ 			}
+ 			bar(10);
+ 			var i=10;
+ 			if(i>0){
+ 				var name="王福朋";
+ 			}
+ 			console.log(name);
+// 			function fn(){
+// 				var max = 10;
+// 				return function bar(x){
+// 					if(x > max){
+// 						console.log(x);
+// 					}
+// 				};
+// 			}
+// 			var f1 = fn();
+// 			f1(15);
+//		function fn(){
+//			var max = 10;
+//			return function bar(x){
+//				if (x > max){
+//					console.log(x)
+//				}
+//			};
+//		}
+//		
+//		var f111 = fn();
+//		f111(15)
+		
+		
+		(function run(){
+			console.log(arguments[0]);
+		})(4,5,6)
+		</script>
+	</body>
+</html>

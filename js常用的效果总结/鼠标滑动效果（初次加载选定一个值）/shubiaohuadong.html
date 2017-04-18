@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="shubiaohuadong.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script>
+function set(name,cursel,n){
+	  for(i=1;i<=n;i++){
+	  var menu=document.getElementById(name+i);
+	  menu.className=i==cursel?"hover":"";
+	  } 
+	}  
+</script>
+
+<body>
+<div class="nav">
+<div class="nav-center">
+	<ul>
+    
+ 
+            	<li id="tab011" onMouseOver="set('tab01',1,7)"style=" margin-left:8px;" class="hover" ><a>网站首页<br /><span>Home page</span></a></li>
+                <li id="tab012" onMouseOver="set('tab01',2,7)"><a href="#" target="_blank">医院概况<br /><span>Hospital survey</span></a></li>
+                <li id="tab013" onMouseOver="set('tab01',3,7)"><a href="#" target="_blank">院内动态<br /><span>Dynamic</span></a></li>
+                <li id="tab014" onMouseOver="set('tab01',4,7)"><a href="#" target="_blank">专家团队<br /><span>Expert team</span></a></li>
+                <li id="tab015" onMouseOver="set('tab01',5,7)"><a href="#" target="_blank">专家团队<br /><span>Expert team</span></a></li>
+                <li id="tab016" onMouseOver="set('tab01',6,7)"><a href="#" target="_blank">专家团队<br /><span>Expert team</span></a></li>
+                <li id="tab017" onMouseOver="set('tab01',7,7)"><a href="#" target="_blank">专家团队<br /><span>Expert team</span></a></li>
+                
+                
+    </ul>
+</div>
+</div>
+
+
+</body>
+</html>

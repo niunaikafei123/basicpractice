@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="fPartner">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+</body>
+<script>
+    var boxs = document.getElementsByClassName('box');
+
+        for(var i= 0;i<boxs.length;i++){
+            boxs[i].onclick = (function(j){
+                return function(){
+                    console.log(j);
+                }
+            })(i)
+        }
+
+
+
+</script>
+</html>

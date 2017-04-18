@@ -1,0 +1,58 @@
+header {
+  background: #008000;
+}
+header h1 {
+  color: #ffffff;
+}
+.class {
+  one: 1;
+}
+.class .brass {
+  three: 3;
+}
+.width {
+  width: 150px;
+  background: #008000;
+}
+h2 {
+  font-size: 28px;
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+h2:hover {
+  color: pink;
+  border: 1px solid #ffff00;
+}
+h3 {
+  font-size: 24px;
+  color: red;
+  text-decoration: underline;
+  border: 1px solid #000000;
+}
+.bb:hover {
+  color: pink;
+  border: 1px solid #ffff00;
+}
+.aa:hover {
+  color: pink;
+  border: 1px solid #ffff00;
+}
+.newdiv {
+  color: #ff0000;
+  padding: 10px;
+  margin: 3px;
+}
+.bbyy {
+  color: 1, 2, 3;
+  padding: 10px;
+  margin: 3px;
+}
+.abc {
+  color_1: #008000;
+  color_2: #008000;
+  padding_2: 2px;
+  color_3: #008000;
+  padding_3: 2px;
+  margin: 2 2 2 2;
+}

@@ -1,0 +1,388 @@
+﻿1.在package.json中的script节点中可以定义脚本任务
+"scripts": {
+  	"e": "echo hello",
+  	//完成install后要执行这个命令
+    "postinstall": "bower install",
+    //运行start先执行这个命令
+    "prestart": "npm install",
+    //运行当前地址,把当前地址放在9000端口上
+    "start": "./node_modules/.bin/hs -a localhost -p 9000 -o",
+    "pretest": "npm install",
+    //用来同步几个浏览器,方便单元测试
+    "test": "./node_modules/.bin/browser-sync start --server app --files 'app/index.html' --no-notify"
+ },
+ 2.在根目录下的.bowerrc下设置了bower install下载的库存放路径
+ {
+   "directory":"app/bower_components"
+ }
+ 3.根目录下的.gitignore文件中的文件不会提交到github上
+ 4.bower.json是项目依赖的包  bower install xxx会在里面的dependencies输出东西
+ bower install会从里面读取信息输出东西
+ 5.package.json是说明npm的指令和生产依赖和开发依赖的包 npm install xxx -save或者--save-dev
+ 6.npm install会从package.json读取信息下载对应的包
+ 7.editorconfig是编码规范
+ 8.angular-seed 官方的骨架
+ 9.https://browsersync.io/docs/gulp 用gulp的browsersync插件,网站上有gulpfile.js最基础的开发
+10.npm install browser-sync --save-dev
+11.http://www.browsersync.cn/docs/command-line/
+12.需要注意的是这里的npm test只是test,用的是browser-sync的start和多浏览器同步的功能,
+不会运行glupfile.js上的语句,所以开发时用的命令时gulp不是npm test
+13.当然你可以把npm hello设置成gulp的功能(不推荐使用npm test,耗时长)
+
+API:Application Program Interface
+应用程序编程接口;所有有输入有输出的事物都可以是API;都是函数
+
+WebAPI : 通过web方式提供的接口叫WebAPI;
+
+14.angular-loader.js和script.js可以帮助我们异步加载库文件
+
+Math.random();
+
+测试WebAPI的工具 : POSTMAN
+
+后端设计API的时候,会在url地址封装参数,
+比如http://api.douban.com/v2/movie/in_theaters?count=2表示只拿2条
+比如http://api.douban.com/v2/movie/in_theaters?count=2&start=1表示从第1个索引值开始拿2条
+url参数特征: ?后面的就是参数  然后和key1=value1&key2=value2
+
+jsonp不属于ajax请求 
+angular对jsonp的处理:
+https://angularjs.org/greet.php?name=Super%20Hero&callback=angular.callbacks._0
+angular统一把jsonp请求回来的数据传给angular.callbacks._0函数,angular.callback是个对象
+
+15.bower install script.js --offline --save  (--offline是离线安装)
+
+16.angular.boostrap(document,['moviecat'])的意思是把angular启动起来,
+相当于在document标签上写ng-app="moviecat",把document给moviecat模块管理
+
+17.script.js是一个异步加载js文件的小库,缺点是对于有依赖关系过深的项目不方便
+
+18.angular-loader的作用就是在使用一些异步加载库的时候,比如script.js,load.js,自动处理依赖关系然后控制执行顺序
+
+
+1.手机号正则表达式的写法：
+<ul>
+	<li class="newadd"><input type="number" placeholder="请输入银行卡手机预留号码" ng-model="phone" name="phone" ng-pattern="/^(1[3|4|5|7|8][0-9]{9})$/" required/></li>
+	<p ng-show="bindCardForm.phone.$error.pattern">手机号码格式错误</p>
+	<div class="clearFloat"></div>
+</ul>
+
+注释：ng-pattern后面写的是手机号正则表达式；<p></p>标签内写的是手机号错误的提示（form上面必须写上novalidate，是为了去除验证码自带的错误提示样式）
+
+2.定时器的写法：
+
+$timeout(function () {
+	$state.go("tab.addCard");
+}, 3000);
+
+3.<button class="viewresult" ui-sref="tab.limit" href="#/tab/limit">查看額度</button>跳转到新的页面
+font-family: "Microsoft YaHei.SimHei,Verdana,Arial,sans-serif,Heitisc";
+
+4.跳转到固定的页面：
+
+	var token = $localstorage.get('token','');
+	var url = 'http://192.168.0.82:8080/luckydraw/?token='+token;
+	window.open(url,'_blank');
+
+
+5.计算高度
+height:calc(100% - 287px);
+
+ng-checked
+
+5.验证码正则表达式：ng-pattern="/^\d{6}$/"
+
+6.$q进行服务校验
+this.addBankCard = function (mobile,bankCardNo,validateCode) {
+		var deferred = $q.defer();
+		$http.post(Address + '/pay/addBankCard', {
+			'mobile':mobile,
+			'bankCardNo':bankCardNo,
+			'validateCode':validateCode
+		})
+		.success(function(data) {
+			deferred.resolve(data);
+		})
+		.error(function(data) {
+			deferred.reject(data);
+		});
+		return deferred.promise
+	};
+}])
+
+进行服务校验的第二种格式：
+.service('isFirstService',['$localstorage',function($localstorage){
+	return {
+		setFirst:  function() {
+			$localstorage.set('runtime', 1);
+		},
+		setSeconds: function() {
+			$localstorage.set('runtime', 2);
+		},
+		check:  function() {
+			return $localstorage.get('runtime',0);
+		}
+	};
+}])
+7.序列化json数据
+
+	$scope.savePromoDetail = function () {
+		var detail = [];
+		for (var i in $scope.selected) { 
+			if($scope.selected[i] ==  true) {
+				detail.push($scope.promo_detail[i]);
+			}
+		}
+		businessService.saveProjectPromoRequest($scope.houseId, $scope.name, $scope.phone, JSON.stringify(detail))
+
+8.含补贴相关代码：
+<div class="qi_wdiv_hot" ng-show="item.platform_bonus!=0"><span class="qi_wdiv_hot_span1"></span><span>含补贴</span></div>
+
+ng-class="{true: 'qi_winput', false: 'inqi_winput'}[isActive]"
+
+if($scope.item.status==8){
+				$scope.title="已满标";
+			}
+			else{
+				$scope.title="立即投资";
+			}	
+
+
+首页：
+	//		var url = LuckyDrawAddress+'/?token='+token;
+	//		window.open(url,'_blank');
+
+
+循环并且显示循环次数：
+ng-repeat="item in items track by $index"
+
+
+onerror="this.src='img/buyhouse1.jpg'"
+
+1.移动端清缓存
+<meta http-equiv="Expires" CONTENT="-1">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache">
+
+2.给滑动框加自动滑动
+auto-play="true" slide-interval="4000" show-pager="true" does-continue="true"
+
+3.下拉刷新：
+<ion-refresher pulling-text="下拉刷新" on-refresh="vm.doRefresh()"></ion-refresher>
+结束下拉刷新代码：
+ .finally(function() {
+                      $scope.$broadcast('scroll.refreshComplete');
+                  });
+
+4.  先变为字符串，在变为数字
+         var a=parseInt(source);
+			 return  Number(a);
+
+5.ng-class的用法：
+ng-class="{activeTab:showIndex==2}"
+
+6.关闭倒计时
+$timeout.cancel( $scope.timeout );
+7.倒计时的写法：
+      $timeout(function() {
+				$state.go("tab.tuijian",{},{reload:true});
+			},3000);
+
+7.弹窗提示：
+$cordovaToast.showLongCenter('当前版本是最新的！=^_^=');
+
+8.查找所有css文件行数：
+find . -name "*.css" | xargs wc -l
+
+ onclick="selectRow(this)"
+
+银行卡的名字
+<img ng-if="cardInfo.bank_name!=''" ng-src="img/{{cardInfo.bank_name | bankname}}.jpg"/>
+9.立即刷新：
+ $state.go("test",{}, {reload: true});和 cache:'false', 
+
+10.
+{{$root.coupon.showData}}
+$scope.useCoupon = function (item) {
+		$scope.$emit('chooseCoupon',item);
+		$ionicHistory.goBack();
+	};
+11.右上角登录代码：
+<div class="top-r" id="loginInfo"><a href="#" id="bt_login">登录</a><a href="#" target="_blank">注册</a></div>
+.top-r a:first-child{border-right:1px solid #CACACA;}
+
+12.上传列表
+<form name="form2" ng-submit="vm.uploadbusinessFile()" class="hybq">
+					<fieldset>
+						<p class="legend">上传工程相关文件</p>
+						<div class="a-upload">选择文件
+							<input type="file" ngf-select ng-model="vm.businessFile.content" name="businessFile" required />
+						</div>
+						<span class="filename">{{vm.businessFile.content.name}}</span>
+						<div class="form-group miaoshuzong">
+							<label class="col-sm-2 control-label" for="businessFiledesc">描述：</label>
+							<textarea  class="form-control miaoshu" rows="2" id="businessFiledesc" ng-model="vm.businessFile.description" name="businessFiledesc" required></textarea>
+							<span ng-show="vm.businessFile.result">{{vm.businessFile.result.retMsg}}</span>
+						</div>
+						<div ng-show="vm.businessFile.progress >= 0">
+							<uib-progressbar value="vm.businessFile.progress" type="success">
+								{{vm.businessFile.progress}}%
+							</uib-progressbar>
+						</div>
+						
+						<input type="submit" value="上传文件" />
+					</fieldset>
+				</form>
+
+上传进度：{{progress}}\
+
+9，禁止ionic中content的滑动：
+overflow-scroll="true" style="overflow: hidden"
+
+var url = MobileDrawAddress + '/landing/realnameAuth.html?token='+token;
+
+$scope.goBaoliMore=function(){		
+		var promise = myAccount.checkRealName();
+		promise.then(function (data) {
+			if (data.retCode === 1) {
+			$state.go('tab.ibaoli-more',{'projectId':$stateParams.projectId});
+		}
+		 else if(data.retCode === -1){	
+						var token = $localstorage.get('token','');
+						var url = MobileDrawAddress + '/landing/realnameAuth.html?token='+token;
+						window.open(url,'_blank');	
+			}
+		});
+	};
+
+遮罩层：
+$scope.showCover('fail.html');
+分享： "share",
+-       ['金房汇送您680元！百万壕礼等您拿！','金房汇携手金融机构与百强房企，提供更安全的投资理财产品，投资倍享现金与金房币双重收益，话不多说快上车！',LinkAddress+'/special/mobile/landing/img/share.jpg',LinkAddress+'/special/mobile/landing/register.html?invitationCode='+$scope.invitationCode]);
+
+
+foreach循环：
+	$scope.lists.forEach(function(ele){
+						console.log(ele);
+						if(ele.id_verified==1){
+							ele.id_verified="已开通";							
+							ele.coupon_discount=ele.coupon_discount+"元现金";
+						}
+					})
+
+
+1.优惠券部分：
+<li ng-if="item.coupon_category_id===3">
+									<div class="coupon_voucharuse">
+										<img src="img/coupon_red.png">
+									</div>
+									<div class="coupon_voucharuse_fu">
+										<div class="coupon_left"><em>抵</em></div>
+										<div class="coupon_right">
+											<p class="p1">现金抵用券</p>
+											<p class="p2"><span>{{item.discount}}</span>元</p>
+										</div>
+									</div>
+									<div class="coupon_usecashCon">
+										<p class="title">邀请注册活动奖励</p>
+										<em>有效期至:{{item.dateEnd}}</em>
+										<em>编码:{{item.code}}</em>
+									</div>
+									<!--<div class="cash"><button>去使用</button></div>-->
+								<div class="clearFloat"></div>
+							</li>
+
+
+弹框提示语句：
+$cordovaToast.showLongCenter('领取成功，两小时后请到账户余额查看');
+
+开通第三方托管账户：
+			var confirmPopup = $ionicPopup.confirm({
+            		title: '温馨提示',
+            		template: "为保证您的资金安全，投资需开通第三方资金托管账户，您还未开通，是否前往开通", //从服务端获取更新的内容
+            		cancelText: '取消',
+            		okText: '确定'
+        		});
+				
+				confirmPopup.then(function (res) {
+					if(res) {		
+						var token = $localstorage.get('token','');
+						var url =  MobileDrawAddress + '/landing/realnameAuth.html?token='+token;
+						window.open(url,'_blank');
+					}
+					else {
+						
+					}
+				});
+
+判断手机号正则：
+/^((1[3,5,8][0-9])|(14[5,7])|(17[0,1,6,7,8]))\d{8}$
+
+1.页面跳转后返回到上个页面浏览的位置：
+所以整个需求只需要在页面最顶部添加<ion-nav-view>指令,然后再指令内部添加<ion-view> 设置其cache-view='true' 即可.
+
+2.增加遮罩：
+
+$scope.showCover = function(index) {
+		$ionicLoading.show({
+			scope: $scope,
+			templateUrl: 'templates/cover/'+index 
+		});
+	};
+去掉遮罩：
+$ionicLoading.hide();
+
+Ionic自动刷新页面：
+location.reload([true]);
+
+1.获取token
+	console.log($localstorage.get('token',''));
+		GetListService.getToken($localstorage.get('token',''))
+		.success(function(data){
+			console.log(data);
+			if (data.retCode === 1){
+				$rootScope.buttonshow = false;
+			}
+		});
+
+ion-slide可以循环滑动：
+$ionicSlideBoxDelegate.$getByHandle("slideimgs").loop(true);
+
+ionic中调用第三方页面：
+iframe的src属性用ng-src属性替代，并指明绑定对象： ng-src="{{targetUrl}}"
+
+在controller里，调用$sce: $scope.targetUrl = $sce.trustAsResourceUrl(url)
+
+父页面调用子页面：
+	var url="templates/tabs/newshiyan.html";
+	$scope.myURL = $sce.trustAsResourceUrl(url);
+	window.aa=function(){
+		alert("你好");
+	}
+
+
+底部tabs按钮隐藏：
+.directive('hideTabs', function ($rootScope) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attributes) {
+        	console.log(attributes);
+            scope.$on('$ionicView.beforeEnter', function () {
+                scope.$watch(attributes.hideTabs, function (value) {
+                    $rootScope.hideTabs = value;
+                });
+            });
+
+            scope.$on('$ionicView.beforeLeave', function () {
+                $rootScope.hideTabs = false;
+            });
+        }
+    };
+})
+hide-tabs=true (按钮隐藏)；
+hide-tabs=false(按钮显示)
+
+angularjs 刷新页面：
+    vm.refresh = function(){
+            $route.reload();
+        }

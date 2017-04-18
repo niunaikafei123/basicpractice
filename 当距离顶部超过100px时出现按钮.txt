@@ -1,0 +1,24 @@
+<!-- 代码 开始 -->
+<ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+</ul>
+<!-- 代码 结束 -->
+
+
+//返回顶部
+$(function(){
+	$(window).scroll(function(){
+		if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
+			$("#side-bar .gotop").fadeIn();	
+		}
+		else{
+			$("#side-bar .gotop").hide();
+		}
+	});
+	$("#side-bar .gotop").click(function(){
+		$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
+	});
+});
+
+
+

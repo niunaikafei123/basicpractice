@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<link href="css/bzy.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<title>精神分裂病种页</title>
+
+<script type="text/javascript">
+// JavaScript Document	
+
+function set(name,cursel,n){
+
+	  for(i=1;i<=n;i++){
+	  var menu=document.getElementById(name+i);
+	  var con=document.getElementById(name+"_"+i);
+	  menu.className=i==cursel?"hover":"";
+	  con.style.display=i==cursel?"inline":"none";
+	} 
+  }
+ function showList(id,num){
+	if(num == 1){
+		document.getElementById(id).style.display = "inline";
+	}
+	else{
+		document.getElementById(id).style.display = "none";
+	}
+} 
+</script>
+
+<script type="text/javascript">	
+	$(function(){
+		$("#tab_bottom1_1").hover(function(){
+			$("#tab_top1_1").fadeIn(10);
+			$("#tab_top1_2").hide();
+			$("#tab_top1_3").hide();
+		});
+		$("#tab_bottom1_2").hover(function(){
+			$("#tab_top1_1").hide();
+			$("#tab_top1_3").hide();
+			$("#tab_top1_2").fadeIn(10);
+		});
+		$("#tab_bottom1_3").hover(function(){
+			$("#tab_top1_1").hide();
+			$("#tab_top1_2").hide();
+			$("#tab_top1_3").fadeIn(10);
+		});
+	});
+</script>
+
+</head>
+
+<body>
+<div class="wq_body">
+<img src="images/03.gif" alt="" width="100%" height="100%" class="ban1 sss"/>
+</div>
+<div class="nav">
+<ul>
+<li><a href="http://wq3g.jyzy120.com/yiyuanjianjie/">医院简介</a></li>
+<li><a href="http://wq3g.jyzy120.com/teseliaofa/1662.html">特色疗法</a></li>
+<li><a href="http://wq3g.jyzy120.com/zhuanjiatuandui/">专家团队</a></li>
+<li><a href="http://wq3g.jyzy120.com/chenggonganli/">康复历程</a></li>
+</ul>
+</div>
+<div class="tiao">
+<div class="tiao_center">
+<p>认识精神分裂的症状  防患未然</p>
+</div>
+</div>
+<div class="wenzi">严重精神分裂患者会引起自杀或杀人。为了避免精神分裂从轻到重，于平华提醒：了解精神分裂症症状，以便早期治疗、早康复。</div>
+
+<!--<div id="third">
+<ul id="tab_top">
+<li id="tab_left_1"><p class="pp">幻觉<br />妄想</p></li>
+<li id="tab_left_2"><p class="pp">行为<br />异常</p></li>
+<li id="tab_left_3"><p class="pp">性格<br />改变</p></li>
+<li id="tab_left_4"><p class="pp">极度<br />兴奋</p></li>
+</ul>
+
+<ul id="tab_con">
+<li id="tab_con_1"><p class="p1">出现无根据的想法，比如幻听、幻视、幻嗅、幻触、嫉妒妄想、夸大妄想、钟情妄想、罪恶妄想等，患者往往信以为真，最终因此做出傻事。</p></li>
+<li id="tab_con_2"style="display:none;"><p class="p1">行为逐渐变得怪僻、诡秘或者难以理解，喜欢独处，不知羞耻，自语自笑、生活懒散、发呆发愣、蒙头大睡、外出游荡，夜不归家等。</p></li>
+<li id="tab_con_3"style="display:none;"><p class="p1">原来活泼开朗、热情好客，变得沉默少语，独自呆坐似在思考问题，不与人交往； 一向干净利索的人变得不修边幅、生活懒散、纪律松弛、做事注意力不集中等。</p></li>
+<li id="tab_con_4"style="display:none;"><p class="p1">病人的精神症状表现为严重的思维紊乱、言语杂乱无章、行为缺乏目的性，这类病人也可能出现自伤或伤人毁物。</p></li>
+</ul>
+</div>-->
+
+
+
+<div id="third">
+<ul id="tab_top">
+<li id="tab_left1" onmouseover="set('tab_left',1,4)" class="hover"><p class="pp">幻觉<br />妄想</p></li>
+<li id="tab_left2" onmouseover="set('tab_left',2,4)"><p class="pp">行为<br />异常</p></li>
+<li id="tab_left3" onmouseover="set('tab_left',3,4)"><p class="pp">性格<br />改变</p></li>
+<li id="tab_left4" onmouseover="set('tab_left',4,4)"><p class="pp">极度<br />兴奋</p></li>
+</ul>
+
+<ul id="tab_con">
+<li id="tab_left_1"><p class="p1">出现无根据的想法，比如幻听、幻视、幻嗅、幻触、嫉妒妄想、夸大妄想、钟情妄想、罪恶妄想等，患者往往信以为真，最终因此做出傻事。</p></li>
+<li id="tab_left_2" style="display:none;"><p class="p1">行为逐渐变得怪僻、诡秘或者难以理解，喜欢独处，不知羞耻，自语自笑、生活懒散、发呆发愣、蒙头大睡、外出游荡，夜不归家等。</p></li>
+<li id="tab_left_3" style="display:none;"><p class="p1">原来活泼开朗、热情好客，变得沉默少语，独自呆坐似在思考问题，不与人交往； 一向干净利索的人变得不修边幅、生活懒散、纪律松弛、做事注意力不集中等。</p></li>
+<li id="tab_left_4" style="display:none;"><p class="p1">病人的精神症状表现为严重的思维紊乱、言语杂乱无章、行为缺乏目的性，这类病人也可能出现自伤或伤人毁物。</p></li>
+</ul>
+</div>
+<div class="wenti">
+<ul>
+<li>症状轻重无法判断？</li>
+<li>心理问题，无从确认？</li>
+</ul>
+</div>
+<div class="wenti" style=" margin-bottom:4%">
+<ul>
+<li style="padding-top:4%">类似症状，是精神分裂？</li>
+<li style="padding-top:4%">以往治疗，出现反复，怎么办？</li>
+</ul>
+</div>
+<div class="anniu"><a href="#"><img src="images/anniu.jpg" /></a></div>
+<div class="tiao">
+<div class="tiao_center">
+<p>了解精神分裂的危害  有备无患</p>
+</div>
+</div>
+<div class="wenzi">精神分裂症给患者身体和心灵造成伤害的同时，也给患者生活等造成不可逆的影响。让患者和家庭都生活在水深火热之中，备受煎熬。</div>
+
+<div id="third">
+<ul id="tab_top">
+<li id="tab_leftb1" onmouseover="set('tab_leftb',1,4)" class="hover"><p class="ppp">家庭</p></li>
+<li id="tab_leftb2" onmouseover="set('tab_leftb',2,4)" ><p class="ppp">婚姻</p></li>
+<li id="tab_leftb3" onmouseover="set('tab_leftb',3,4)" ><p class="ppp">工作</p></li>
+<li id="tab_leftb4" onmouseover="set('tab_leftb',4,4)" ><p class="ppp">社会</p></li>
+</ul>
+
+<ul id="tab_con">
+<li id="tab_leftb_1"><p class="p1"> 经济负债累累、饮食起居等需要照顾，严重者或出现自杀，杀人等情况，让家人的生命受到威胁，牵连家庭，让家人生活质量下降。</p></li>
+<li id="tab_leftb_2" style="display:none;"><p class="p1">多数精神分裂症患者都不能正常工作，有部分病情较轻者隐瞒病情去工作，被发现后，难逃辞退的命运，不能工作，经济来源从何来？</p></li>
+<li id="tab_leftb_3" style="display:none;"><p class="p1">到了结婚的年龄，每次相亲，都因为患有精神分裂症而失败，结婚成为一种奢侈，但也不能一辈子孤独终老，以后的生活谁来照顾？</p></li>
+<li id="tab_leftb_4" style="display:none;"><p class="p1">严重精神病患者，易伤人、杀人、毁物、纵火，破坏性极大，威胁到家属成员的生命和财产安全，对社会治安和社会稳定造成威胁。</p></li>
+</ul>
+</div>
+<div class="tiao">
+<div class="tiao_center">
+<p>解析精神分裂的病因   对因治疗</p>
+</div>
+</div>
+<div class="wenzi">了解精神分裂的病因，才能从根源预防、治愈疾病，那么，都有哪些因素导致精神分裂呢？</div>
+
+<div id="third">
+<ul id="tab_top">
+<li id="tab_leftc1" onmouseover="set('tab_leftc',1,4)" class="hover"><p class="pp">生理<br />因素</p></li>
+<li id="tab_leftc2" onmouseover="set('tab_leftc',2,4)"><p class="pp">生活<br />环境</p></li>
+<li id="tab_leftc3" onmouseover="set('tab_leftc',3,4)"><p class="pp">遗传<br />因素</p></li>
+<li id="tab_leftc4" onmouseover="set('tab_leftc',4,4)"><p class="pp">精神<br />刺激</p></li>
+</ul>
+
+<ul id="tab_con">
+<li id="tab_leftc_1"><p class="p1">患者的脑神经递质间突触传递信号异常，大脑神经功能的协调性被破坏，进而促成精神分裂的发生。</p></li>
+<li id="tab_leftc_2" style="display:none;"><p class="p1">不良的生活事件、经济状况、社会环境、病前不良性格等社会心理学因素，都会在发病中起到诱发和促进作用。</p></li>
+<li id="tab_leftc_3" style="display:none;"><p class="p1">据遗传流行病学调查显示，者亲属中的患病率高于一般人群数倍，血缘关系越亲，患病率越高，尤其以孪生兄弟姐妹为最高。</p></li>
+<li id="tab_leftc_4" style="display:none;"><p class="p1">天灾人祸、亲人亡故、失业穷困等，精神创伤和重大生活事件也可诱发精神分裂症。</p></li>
+</ul>
+</div>
+<div class="tiao">
+<div class="tiao_center">
+<p>中西医多方结合&nbsp;&nbsp;&nbsp;全方位治疗</p>
+</div>
+</div>
+<div class="wenzi">精神分裂并不是癌症，并非不可治愈，从精神分裂的发病根源着手，严格遵从医嘱，多角度、全方位治疗，70%-80%的患者都可以康复。</div>
+<div id="third">
+<ul id="tab_top">
+<li id="tab_leftd1" onmouseover="set('tab_leftd',1,4)" class="hover"><p class="pp">精准<br />检测</p></li>
+<li id="tab_leftd2" onmouseover="set('tab_leftd',2,4)"><p class="pppp">脑源神<br />经修复</p></li>
+<li id="tab_leftd3" onmouseover="set('tab_leftd',3,4)"><p class="pp">中医<br />疗法</p></li>
+<li id="tab_leftd4" onmouseover="set('tab_leftd',4,4)"><p class="pp">心理<br />辅助</p></li>
+</ul>
+
+<ul id="tab_con">
+<li id="tab_leftd_1"><p class="p1">多年临床经验中医专家，通过观其色、听生息、问症状、摸脉象，结合中医经络检测仪和先进检测仪器，综合判断疾病情况，检测更精准。</p></li>
+<li id="tab_leftd_2"style="display:none;"><p class="p1">采用现代中医生物萃取技术分离出细胞活性物质，直接通过酶的活性作用于脑神经细胞，对受损脑细胞进行修复，从源头修复神经元，恢复大脑神经递质平衡，使患者恢复常态。</p></li>
+<li id="tab_leftd_3"style="display:none;"><p class="p1">根据患者体征，注重辩证轮治，以恢复身体平衡、加强体抗力、增加身体自愈能力，从源头治疗，治愈疾病。</p></li>
+<li id="tab_leftd_4"style="display:none;"><p class="p1">运用行为治疗，如放松训练，系统脱敏等方法，在临床上治疗上收到事半功倍效果。</p></li>
+</ul>
+</div>
+<div class="tiao">
+<div class="tiao_center">
+<p>患者说好才是真的好&nbsp;&nbsp;康复历程</p>
+</div>
+</div>
+<div class="wenzilan">世间最感动的事，莫过于患者康复对一个人和家庭的影响，了解一下他们的康复历程，从中寻找康复之路。</div>
+
+<div id="tpal">
+<ul id="tab_top1">
+<li id="tab_top1_1"><p class="pp1">妹妹去世让她患上精神分裂症</p><p class="pp2">她来自河南，她今年27岁，她有着幸福的家庭。有爱她的老公，有可爱的女儿，可由于精神分裂症让她...<a href="http://wq3g.120bjjy.com/yiyuandongtai/3013.html">【详细】</a></p></li>
+<li id="tab_top1_2" style="display:none;"><p class="pp1">一纸毕业证断送学子前程</p><p class="pp2">2004年9月考入沈阳建筑大学的于小华...<a href="http://wq3g.120bjjy.com/chenggonganli/jingshenfenlie/2015/0416/3249.html">【详细】</a></p></li>
+<li id="tab_top1_3" style="display:none;"><p class="pp1">精神分裂症需规范治疗  不要靠旁门左道 </p><p class="pp2">吴钟勇是辽宁人，34岁看似精神抖擞的他，已经患有精神分裂5年了...<a href="http://wq3g.120bjjy.com/chenggonganli/jingshenfenlie/2015/0416/3250.html">【详细】</a></p></li>
+</ul>
+
+<ul id="tab_bottom1">
+<li id="tab_bottom1_1"><img src="images/a1.jpg" /></li>
+<li id="tab_bottom1_2"><img src="images/a2.jpg" /></li>
+<li id="tab_bottom1_3"><img src="images/a3.jpg" /></li>
+</ul>
+</div>
+<div class="dianji"><img src="images/licheng.jpg" /></div>
+<div class="tiao">
+<div class="tiao_center">
+<p class="p0">多位精神科在线专家&nbsp;一对一指导</p>
+</div>
+</div>
+<div class="zhuanjia">
+<ul>
+<li><a href="#"><img src="images/yph.jpg" /></a></li>
+<li><a href="#"><img src="images/wyt.jpg" /></a></li>
+<li><a href="#"><img src="images/wkx.jpg" /></a></li>
+<li style="margin-right:0px;"><a href="#"><img src="images/lxs.jpg" /></a></li>
+</ul>
+</div>
+<div class="zxzj"><a href="#"><img src="images/zizj.jpg" /></a></div>
+<div class="daohang">
+<ul>
+<li><a href="#"><img src="images/zz.jpg" /></a></li>
+<li><a href="#"><img src="images/wh.jpg" /></a></li>
+<li><a href="#"><img src="images/by.jpg" /></a></li>
+<li><a href="#"><img src="images/zl.jpg" /></a></li>
+<li style=" margin-right:0px"><a href="#"><img src="images/bl.jpg" /></a></li>
+</ul>
+</div>
+<div class="footer">
+<p style=" padding-top:10%;">北京军颐中医医院 | 版权所有</p>
+<p>咨询热线：010-83980777</p>
+<p>医院地址：北京市西城区广安门南街54号</p>
+<p style=" padding-bottom:5%;">微信订阅号：bjkjsk</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@charset "utf-8";
+a{
+	text-decoration:none;
+	color: #525252;
+	cursor:pointer;
+}
+
+.nav{ min-width:1000px; height:95px; background:#737373; overflow:hidden;}
+.nav-center{ width:1000px; height:95px; margin:0 auto; overflow:hidden;}
+.nav-center ul li{ float:left; width:139px; height:95px; text-align:center; padding-top:25px; list-style:none;}
+.nav-center ul li a{ color:#FFF;}
+.nav-center ul li a span{ font-size:11px; color:#FFF;}
+.nav-center ul li.hover{ background:url(images/2.jpg) no-repeat; }
+
+

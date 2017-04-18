@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>无标题文档</title>
+<style>
+*{ padding:0px; margin:0px;}
+ul li{ width:100px; height:40px; border:1px solid blue; list-style:none; float:left;}
+.box{ width:404px; height:42px; overflow:hidden;}
+.box ul{ width:1500px;}
+</style>
+</head>
+
+<body>
+<div class="box">
+    <ul class="aaa">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>菠萝</li>
+        <li>葡萄</li>
+    </ul>
+</div>
+<script>
+function yidong(){
+	$(".aaa").animate({marginLeft:"-100px"}, 2000,"linear",function(){
+		$(this).css({marginLeft:"0"}).find("li:first-child").appendTo(this);		
+		})
+			
+	}
+	var abc=setInterval(yidong,2000);
+</script>
+</body>
+</html>
