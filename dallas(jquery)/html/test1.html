@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>酒店助眠云平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+	<meta name="apple-touch-fullscreen" content="yes" /> 
+    <link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/index.css" />
+	<script>
+    	document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/20+"px";  	
+    </script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		酒店助眠云平台
+		<i class="return4" onclick="returntest()"></i>
+		<div class="pre prev-question" ></div>
+	</div>
+    <!-- main -->
+    <div class="main1">
+	    <div class="myslide">
+	        <ul class="myslidetwo">
+	        	<li class="main-bmbox">
+	        		<div class="swiper-slide main-test" id="boxscroll">
+		            	<div class="lblby lblby1">
+							<form action="" method="post">
+								<div class="title">您觉得您的失眠原因是（多选）:</div>
+								<label class="label_check"> 
+									<input type="checkbox" value="36" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">环境不适</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="37" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">认床</span> 
+								</label><br />  
+								<label class="label_check"> 
+									<input type="checkbox" value="38" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">压力大</span> 
+								</label><br />  
+								<label class="label_check"> 
+									<input type="checkbox" value="39" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">烦躁</span> 
+								</label><br />  
+								<label class="label_check"> 
+									<input type="checkbox" value="40" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">劳累</span> 
+								</label><br />
+								<label class="label_check"> 
+									<input type="checkbox" value="41" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">激动/兴奋</span> 
+								</label><br />
+								<label class="label_check"> 
+									<input type="checkbox" value="42" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">想事</span> 
+								</label><br />
+								<label class="label_check"> 
+									<input type="checkbox" value="51" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">夜尿频多</span> 
+								</label><br />
+								<label class="label_check"> 
+									<input type="checkbox" value="43" name="sel1" class="checkbox" /> 
+									<span class="checkbox-span">无原因</span> 
+								</label><br />
+								<label class="label_check" id="other1"> 
+									<input type="checkbox" value="44" name="sel1" class="checkbox" id="other1-input" /> 
+									<span class="checkbox-span">其他</span> 
+								</label>
+								<textarea class="textarea textarea1" name="mytextarea" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';"></textarea>
+								<br />
+							</form>
+						</div>
+						<div class="argee-next">
+							<div class="next next-one">下一步</div>
+						</div>
+		           </div>
+	        	</li>
+	            <li class="main-bmbox">
+	            	<div class="swiper-slide warp-test">
+		            	<div class="lblby lblby2">
+							<form action="" method="get">
+								<div class="title">您在失眠后第二天是否出现以下问题（多选）：</div>
+								<label class="label_check"> 
+									<input type="checkbox" value="45" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">头晕</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="46" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">心烦</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="47" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">心慌</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="48" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">乏力困倦</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="49" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">头疼</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="50" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">健忘</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="52" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">情绪低落</span> 
+								</label><br /> 
+								<label class="label_check"> 
+									<input type="checkbox" value="53" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">兴趣减退</span> 
+								</label><br /> 
+								<label class="label_check" id="other2"> 
+									<input type="checkbox" value="54" name="sel2" class="checkbox" id="other2-input" /> 
+									<span class="checkbox-span">其他</span>
+								</label>
+								<textarea class="textarea textarea2"name="mytextarea" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';"></textarea>
+								<br />
+								<label class="label_check"> 
+									<input type="checkbox" value="55" name="sel2" class="checkbox" /> 
+									<span class="checkbox-span">不会出现问题</span> 
+								</label><br /> 
+							</form>
+						</div>
+						<div class="argee-next">
+							<div class="next next-one">下一步</div>
+						</div>
+		            </div>
+	            </li>
+	            <li class="main-bmbox">
+	            	<div class="swiper-slide main-test">
+		            	<div class="lblby lblby3">
+							<form action="" method="get">
+								<div class="title">请从以下颜色中选出您现在最喜欢的一个：</div>
+								<label class="label_radio0"> 
+									<input type="radio" value="56" name="sel3" class="checkbox" /> 
+									<span class="checkbox-span">草绿</span> 
+								</label><br />
+								<label class="label_radio1"> 
+									<input type="radio" value="57" name="sel3" class="checkbox" /> 
+									<span class="checkbox-span">火红</span> 
+								</label><br />
+								<label class="label_radio2"> 
+									<input type="radio" value="58" name="sel3" class="checkbox" /> 
+									<span class="checkbox-span">土黄</span> 
+								</label><br />
+								<label class="label_radio3"> 
+									<input type="radio" value="59" name="sel3" class="checkbox" /> 
+									<span class="checkbox-span">冷白</span> 
+								</label><br />
+								<label class="label_radio4"> 
+									<input type="radio" value="60" name="sel3" class="checkbox" /> 
+									<span class="checkbox-span">无光</span> 
+								</label><br />
+							</form>
+						</div>
+						<div class="argee-next">
+							<div class="next next-one">下一步</div>
+						</div>
+		            </div>
+	            </li>
+	            <li class="main-bmbox">
+	            	<div class="swiper-slide warp-test">
+		            	<div class="lblby lblby4">
+							<form action="" method="get">
+								<div class="title">请问您是否有开夜灯的习惯？</div>
+								<label class="label_radio" style="width: 45%; float: left;"> 
+									<input type="radio" value="194" name="r_sel2" class="checkbox" /> 
+									<span class="checkbox-span">是</span> 
+								</label>
+								<label class="label_radio" style="width: 45%; float: left;"> 
+									<input type="radio" value="195" name="r_sel2" class="checkbox" /> 
+									<span class="checkbox-span">否</span> 
+								</label>
+								<div class="title-1">设置闹钟时间</div>
+								<div class="date">
+									<input type="text" value="" class="textarea-s number1" id="input1" onblur="add0()" onkeyup='this.value=this.value.replace(/\D/gi,"")' />
+									<i>:</i>
+									<input type="text" value="" class="textarea-s number2" id="input2" onblur="add0()" onkeyup='this.value=this.value.replace(/\D/gi,"")' />
+									<span>(请输入24小时制时间)</span>
+								</div>
+								<label class="label_check" style="width: 45%; float: left;"> 
+									<input type="checkbox" value="1" name="r_sel" class="checkbox" id="disable" onclick="isChecked()"/> 
+									<span class="checkbox-span">不设置</span>
+								</label>
+							</form>
+						</div>
+						<div class="argee-next">
+							<div class="next next-one">下一步</div>
+						</div>
+		            </div>
+	            </li>
+	            <li class="main-bmbox">
+	            	<div class="swiper-slide main-test">
+		            	<div class="lblby title-1">
+		            		<span class="txt">
+								减压助眠系统将于2分钟后开始工作，请在此期间关闭除顶灯外的其余灯光，将手机调至静音状态，在床上用自我感觉舒适的姿势躺好，闭上眼睛。<br /><br />
+								如不小心关闭主灯也不要紧，本系统有2分钟的选项暂存功能，打开顶灯即可。<br /><br />
+								您现在可将手机休眠了，祝您一夜好眠。<br />
+							</span>
+							<p class="remind">
+								如需连接互联网，请切换使用酒店WiFi
+							</p>
+						</div>
+		            </div>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+
+    <!-- JS -->
+    
+    <!-- Slider -->
+    <script>
+	//  滚动条
+	$(document).ready(function() {
+	    $("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#c1c1c1",boxzoom:true}); 
+	  });
+    //  传参
+   	function add2() {
+   		add1(2,"r_sel2");
+   		var obj = document.getElementsByName("r_sel");
+		if(obj[0].checked){
+			$.ajax({
+		    	url: "http://192.168.0.164:8080/dallas/front/setAlarmTime",
+		    	type:"post",
+		    	async:true,
+		    	data:{
+		    		alarmTime: ''
+		    	},
+		    	success: function(data){
+			    }
+		    });
+		}else{
+			var datas = $("#input1").val()+':'+$("#input2").val()+":00";
+			$.ajax({
+		    	url: "http://192.168.0.164:8080/dallas/front/setAlarmTime",
+		    	type:"post",
+		    	async:true,
+		    	data:{
+		    		alarmTime: datas
+		    	},
+		    	success: function(data){
+			    }
+		    });	
+		}
+
+    };
+    
+    //切换
+	    $(document).ready(function () {
+	    	var width = $(document).width();
+
+	    	$(".pre").css("display","none");
+	        var _now=0;
+	        var oul = $(".myslidetwo");
+	        var numl = $(".myslidetwo li");
+	        var wid = $(".myslide").eq(0).width();
+	        //左右箭头轮播
+	        $(".pre").click(function () {
+	            if (_now>=1) _now--;
+	            else _now=0;
+	            ani();
+	            if(_now<1){
+	            	$(".pre").css("display","none");
+	            	$(".return4").css("display","block");
+	            }
+	        });
+	        $(".next").click(function () {
+	        	var el = $('from');
+	        	var val = [];
+				val[0] = $(".lblby1 input[checked='checked']").length;
+				val[1] = $(".lblby2 input[checked='checked']").length;
+				var index3 = document.getElementsByName('sel3');
+				for(var i in index3){
+					if(index3[i].checked){
+						val[2] = 1;
+					};
+				}
+	            if(_now != 3 ){
+					if(val[_now] > 0){
+						if(_now == 0){
+		            		add1(2,'sel1',8,'textarea1');
+		            	}
+						if(_now == 1){
+		            		add1(2,'sel2',9,'textarea2');
+		            	}
+						if(_now == 2){
+		            		add1(2,'sel3');
+		            	}
+		            	if (_now == numl.size() - 1) {
+		                	_now = numl.size() - 1;
+		           		}
+		            	else _now++;
+		            	ani();
+		            	$(".return4").css("display","none");
+					}
+				}else if(_now = 3){
+					var open = document.getElementsByName("r_sel2");
+					if(open[0].checked){
+						var a = 1;
+					}
+					if(open[1].checked){
+						var b = 1;
+					}
+					var alarm = document.getElementsByName("r_sel");
+					var c = $(".lblby4 .textarea-s").eq(0).val();
+					var d = $(".lblby4 .textarea-s").eq(1).val();
+					if((a>0 || b>0) && ((c !== '' && d!== '' )||alarm[0].checked)){
+						add2();
+						 _now++;
+		            	ani();
+					}
+				}
+	            if (_now>0){
+	            	$(".pre").css("display","block");
+	            	$(".return4").css("display","none");
+	            }
+	            if(_now == 4){
+		        	$(".pre").css("display","none");
+		            $(".next").css("display","none");
+		        }
+	        });
+	        //动画函数
+	        
+	        function ani(){
+	            oul.animate({'left': -wid * _now}, width);
+	        }
+	        
+	    });
+	//input输入框被键盘挡住
+		$('textarea').on('click', function () {
+		  var target = this;	  
+		  setTimeout(function(){
+		        $('.swiper-slide').scrollTop(9999);
+		      },400);
+		});
+	//其他选项按钮
+		$(".textarea1").focus(function(){
+		    $("#other1").addClass("c_on");
+		    $("#other1-input").attr("checked","checked");
+		});
+		$(".textarea2").focus(function(){
+		    $("#other2").addClass("c_on");
+		    $("#other2-input").attr("checked","checked");
+		});
+		
+		//去掉搜狗地址栏
+		window.onload=function(){  
+	        setTimeout(function() {  
+	            window.scrollTo(0, 1)  
+	        }, 0);  
+	    }; 
+	</script>
+	
+    <script type="text/javascript">
+	    function returntest() {       
+	        window.location.href='test.html';
+		}
+	    
+	    //时间验证
+	    $("#input1").on('input',function(){
+    		var date1 = $(".number1").val();
+	    	if(date1<0 || date1>23){
+    			$(".number1").val(str1);
+    		}else{
+				str1 = date1;
+    		}
+	    });
+	    var str1 = '';
+	    $("#input2").on('input',function(){
+    		var date2 = $(".number2").val();
+	    	if(date2<0 || date2>59){
+    			$(".number2").val(str2);
+    		}else{
+				str2 = date2;
+    		}
+	    });
+	    var str2 = '';
+	    
+	    function add0(){
+	    	var input1 = document.getElementById("input1");
+	    	var add1 = document.getElementById("input1").value;
+	    	var input2 = document.getElementById("input2");
+	    	var add2 = document.getElementById("input2").value;
+	    	if(parseInt(add1.length)==1){
+	    		newadd = '0' + add1;
+	    		input1.value = newadd;
+	    	}
+	    	if(parseInt(add2.length)==1){
+	    		newadd = '0' + add2;
+	    		input2.value = newadd;
+	    	}
+	    }
+	    //点击不设置不能输入时间
+		function isChecked(){
+			if($("#disable").attr("checked") == 'checked'){
+				$("#input1").attr("disabled",false);
+	    		$("#input2").attr("disabled",false);
+			}else{
+				$("#input1").attr("disabled",true);
+	    		$("#input2").attr("disabled",true);
+	    		$("#input1").val("");
+	    		$("#input2").val("");
+			}
+		}
+	
+	</script>
+	<script type = "text/javascript" > 
+	$(function(){
+	    $("input[type='checkbox']").click(function() {
+	        if ($(this).is(':checked')) {
+	            $(this).attr("checked", "checked");
+	            $(this).parent().removeClass("c_off").addClass("c_on");
+	        } else {
+	            $(this).removeAttr("checked");
+	            $(this).parent().removeClass("c_on").addClass("c_off");
+	        }
+	    });
+	    $("input[type='radio']").click(function() {
+	        $(this).parent().removeClass("r_off").addClass("r_on").siblings().removeClass("r_on").addClass("r_off");
+	        $(this).parent().removeClass("r_off0").addClass("r_on0").siblings().removeClass("r_on0").addClass("r_off0");
+	        $(this).parent().removeClass("r_off1").addClass("r_on1").siblings().removeClass("r_on1").addClass("r_off1");
+	        $(this).parent().removeClass("r_off2").addClass("r_on2").siblings().removeClass("r_on2").addClass("r_off2");
+	        $(this).parent().removeClass("r_off3").addClass("r_on3").siblings().removeClass("r_on3").addClass("r_off3");
+	        $(this).parent().removeClass("r_off4").addClass("r_on4").siblings().removeClass("r_on4").addClass("r_off4");
+	    });
+	}); 
+	</script> 
+</body>
+</html>

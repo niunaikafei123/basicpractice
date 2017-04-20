@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>酒店助眠云平台</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+		<meta name="apple-touch-fullscreen" content="yes" /> 
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	    <script>
+	    	document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/20+"px";  	
+	    </script>
+	</head>
+	<body>
+		<div class="header">
+			酒店助眠云平台
+			<i class="return4" onclick="returntest()"></i>
+		</div>
+		<div class="main">
+			<div class="lblby">
+				<div class="title">特别提醒：长期失眠建议寻求医师及中医心理师的帮助，仅用本设备效果可能不够明显，请问是否继续使用。</div>
+				<label class="label_radio"> 
+					<input type="radio" value="1" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">是</span> 
+				</label><br />  
+				<label class="label_radio"> 
+					<input type="radio" value="2" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">否</span> 
+				</label><br />  
+			</div>
+			<div class="argee-next">
+				<input class="next-one" type="button" value="下一步" onClick="test()" />
+			</div>
+		</div>
+		<script src="../js/jquery.min.js"></script>
+		<script type = "text/javascript" > 
+		$(function(){
+		    $("input[type='checkbox']").click(function() {
+		        if ($(this).is(':checked')) {
+		            $(this).attr("checked", "checked");
+		            $(this).parent().removeClass("c_on").addClass("c_off");
+		        } else {
+		            $(this).removeAttr("checked");
+		            $(this).parent().removeClass("c_off").addClass("c_on");
+		        }
+		    });
+		    $("input[type='radio']").click(function() {
+		        $("input[type='radio']").removeAttr("checked");
+		        $(this).attr("checked", "checked");
+		        $(this).parent().removeClass("r_off").addClass("r_on").siblings().removeClass("r_on").addClass("r_off");
+		    });
+		}); 
+		</script>
+		<script type="text/javascript">
+		    function returntest() {       
+		        window.location.href='test.html';
+			}
+		    //去掉搜狗地址栏
+		    window.onload=function(){  
+		        setTimeout(function() {  
+		            window.scrollTo(0, 1)  
+		        }, 0);  
+		    }; 
+		</script>
+		<script>
+		function test()
+		{
+			var val = $(".label_radio input[checked='checked']").val();
+			console.log(val);
+	        if(val == 1){
+	            window.location.href='test4.html';
+	        }
+	        if(val == 2){
+	            window.location.href='end.html';
+	        }
+		}
+		</script> 
+	</body>
+</html>

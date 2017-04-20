@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>酒店助眠云平台</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+	    <script>
+	    	document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/20+"px";  	
+	    </script>
+	</head>
+	<body>
+		<div class="header">酒店助眠云平台</div>
+		<div class="main">
+			<div class="yinyan">
+				<p class="yinyan1">亲爱的使用者，您好，感谢体验减压助眠系统，本系统由世界中医药联合会中医心理学分会及睡眠医学分会指导，北京广安睡眠科学研究院与北京广安中医心理研究院联合研制，可提供针对多种失眠问题的解决方案，助您一夜好眠。</p>
+				<p class="yinyan2">本系统将通过一些问题测试您的失眠类型，不会收集您的个人资料。</p>
+				<p class="yinyan2">本系统主要针对一过性失眠及中轻度、中短期失眠而研制。</p>
+			</div>
+			<style> 
+			label { display: block; cursor: pointer; line-height: 26px; margin-bottom: 20px; width: 26px; height: 26px; line-height: 26px; float: left; margin-top: 6px; }
+			.label_check input { margin-right: 5px; }
+			.argee{margin-top: 3.9rem; width: 100%; text-align: center;}
+			.argee .wyzs{width: 100%; float: left; position: relative; height: 2rem;}
+			.argee .label_check{ width: 6.2rem; position: absolute; left: 50%; margin-left: -2.7rem; background: url(images/icon1.png) no-repeat; background-position: 0 0px; }
+			.argee label.c_on { background-position: 0 -26px; color: #333333; width: 40%; height: 2rem; display: inline-block; text-align: center;}
+			.argee label.r_on { background-position: 0 -78px; }
+			.argee .label_check input { position: absolute; left: -9999px; } 
+			
+			.next-one{width: 6.66rem; height: 1.86rem; font-size: 0.8rem; color: #FFFFFF; line-height: 1.86rem; text-align: center; border: none;
+	 background: #3782ff; border-radius:3px;/* position: absolute; left: 50%; margin-left: -3.33rem; bottom: 3.4rem;*/}
+			</style>
+			<div class="argee">
+				<div class="wyzs">
+					<label class="label_check c_on"> 
+						<input type="checkbox" checked="checked" value="1" onclick="if(this.checked) document.getElementById('Glume').disabled=false;else document.getElementById('Glume').disabled=true" /> 
+						<span class="checkbox-span">我已知晓</span><br />
+					</label>
+				</div>
+				<input class="next-one" type="button" id="Glume" value="下一步" onClick="test()" />
+				<p>如需连接互联网，请切换使用酒店WiFi</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+		    function test() {       
+		        window.location.href='html/test.html';
+			}
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script type = "text/javascript" > 
+		$(function(){
+//			if() {
+//				
+//			}
+			
+			$.ajax({
+		    	url: "http://192.168.0.164:8080/dallas/front/isSurveyFinished",
+		    	type:"post",
+		    	async:true,
+		    	data:{
+		    		uuid:'2C0F33FD-B5C8-4D02-84DF-EAA1030BA1FD',
+		    		deviceMACAddress:'5C-FF-35-0B-95-B1',
+		    		mobileMACAddress:'5C-FF-35-0B-95-B6',
+		    		tranId:'4CDBC040-657A-4847-B266-7E31D9E2C3D',
+		    		timeRequested:'2016-12-14 10:52:21'
+		    	},
+		    	success: function(data){
+		    		
+			    }
+		    });
+			
+			
+		    $("input[type='checkbox']").click(function() {
+		        if ($(this).is(':checked')) {
+		            $(this).attr("checked", "checked");
+		            $(this).parent().removeClass("c_off").addClass("c_on");
+		        } else {
+		            $(this).removeAttr("checked");
+		            $(this).parent().removeClass("c_on").addClass(" c_off");
+		        }
+		    });
+		    $("input[type='radio']").click(function() {
+		        $("input[type='radio']").removeAttr("checked");
+		        $(this).attr("checked", "checked");
+		        $(this).parent().removeClass("r_off").addClass("r_on").siblings().removeClass("r_on").addClass("r_off");
+		    });
+		}); 
+		</script>
+		<!--去掉搜狗地址栏-->
+		<script>  
+		    window.onload=function(){  
+		        setTimeout(function() {  
+		            window.scrollTo(0, 1)  
+		        }, 0);  
+		    };  
+		</script>  
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>酒店助眠云平台</title>
+	    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes"> 
+		<meta name="apple-touch-fullscreen" content="yes" /> 
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	    <script>
+	    	document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/20+"px";  	
+	    </script>
+	</head>
+	<body>
+		<div class="header">酒店助眠云平台</div>
+		<div class="warp">
+			<div class="lblby">
+				<div class="title">您通常会在何种情况下失眠：</div>
+				<label class="label_radio"> 
+					<input type="radio" value="1" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">出差偶尔失眠。</span> 
+				</label><br />  
+				<label class="label_radio"> 
+					<input type="radio" value="2" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">出差经常失眠。</span> 
+				</label><br />  
+				<label class="label_radio"> 
+					<input type="radio" value="3" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">在家偶尔失眠，出差加重。</span> 
+				</label><br />  
+				<label class="label_radio"> 
+					<input type="radio" value="4" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">长期失眠。</span> 
+				</label><br />  
+				<label class="label_radio">
+					<input type="radio" value="5" name="r_sel" class="checkbox" /> 
+					<span class="checkbox-span">不失眠。（感谢使用，您将离开本次应用）</span> 
+				</label><br />  
+			</div>
+			<div class="argee-next">
+				<input class="next-one" type="button" value="下一步" onClick="test()" />
+			</div>
+		</div>
+		<script src="../js/jquery.min.js"></script>
+		<script type = "text/javascript" > 
+		$(function(){
+		    $("input[type='checkbox']").click(function() {
+		        if ($(this).is(':checked')) {
+		            $(this).attr("checked", "checked");
+		            $(this).parent().removeClass("c_on").addClass("c_off");
+		        } else {
+		            $(this).removeAttr("checked");
+		            $(this).parent().removeClass("c_off").addClass("c_on");
+		        }
+		    });
+		    $("input[type='radio']").click(function() {
+		        $("input[type='radio']").removeAttr("checked");
+		        $(this).attr("checked", "checked");
+		        $(this).parent().removeClass("r_off").addClass("r_on").siblings().removeClass("r_on").addClass("r_off");
+		    });
+		}); 
+		
+		//去掉搜狗地址栏
+		window.onload=function(){  
+	        setTimeout(function() {  
+	            window.scrollTo(0, 1)  
+	        }, 0);  
+	    }; 
+		</script>
+
+		<script>
+		function test()
+		{
+			var val = $(".label_radio input[checked='checked']").val();
+		        if(val == 1){
+		            window.location.href='test1.html';
+		        }
+		        if(val == 2){
+		            window.location.href='test2.html';
+		        }
+		        if(val == 3){
+		            window.location.href='test3.html';
+		        }
+		        if(val == 4){
+		            window.location.href='test4_about.html';
+		        }
+		        if(val == 5){
+		            window.location.href='end.html';
+		        }
+		   		if(val == 6){
+		            window.location.href='test5.html';
+		        }
+
+		}
+		</script> 
+	</body>
+</html>

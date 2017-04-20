@@ -1,0 +1,76 @@
+html, body { position: relative; height: 100%; font-family:-apple-system,Microsoft YaHei; overflow: hidden; }
+/*input, textarea{font-family: -apple-system,"Microsoft YaHei"; outline:none;border-radius:0;}
+input, button{-webkit-appearance: none;}*/
+label{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+.swiper-container { width: 100%; height: 100%;}
+.swiper-slide {text-align: left; background: #fff; overflow: auto;-webkit-overflow-scrolling: touch;}
+/*上一题按钮*/
+.prev-question{width: 0.55rem; height: 1.2rem; background: url(../images/fanhui.png) no-repeat left center; position: absolute; top: 0.7rem; left: 0.8rem; z-index: 99;}
+
+/*include*/
+.header{ width:100%; height: 2.34rem; position: relative;/* top: 0; left: 0;*/ background: #333333; line-height: 2.34rem; color: #FFFFFF; text-align: center; font-size: 0.96rem;}
+.return1{display: inline-block; width: 0.55rem; height: 1.2rem; background: url(../images/fanhui.png) no-repeat left center; position: fixed; top: -1.7rem; left: 0.8rem; z-index: 99;}
+.return4{display: inline-block; width: 0.55rem; height: 1.2rem; background: url(../images/fanhui.png) no-repeat left center; position: absolute; top: 0.7rem; left: 0.8rem; z-index: 99;}
+.main{width: 100%; height: calc(100% - 2.34rem); background: url(../images/background1.jpg) no-repeat center center; position: absolute; top: 2.34rem; left: 0;}
+.warp{width: 100%; height: calc(100% - 2.34rem); background: url(../images/background2.jpg) no-repeat center center; position: absolute; top: 2.34rem; left: 0;}
+.main-test{width: 100%; background: url(../images/background1.jpg) no-repeat center center;}
+.warp-test{width: 100%; background: url(../images/background2.jpg) no-repeat center center;}
+.main1 { position: relative;  width: 100%;  height: calc(100% - 2.34rem);}
+.myslide { float: left;  position: absolute;  overflow: hidden;  width: 100vw;  height: calc(100vh - 2.34rem);}
+.myslidetwo { position: absolute; overflow: hidden; width: 20000px; }
+.myslidetwo .main-bmbox { float: left;  width: 100vw; /* height:100vh;*/ height: calc(100vh - 2.34rem);}
+.next-one{width: 6.66rem; height: 1.86rem; font-size: 0.8rem; color: #FFFFFF; line-height: 1.86rem; text-align: center; border: none; background: #3782ff; border-radius:3px; display: inline-block;-webkit-touch-callout:none; /*系统默认菜单被禁用*/
+-webkit-user-select:none; -khtml-user-select:none;  -moz-user-select:none; -ms-user-select:none; user-select:none;}
+
+/*多选,单选*/
+.checkbox{margin-right: 0.93rem; width: 50px; height: 50px; display:inline-block;}
+label { display: block; cursor: pointer; margin: 0.25rem 0; width: 26px; height: 26px; line-height: 20px; float: left;}
+.label-height{height: auto;}
+.lblby .label_check, .lblby-other .label_check, .lblby .label_radio, .lblby .label_radio0, .lblby .label_radio1, .lblby .label_radio2, .lblby .label_radio3, .lblby .label_radio4{ margin-right: 8px; }
+.label_check input, .label_radio input, .label_radio0 input, .label_radio1 input, .label_radio2 input, .label_radio3 input, .label_radio4 input { margin-right: 5px; }
+.lblby .label_check input, .lblby-other .label_check input, .lblby .label_radio input, .lblby .label_radio0 input, .lblby .label_radio1 input, .lblby .label_radio2 input, .lblby .label_radio3 input, .lblby .label_radio4 input { position: absolute; left: -9999px; }
+.lblby .label_check, .lblby-other .label_check{ background: url(../images/icon1.1.png) no-repeat; }
+.lblby .label_check, .lblby-other .label_check{ background-position: 0 0px;}
+.lblby label.c_on, .lblby-other label.c_on { background-position: 0 -59px; color: #333333;}
+	 
+
+.lblby .label_radio{ background: url(../images/icon1.png) no-repeat; }
+.lblby .label_radio0{ background: url(../images/icon2.png) no-repeat; }
+.lblby .label_radio1{ background: url(../images/icon3.png) no-repeat; }
+.lblby .label_radio2{ background: url(../images/icon4.png) no-repeat; }
+.lblby .label_radio3{ background: url(../images/icon5.png) no-repeat; }
+.lblby .label_radio4{ background: url(../images/icon6.png) no-repeat; }
+.lblby .label_radio,.lblby .label_radio0, .lblby .label_radio1, .lblby .label_radio2, .lblby .label_radio3, .lblby .label_radio4 { background-position: 0 0px }
+.lblby label.r_on, .lblby label.r_on0, .lblby label.r_on1, .lblby label.r_on2, .lblby label.r_on3, .lblby label.r_on4 { background-position: 0 -26px; color: #333333; }
+
+.argee-next{width: 100%; text-align: center; height: 1.86rem; float: left; margin-bottom: 4.5rem;}
+#other1, #other2{width: 5rem; }
+.textarea{width: 6.93rem; height: 1.3rem; line-height: 1.3rem; display: inline-block; font-size: 0.74rem; background: none; border: none; border-bottom: 1px solid #666;}
+.textarea-s{width: 1.43rem; height: 1rem; color: #878787; padding-left:0.5rem ; display: inline-block; font-size: 0.74rem; background: none; border: none; border-bottom: 1px solid #666;}
+.lblby{width: 92%; padding: 4%; min-height: 19.3rem; float: left;}
+.lblby-other{width: 92%; padding: 4%; min-height: 0; float: left;}
+.lblby .bmbox, .lblby-other .bmbox{width: 100%; height: 3rem;}
+.lblby .bmbox span, .lblby-other .bmbox span{font-size: 0.74rem; display: inline-block; width: 45%;}
+.date{color: #333333; margin-bottom: 0.5rem;}
+.date i{font-style: normal; color: #333333;}
+.date span{color: #888888; font-size: 0.64rem;}
+/*第一页*/
+.yinyan{height: 10rem; padding-top: 3.73rem; text-align: justify; padding-left: 4%; padding-right:4% ;}
+.yinyan1{ font-size: 0.96rem; color: #333; margin-bottom: 1.06rem;}
+.yinyan2{ font-size: 0.69rem; color: #666; line-height: 1.09rem;}
+.argee{margin-top: 2rem; width: 100%; text-align: center;}
+.label_check, .label_radio, .label_radio0, .label_radio1, .label_radio2, .label_radio3, .label_radio4{width: 100%;/* height: 1.3rem;*/}
+.checkbox-span{ font-size: 0.74rem; /*height: 1.3rem;*/ line-height: 1.3rem; display: inline-block; float: left; padding-left:2.5rem; margin-right: 0.5rem;}
+.argee p{color: #888888; font-size: 0.59rem; margin-top: 1.5rem; float: left; width: 100%; text-align: center;}
+
+/*第二页*/
+.title{font-size: 0.96rem; color: #333333; margin-bottom: 0.45rem;}
+.title-1{font-size: 0.96rem; color: #333333; margin-bottom: 0.45rem; width: 92%;}
+.option{font-size: 0.74rem; color: #666666;}
+/*准备页*/
+.txt{margin-top: 5.33rem; display: block; text-align: justify;}
+.remind{font-size: 0.58rem; color: #999; width: 92%; height: 0.8rem; line-height: 0.8rem; text-align: center; position: absolute; bottom: 6rem;}
+/*结束*/
+.end-txt{text-align: center; width: 100%; height: 1.4rem; position: absolute; top:50%; margin-top: -0.7rem;}
+/*滚动条*/
+#boxscroll { height: 100%; width: 100%; overflow: auto; }
