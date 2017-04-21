@@ -15,7 +15,7 @@
 	<body>
 		<div class="header">酒店助眠云平台</div>
 		<div class="warp">
-			<div class="lblby">
+			<!--<div class="lblby">
 				<div class="title">您通常会在何种情况下失眠：</div>
 				<label class="label_radio"> 
 					<input type="radio" value="1" name="r_sel" class="checkbox" /> 
@@ -37,9 +37,35 @@
 					<input type="radio" value="5" name="r_sel" class="checkbox" /> 
 					<span class="checkbox-span">不失眠。（感谢使用，您将离开本次应用）</span> 
 				</label><br />  
-			</div>
+			</div>-->
 			<div class="argee-next">
 				<input class="next-one" type="button" value="下一步" onClick="test()" />
+			</div>
+			<div class="huoqu">
+				<!--<p>aa的值为：<span></span></p>
+				<p>bb的值为：<span></span></p>
+				<p>cc的值为：<span></span></p>
+				<p>dd的值为：<span></span></p>
+				<p>ee的值为：<span></span></p>-->
+			</div>
+			<div class="box">
+				<span>点击按钮获取第二个div中所有p标签的值</span>
+				<div class="content">
+					<p>aaaaa</p>
+					<p>bbbbb</p>
+					<p>ccccc</p>
+				</div>
+				<div class="content">
+					<p>111</p>
+					<p>222</p>
+					<p>333</p>
+				</div>
+				<div class="content">
+					<p>444</p>
+					<p>555</p>
+					<p>666</p>
+				</div>
+				<input>
 			</div>
 		</div>
 		<script src="../js/jquery.min.js"></script>
@@ -59,6 +85,16 @@
 		        $(this).attr("checked", "checked");
 		        $(this).parent().removeClass("r_off").addClass("r_on").siblings().removeClass("r_on").addClass("r_off");
 		    });
+		    var objects = [
+		    	{aa:10,bb:15,cc:20,dd:25,ee:30},
+		    	{aa:101,bb:102,cc:103,dd:104,ee:105},
+		    	{aa:201,bb:202,cc:203,dd:204,ee:205}
+		    ]
+		    var htmls="";
+		    for(var i=0;i<objects.length;i++){
+		    	htmls+="<p>aa的值:" + objects[i].aa + "</p><p>bb的值：" + objects[i].bb + "</p><p>cc的值：" + objects[i].cc +"</p><p>dd的值:" + objects[i].dd +"</p><p>ee的值" + objects[i].ee + "</p>" ;		    	
+		    }
+		    $(".huoqu").append(htmls);
 		}); 
 		
 		//去掉搜狗地址栏
