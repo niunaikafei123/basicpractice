@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="aa1"></div>
+		<div id="aa2" data-test="今天星期一"></div>
+		<div id="aa3"></div>
+		<form id="form1">
+			<select id="select1">
+			<option value="11">11</option>
+			<option value="22">22</option>
+			<option value="33">33</option>
+		</select>
+		<div>
+			<input type="radio" name="aa" value="0" checked="checked"/>男
+			<input type="radio" name="aa" value="1" />女
+		</div>
+		</form>
+		
+		
+	</body>
+	<script>
+		$("#aa1").data("ceshi",12345);
+		console.log($("#aa1").data("ceshi"));
+		console.log($("#aa2").data("test"));
+		$("#aa3").data("cunchu","为啥还没网");
+		console.log($("#aa3").data("cunchu"));
+		$("#select1").find("option[text='22']").attr("selected","selected");
+//		console.log($("#select1").find("option:selected").text());
+//	    console.log($("#select1").val());
+//	    $("#select1").get(0).selectedIndex=2; 
+		//将select中value值为22的那一项选中
+		$("#select1").find("option[value=22]").attr("selected",true);
+//		$("#select1").find("option[text='22']").attr("selected",true);
+		//向select里面增加一项
+		$("#select1").get(0).options.add(new Option(66,66));
+		$("#select1").get(0).options.add(new Option(77,77));
+		//将select中值为66的那一项删除
+		var oplength = $("#select1").get(0).options.length;//获取select中所有项的个数      
+		console.log(oplength);
+		for(var i=0;i<oplength;i++){
+			if($("#select1").get(0).options[i].value == 66)
+			{
+				$("#select1").get(0).remove(i);
+				break;
+			}
+		}
+		
+		//获取select选中项的text
+		$("#select1").find("option:selected").text();
+		$("#select1 option:selected").text()
+		
+		//获取select选中项的value
+		var v1 = $("#select1").find("option:selected").val();
+		console.log(v1);
+		var v2 = $("#select1 option:selected").val();
+		console.log(v2);
+		//获取select选中项的索引
+		var index = $("#select1").find("option:selected").index();
+		console.log(index);
+		var index2 = $("#select1").get(0).selectedIndex;
+		console.log(index2);		
+		//获取select项的数目
+		var num = $("#select1").get(0).options.length;
+		console.log(num);
+		//设置select选中的索引
+		$("#select1").get(0).selectedIndex = 3;
+		//设置select选中的value
+		$("#select1").attr("value",33);
+		$("#select1").val("11");
+		console.log($("#select1").find("option:selected").val());
+		//获取单选按钮选中的值
+//		$("input[name='aa'][checked]").val();
+		console.log($("input[name='aa'][checked]").val())
+		$(document).ready(function(){
+			console.log($("#select1").serialize());
+		})
+		
+	</script>
+</html>

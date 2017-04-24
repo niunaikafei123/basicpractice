@@ -1,0 +1,43 @@
+1. ionic platform rm android
+2. ionic platform add android
+3. ionic build --release android
+4.签名：jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-key.keystore android-release-unsigned.apk rkey
+
+
+经过windows后打包就需要执行以下命令：
+# check if the file has ^M line endings
+cat -v FILE-NAME-WITH-ERROR
+
+# fix the file
+tr -d '\r' < FILE-NAME-WITH-ERROR > FILE-NAME-WITH-ERROR.fix
+
+# check if problem fixed in resulting file from above
+cat -v FILE-NAME-WITH-ERROR.fix
+
+# overwrite original file with fixed file
+mv FILE-NAME-WITH-ERROR.fix  FILE-NAME-WITH-ERROR
+
+
+
+ionic自定义插件安装：
+1.ANdroidModify——》AndroidMainifest.xml文件中新增
+ <activity android:name="com.test.bbb.MyPlugin222.Activity1"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:launchMode="singleTop"
+            tools:replace="android:theme">
+        </activity>
+2.plugin.xml文件中新增：
+<source-file src="src/android/Activity1.java" target-dir="src/com/test/bbb/MyPlugin222" />
+
+
+下载node.js：
+wget https://nodejs.org/dist/v4.5.0/node-v4.5.0.tar.gz
+
+去orache官网下载jdk-8u101-linux-x64.tar.gz
+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz	http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tz
+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
+
+调用视频：
+<embed src="http://static.video.qq.com/TPout.swf?vid=h0021aj82e8&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
