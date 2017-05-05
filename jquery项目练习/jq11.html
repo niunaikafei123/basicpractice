@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<style type="text/css">
+			ul{ overflow: hidden;}
+			ul li{list-style:none; float:left; width:150px; height:200px; font-size:24px;}
+		</style>
+	</head>
+	<body>
+		<ul id="first">
+			<li>a</li>
+			<li>c</li>
+			<li>h</li>
+			<li>x</li>
+		</ul>
+		<script type="text/javascript">
+			var obj=[
+				{
+					name:"安徽",
+					letter:'a',
+					content:"安徽123456",
+				},
+				{
+					name:"长春",
+					letter:'c',
+					content:"长春134456",
+				},
+				{
+					name:"朝阳区",
+					letter:'c',
+					content:"朝阳区123456",
+				},
+				{
+					name:"邯郸市",
+					letter:'h',
+					content:"邯郸市12345",
+				},
+				{
+					name:"邢台市",
+					letter:'x',
+					content:"邢台市12345",
+				},
+				{
+					name:"兴华区",
+					letter:'x',
+					content:"兴华区12345",
+				}
+			]
+			$("ul#first li").each(function(index,ele){
+				console.log(index);
+				console.log(ele);
+				console.log($(this));
+				var shuzu=[];
+				console.log($(this).text());
+				for(i in obj){
+					console.log(obj[i]);
+					if($(this).text() == obj[i].letter){
+						shuzu.push(obj[i]);
+						console.log(shuzu);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
