@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			var arr = 'abcdaabc';
+//			var info = arr
+//			    .split('')
+//			    .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});			
+//			console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
+
+		  var str = "abdcadfasfdbadfafdasdfasyweroweurowqrewqrwqrebwqrewqrejwq;;";
+		    var array = str.split("");
+		    array.sort();
+		    var countArray = [];
+		    var CountObj = function(character){
+		      this.count = 1
+		      this.character = character;
+		      return this;
+		    }
+		    var arrayObj = null,
+		      countArrayObj = null,
+		      arrayLength = 0;
+		    for (var i = 0, length = array.length; i < length; i++) {
+		      arrayObj = array[i];
+		      arrayLength = countArray.length;
+		      if (arrayLength > 0) {
+		        countArrayObj = countArray[arrayLength - 1];
+		        if (countArrayObj.character == arrayObj) {
+		          countArrayObj.count = countArrayObj.count + 1;
+		        } else {
+		          countArray.push(new CountObj(arrayObj));
+		        }
+		      } else {
+		        countArray.push(new CountObj(arrayObj));
+		      }
+		    }
+		    /**
+		     * 输出每个字母和其对应出现的统计数据
+		     */
+		    for(var i=0,length=countArray.length; i<length; i++) {
+		      countArrayObj = countArray[i];
+		      console.log(countArrayObj.character + ":" + countArrayObj.count);
+		    }
+
+		</script>
+	</body>
+</html>

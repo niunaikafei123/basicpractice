@@ -125,5 +125,8 @@ obj.addEventListener("click",func,false) //冒泡事件
 
 关于echarts的总结：
 
+28. html5已经被移除的元素：
+big，center，dir，font，frame等等
+
 
  

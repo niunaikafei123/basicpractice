@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>下拉刷新</p>
+		<ion-refresher on-refresh="doRefresh(index)"></ion-refresher>
+		<script>
+			$scope.index = 0; /* 默认选中金信宝页  0:金信 1:金易 2:金房 3:信托 4:债权  这儿默认值不可修改和slide的默认第一个相关，需要切换默认值，请界面和模型同时切换*/
+			$scope.products = [];
+			$scope.animateStyle = {'transform':'translateX(0%)','transition-duration':'0.5s'};
+			$scope.products[0] = {
+				'pageNum': 0,
+				'list': [],
+				'islastPage': false
+			};
+			$scope.products[1] = {
+				'pageNum': 0,
+				'list': [],
+				'islastPage': false
+			};
+			$scope.products[2] = {
+				'pageNum': 0,
+				'list': [],
+				'islastPage': false
+			};
+			$scope.products[3] = {
+				'pageNum': 0,
+				'list': [],
+				'islastPage': false
+			};
+			$scope.products[4] = {
+				'pageNum': 0,
+				'list': [],
+				'islastPage': false
+			};
+			$scope.doRefresh = function (index) {
+				var temp = $scope.products[index].pageNum;
+				$scope.products[index].pageNum = 1;
+				GetListService.getList(index+1, $scope.products[index].pageNum)
+				.success(function (data) {
+					if (data.retCode === 1) {
+						$scope.products[index].list = data.result.list;
+						$scope.products[index].islastPage = data.result.lastPage;
+						$scope.$broadcast('scroll.refreshComplete');
+					} else {
+						/* 数据应该保持不变 */
+						$scope.products[index].pageNum = temp;
+					    $scope.$broadcast("scroll.refreshComplete");
+					}	
+				})
+				.error(function(data) {
+					/* 数据应该保持不变 或者从$localstore中读取已有数据 */
+					$scope.products[index].pageNum = temp;
+					$scope.$broadcast("scroll.refreshComplete");
+				});
+			};
+//			下拉加载
+			$scope.doAppend = function (index) {
+					$scope.products[index].pageNum++;
+					GetListService.getList(index+1, $scope.products[index].pageNum)
+					.success(function (data) {
+						console.log(data);
+						if (data.retCode === 1) {
+							$scope.products[index].list = $scope.products[index].list.concat(data.result.list);
+							$scope.products[index].islastPage = data.result.lastPage;
+							$scope.$broadcast('scroll.infiniteScrollComplete');
+						} else {
+							$scope.products[index].pageNum--;
+							$scope.$broadcast("scroll.infiniteScrollComplete");
+						}
+					})
+					.error(function (data) {
+						$scope.products[index].pageNum--;
+						$scope.$broadcast("scroll.infiniteScrollComplete");
+					});
+				};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str1 = "abcdaacdrt";
+			var shuzu1 = str1.split("");
+			var shuzu2=[];
+			console.log(shuzu1);
+			shuzu2.push(shuzu1[0]);
+			for(var i=1;i<shuzu1.length;i++){
+				var zhi = false;
+				for(var j=0; j<shuzu2.length;j++){
+					if(shuzu2[j] == shuzu1[i]){
+						zhi = true;
+						break;
+					}
+				}
+				if(!zhi){
+						shuzu2.push(shuzu1[i]);
+					}
+			}
+			console.log(shuzu2);
+		</script>
+	</body>
+</html>

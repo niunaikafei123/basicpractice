@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--告知浏览器用html的哪个版本进行编写，用w3c的标准来解析页面-->
+<html>
+	<head>
+		<meta charset="UTF-8">  <!--用这个声明编码，否则会出现乱码-->
+		<title></title>
+		<!--如果有的浏览器不识别h5标签,可以加上这句话解决新元素不被识别的问题-->
+		<!--<script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>-->
+		<script type="text/javascript">
+//		window.onload表示让dom先加载完之后再加载js
+		window.onload = function(){  
+			document.createElement("myhello"); //自定义一个标签
+//			canvas的用法
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext('2d'); //指定了要在画布上绘图的类型，2d表示二维绘图
+			ctx.fillStyle = "#FF0000"; //设置用于绘画色颜色
+			ctx.fillRect(0,0,80,100); //绘制上一句已经填充的对象，其中前两位表示左上角的x和y坐标；后两位表示宽和高
+//			用canvas画圆
+			var yuan = document.getElementById("yuan");
+			var yuanxing = yuan.getContext('2d');
+			yuanxing.beginPath(); //开始一个新的绘制路径
+			yuanxing.strokeStyle = "blue"; //设置弧线的颜色为蓝色
+			var circle ={
+				x:100,
+				y:100,
+				r:50,
+			}
+			//沿着坐标点（100,100）为圆心，半径为50px的圆的顺时针方向绘制弧线
+			yuanxing.arc(circle.x,circle.y,circle.r,0, 2*Math.PI, false); //圆的中心x坐标，y坐标，圆的半径，起始角，结束角，false表示顺时针，注：1/4弧度是Math.PI/2
+			yuanxing.stroke();
+		}
+		</script>
+	</head>
+	<body>
+		<h1>我要添加新的元素</h1>
+		<myhello>这个就是我定义的新标签</myhello>
+		<canvas id="myCanvas"></canvas>
+		<canvas id="yuan"></canvas>
+		<p>h5表单属性:自动填充功能/autocomplete="off"为关闭自动填充功能</p>
+		<form action="biaodan.html" autocomplete="on">
+			firstname:<input type="text" name="fname" /><br> 
+			lastname:<input type="text" name="lname" /><br>
+			email:<input type="email" name="email" autocomplete="off"/><br>
+			<input type="submit" />
+		</form>
+		<p>novalidate表示不校验格式</p>
+		<form action="biaodan.html" novalidate>
+			邮箱格式：<input type="email" />
+			<input type="submit" />
+		</form>
+	</body>
+	
+</html>
