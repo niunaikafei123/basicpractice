@@ -1,24 +1,25 @@
-1.Ê×ÏÈ´´½¨Ò»¸ö²Ö¿â±ÈÈç£ºqinaduan
+gitå‘½ä»¤ç”±cç›˜åˆ‡æ¢åˆ°dç›˜ï¼šcd d:
+1.é¦–å…ˆåˆ›å»ºä¸€ä¸ªä»“åº“æ¯”å¦‚ï¼šqinaduan
 
-2.ÔÚ±¾µØ¶ÔÕËºÅºÍÓÊÏä½øĞĞ¹ØÁª£º
-git config --global user.name ÄãgithubµÄÃû×Ö
-git config --global user.email Äãgithub¼´½«¹ØÁªµÄÓÊÏäÃû×Ö
+2.åœ¨æœ¬åœ°å¯¹è´¦å·å’Œé‚®ç®±è¿›è¡Œå…³è”ï¼š
+git config --global user.name ä½ githubçš„åå­—
+git config --global user.email ä½ githubå³å°†å…³è”çš„é‚®ç®±åå­—
 
-3.½«gitbashÀïÃæ½øÈëµ½±¾µØÓëgithub¹ØÁªµÄÎÄ¼ş¼ĞÖĞ£¬È»ºó
+3.å°†gitbashé‡Œé¢è¿›å…¥åˆ°æœ¬åœ°ä¸githubå…³è”çš„æ–‡ä»¶å¤¹ä¸­ï¼Œç„¶å
 
-4.git init //°ÑÕâ¸öÄ¿Â¼±ä³Égit¿ÉÒÔ¹ÜÀíµÄ²Ö¿â
+4.git init //æŠŠè¿™ä¸ªç›®å½•å˜æˆgitå¯ä»¥ç®¡ç†çš„ä»“åº“
 
-5.git add README.md  //½«README.mdÌí¼Óµ½.gitÀïÃæ
+5.git add README.md  //å°†README.mdæ·»åŠ åˆ°.gité‡Œé¢
 
 6.git commit -m "first commit"
 
-7.git remote add origin git@github.com:wangjiax9/practice.git //¹ØÁªÔ¶³Ì²Ö¿â ×¢Òâ£ººóÃæÄÇ¸öÊÇ×Ô¼ºµÄ²Ö¿âµÄµØÖ·
+7.git remote add origin git@github.com:wangjiax9/practice.git //å…³è”è¿œç¨‹ä»“åº“ æ³¨æ„ï¼šåé¢é‚£ä¸ªæ˜¯è‡ªå·±çš„ä»“åº“çš„åœ°å€
 
-8.git push -u origin master //°Ñ±¾µØ¿âµÄËùÓĞÄÚÈİÍÆËÍµ½Ô¶³Ì¿âÉÏ
+8.git push -u origin master //æŠŠæœ¬åœ°åº“çš„æ‰€æœ‰å†…å®¹æ¨é€åˆ°è¿œç¨‹åº“ä¸Š
 
 
-È»ºóÃ¿´Î¹ØÁªµÄ±¾µØµÄÕâ¸öÎÄ¼ş¼ĞÒªÊÇÓĞËù±ä¶¯£¬ĞèÒªÖ´ĞĞÒÔÏÂÃüÁî£º
+ç„¶åæ¯æ¬¡å…³è”çš„æœ¬åœ°çš„è¿™ä¸ªæ–‡ä»¶å¤¹è¦æ˜¯æœ‰æ‰€å˜åŠ¨ï¼Œéœ€è¦æ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 git add -A
-git commit -m "ĞŞ¸ÄµÄÄÚÈİ"
-git pull //Èç¹ûÊÇ×Ô¼ºÌá½»Ò»°ã²»ĞèÒªÕâ¸ö
+git commit -m "ä¿®æ”¹çš„å†…å®¹"
+git pull //å¦‚æœæ˜¯è‡ªå·±æäº¤ä¸€èˆ¬ä¸éœ€è¦è¿™ä¸ª
 git push -u origin master
